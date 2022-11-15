@@ -1,0 +1,48 @@
+<form id="user-form" (ngSubmit)="onSubmit()" #form="ngForm">
+  <fieldset>
+
+    <!-- Username read only -->
+    <div class="form-group mb-3">
+      <label class="control-label" for="username">Username</label>
+      <input id="username" name="username" type="text" class="form-control" readonly [ngModel]="user.id">
+    </div>
+
+    <!-- Role read only -->
+    <div *ngIf="user.getRoles().length > 0" class="form-group mb-3">
+      <label class="control-label" for="role">Role</label>
+      <input id="role" name="role" type="text" class="form-control" readonly [ngModel]="user.getRoles().join(', ')">
+    </div>
+
+    <!-- E-Mail input -->
+    <div class="form-group mb-3" [class.was-validated]="email.dirty || email.touched">
+      <label class="control-label" for="email">E-Mail*</label>
+      <input id="email" name="email" type="email" class="form-control" required
+             [(ngModel)]="user.email" #email="ngModel">
+      <div class="invalid-feedback">An e-mail is required</div>
+    </div>
+
+    <!-- Change password checkbox -->
+    <div *ngIf="!user.passwordReset" class="form-check mb-3">
+      <input id="isPasswordReset" name="isPasswordReset" type="checkbox" class="form-check-input"
+             [(ngModel)]="user.passwordReset">
+      <label class="form-check-label" for="isPasswordReset">Change password?</label>
+    </div>
+
+    <!-- Password input -->
+    <div *ngIf="user.passwordReset" class="form-group mb-3" [class.was-validated]="password.dirty || password.touched">
+      <label class="control-label" for="password">Password</label>
+      <input id="password" name="password" type="password" class="form-control" required minlength="8" maxlength="256"
+             [(ngModel)]="user.password" #password="ngModel">
+      <div class="invalid-feedback">A password longer than 8 characters is required</div>
+    </div>
+
+    <!-- Button -->
+    <div class="form-group fa-pull-right">
+      <button id="userDetail" type="button" [routerLink]="['/users/'+getCurrentUserName()]"
+              class="btn btn-outline-primary">Back</button>
+      <button id="submit" type="submit" [disabled]="!form.form.valid"
+              class="btn btn-success ms-3">Submit</button>
+    </div>
+
+  </fieldset>
+</form>

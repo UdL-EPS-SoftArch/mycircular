@@ -1,0 +1,37 @@
+<form id="user-form" (ngSubmit)="onSubmit()" #form="ngForm">
+  <fieldset>
+
+    <!-- Username input -->
+    <div class="form-group mb-3" [class.was-validated]="username.dirty || username.touched">
+      <label class="control-label" for="username">Username*</label>
+      <input id="username" name="username" type="text" class="form-control" required
+             [(ngModel)]="user.id" #username="ngModel">
+      <div class="invalid-feedback">A username is required</div>
+    </div>
+
+    <!-- E-Mail input -->
+    <div class="form-group mb-3" [class.was-validated]="email.dirty || email.touched">
+      <label class="control-label" for="username">E-Mail*</label>
+      <input id="email" name="email" type="email" class="form-control" required email
+             [(ngModel)]="user.email" #email="ngModel">
+      <div class="invalid-feedback">An e-mail is required</div>
+    </div>
+
+    <!-- Password input -->
+    <div class="form-group mb-3" [class.was-validated]="password.dirty || password.touched">
+      <label class="control-label" for="password">Password*</label>
+      <input id="password" name="password" type="password" class="form-control" required minlength="8" maxlength="256"
+             [(ngModel)]="user.password" #password="ngModel">
+      <div class="invalid-feedback">A password longer than 8 characters is required</div>
+    </div>
+
+    <!-- Button -->
+    <div class="form-group fa-pull-right">
+      <button id="listBtn" type="button" (click)="onCancel()"
+              class="btn btn-outline-primary pull-right">Back</button>
+      <button id="submit" type="submit" [disabled]="!form.form.valid"
+              class="btn ms-3 btn-success pull-right">Submit</button>
+    </div>
+
+  </fieldset>
+</form>

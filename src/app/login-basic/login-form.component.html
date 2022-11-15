@@ -1,0 +1,56 @@
+<h4 class="display-4">Login</h4>
+<p class="lead">Please, provide your credentials to log in</p>
+
+<form id="login-form" (ngSubmit)="onSubmit()" #form="ngForm" novalidate>
+  <fieldset>
+
+    <!-- Username input -->
+    <div class="form-group mb-3" [class.was-validated]="username.dirty || username.touched">
+      <label class="control-label" for="username">Username*</label>
+      <input id="username"
+             type="username"
+             name="username"
+             class="form-control"
+             #username="ngModel" [(ngModel)]="user.id"
+             required>
+      <div class="text-danger"
+           *ngIf="username.invalid && (username.dirty || username.touched)">
+        A username is required
+      </div>
+    </div>
+
+
+    <!-- Password input -->
+    <div class="form-group mb-3" [class.was-validated]="password.dirty || password.touched">
+      <label class="control-label" for="password">Password</label>
+      <input id="password"
+             type="password"
+             name="password"
+             class="form-control"
+             #password="ngModel" [(ngModel)]="user.password"
+             required
+             minlength="8"
+             maxlength="256">
+      <div class="text-danger"
+           *ngIf="password.invalid && (password.dirty || password.touched)">
+        <div *ngIf="password.errors.required">
+          A password is required
+        </div>
+        <div *ngIf="password.errors.minlength">
+          Password must be at least 8 characters long.
+        </div>
+        <div *ngIf="password.errors.maxlength">
+          Password must be at max 256 characters long.
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Button -->
+    <div class="form-group fa-pull-right">
+      <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancel</button>
+      <button id="submit" type="submit" class="btn btn-success ms-3" [disabled]="!form.form.valid">Submit</button>
+    </div>
+
+  </fieldset>
+</form>

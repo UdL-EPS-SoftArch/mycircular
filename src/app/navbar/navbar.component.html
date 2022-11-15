@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand ms-3" [routerLink]="['/about']"><b>Angular</b>Template</a>
+  <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
+          [attr.aria-expanded]="!isCollapsed" aria-controls="navbarContent" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarContent" [ngbCollapse]="isCollapsed">
+    <ul class="navbar-nav">
+      <li class="nav-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+        <a class="nav-link" [routerLink]="['/about']">About</a>
+      </li>
+      <li class="nav-item" *ngIf="isRole('user')" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="playerDropdown" role="button"
+           aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>Users</a>
+        <div class="dropdown-menu" aria-labelledby="playDropdown" ngbDropdownMenu>
+          <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
+             [routerLink]="['/users']"><span class="fas fa-user-circle"></span> List</a>
+        </div>
+      </li>
+    </ul>
+    <ul class="navbar-nav ms-auto me-3" app-login-navbar></ul>
+  </div>
+</nav>

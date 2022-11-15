@@ -1,0 +1,11 @@
+<div class="col form-group">
+  <input id="typeahead-http" type="text" class="form-control" [resultTemplate]="rt"
+         [class.is-invalid]="searchFailed" [ngbTypeahead]="autocomplete" placeholder="Search all users"
+         [class.loading]="searching" (selectItem)="select($event.item)"/>
+  <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
+</div>
+
+<ng-template #rt let-r="result" let-t="term">
+  <div class="row"><ngb-highlight [result]="r.id" [term]="t"></ngb-highlight></div>
+  <div class="row"><small>{{r.email}}</small></div>
+</ng-template>

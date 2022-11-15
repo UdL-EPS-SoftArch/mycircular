@@ -1,0 +1,13 @@
+ <div class="panel panel-warning">
+  <div class="panel-heading">
+    <div class="panel-title">Please, confirm deletion:</div>
+  </div>
+  <div class="panel-body">
+    <div class="text-center">
+      <button id="deleteBtn" type="button" (click)="delete()"
+              class="btn btn-outline-danger m-1">Delete</button>
+      <button id="listBtn" type="button" [routerLink]="['users', user.id]"
+              class="btn btn-outline-primary m-1">Cancel</button>
+    </div>
+  </div>
+</div>
