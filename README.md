@@ -3,6 +3,7 @@
 [![Open Issues](https://img.shields.io/github/issues-raw/UdL-EPS-SoftArch/mycircular?logo=github)](https://github.com/orgs/UdL-EPS-SoftArch/projects/15)
 [![CI/CD](https://github.com/UdL-EPS-SoftArch/mycircular/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/UdL-EPS-SoftArch/mycircular/actions)
 [![CypressE2E](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/4isjgp&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/4isjgp/runs)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ec7fc1d3-3d31-486e-a6be-ebf74ab3a783/deploy-status)](https://mycircular.netlify.app/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.9.
 
