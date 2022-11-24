@@ -24,6 +24,16 @@ import {AuthenticationBasicService} from './login-basic/authentication-basic.ser
 import {LoggedInGuard} from './login-basic/loggedin.guard';
 import {UserService} from './user/user.service';
 import { OfferListComponent } from './offer/offer-list/offer-list.component';
+import { ProductofferEditComponent } from './offer/productoffer-edit/productoffer-edit.component';
+import { ProductofferDeleteComponent } from './offer/productoffer-delete/productoffer-delete.component';
+import { ProductofferDetailComponent } from './offer/productoffer-detail/productoffer-detail.component';
+import { ProductofferRegisterComponent } from './offer/productoffer-register/productoffer-register.component';
+import { ProductofferListComponent } from './offer/productoffer-list/productoffer-list.component';
+import { ServiceofferListComponent } from './offer/serviceoffer-list/serviceoffer-list.component';
+import { ServiceofferDeleteComponent } from './offer/serviceoffer-delete/serviceoffer-delete.component';
+import { ServiceofferEditComponent } from './offer/serviceoffer-edit/serviceoffer-edit.component';
+import { ServiceofferDetailComponent } from './offer/serviceoffer-detail/serviceoffer-detail.component';
+import { ServiceofferRegisterComponent } from './offer/serviceoffer-register/serviceoffer-register.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +47,17 @@ import { OfferListComponent } from './offer/offer-list/offer-list.component';
     UserEditComponent,
     UserDeleteComponent,
     UserSearchComponent,
-    OfferListComponent
+    OfferListComponent,
+    ProductofferEditComponent,
+    ProductofferDeleteComponent,
+    ProductofferDetailComponent,
+    ProductofferRegisterComponent,
+    ProductofferListComponent,
+    ServiceofferListComponent,
+    ServiceofferDeleteComponent,
+    ServiceofferEditComponent,
+    ServiceofferDetailComponent,
+    ServiceofferRegisterComponent
   ],
   imports: [
     BrowserModule,
