@@ -23,7 +23,7 @@ import {HttpErrorInterceptor} from './error-handler/http-error-interceptor';
 import {AuthenticationBasicService} from './login-basic/authentication-basic.service';
 import {LoggedInGuard} from './login-basic/loggedin.guard';
 import {UserService} from './user/user.service';
-import { ReviewComponent } from './review/review.component';
+import { ReviewListComponent } from './review/review-list/review-list.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import { ReviewComponent } from './review/review.component';
     UserEditComponent,
     UserDeleteComponent,
     UserSearchComponent,
-    ReviewComponent
+    ReviewListComponent
   ],
   imports: [
     BrowserModule,
