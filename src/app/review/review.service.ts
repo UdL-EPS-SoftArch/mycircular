@@ -10,8 +10,8 @@ export class ReviewService extends HateoasResourceOperation<Review> {
     super(Review);
   }
 
-  public findByUsernameContaining(query: string): Observable<ResourceCollection<Review>> {
-    return this.searchCollection("findByUsernameContaining", { params: { text: query } })
+  public findByMessage(query: string): Observable<ResourceCollection<Review>> {
+    return this.searchCollection("findByMessage", { params: { text: query } })
   }
 
 }

@@ -5,7 +5,7 @@ export class Review extends Resource {
   id: string;
   author: string
   about: string
-  nStars: number
+  stars: number
   message?: string
 
   constructor(values: object = {}) {

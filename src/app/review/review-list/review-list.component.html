@@ -1,12 +1,19 @@
-<div class="card mb-1" *ngFor="let review of reviews">
+<div class="card mb-1" *ngFor="let r of reviews">
   <div class="card-block row m-1 col-12">
     <div class="card-body row align-items-center">
       <div class="col-6 mt-1">
-        <h6 class="card-subtitle text-muted">Username</h6>
-        <a class="card-text" [routerLink]="['/users', review.author]">{{review.id}}</a>
+        <h6 class="card-subtitle text-muted">Author</h6>
+        <a class="card-text" [routerLink]="['/reviews', r.id]">{{r.id}}</a>
+        <p class="card-text">{{r.author}}</p>
+      </div>
+      <div class="col-6 mt-1">
+        <h6 class="card-subtitle text-muted">Message</h6>
+        <p class="card-text">{{r.message}}</p>
+      </div>
+      <div class="col-6 mt-1">
+        <h6 class="card-subtitle text-muted">Stars</h6>
+        <p class="card-text">{{r.stars}}</p>
       </div>
     </div>
   </div>
 </div>
-
-
