@@ -23,6 +23,9 @@ import {HttpErrorInterceptor} from './error-handler/http-error-interceptor';
 import {AuthenticationBasicService} from './login-basic/authentication-basic.service';
 import {LoggedInGuard} from './login-basic/loggedin.guard';
 import {UserService} from './user/user.service';
+import { TransactionListComponent } from './transaction/transaction-list/transaction-list.component';
+import { TransactionDetailComponent } from './transaction/transaction-detail/transaction-detail.component';
+import { TransactionEditComponent } from './transaction/transaction-edit/transaction-edit.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import {UserService} from './user/user.service';
     UserRegisterComponent,
     UserEditComponent,
     UserDeleteComponent,
-    UserSearchComponent
+    UserSearchComponent,
+    TransactionListComponent,
+    TransactionDetailComponent,
+    TransactionEditComponent
   ],
   imports: [
     BrowserModule,
