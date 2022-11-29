@@ -24,6 +24,9 @@ import {AuthenticationBasicService} from './login-basic/authentication-basic.ser
 import {LoggedInGuard} from './login-basic/loggedin.guard';
 import {UserService} from './user/user.service';
 import {MessageListComponent} from './message/message-list/message-list.component';
+import {MessageDetailComponent} from './message/message-detail/message-detail.component';
+import {MessageRegisterComponent} from './message/message-register/message-register.component';
+import {MessageSearchComponent} from './message/message-search/message-search.component';
 
 
 @NgModule({
@@ -38,7 +41,10 @@ import {MessageListComponent} from './message/message-list/message-list.componen
     UserEditComponent,
     UserDeleteComponent,
     UserSearchComponent,
-    MessageListComponent
+    MessageListComponent,
+    MessageDetailComponent,
+    MessageRegisterComponent,
+    MessageSearchComponent
   ],
   imports: [
     BrowserModule,
