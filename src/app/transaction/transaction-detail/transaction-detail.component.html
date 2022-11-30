@@ -1,1 +1,69 @@
-<p>transaction-detail works!</p>
+<div class="card my-4">
+  <div class="card-block">
+    <div class="card-header">
+      <div class="row">
+        <h4 class="card-title p-1 col-md-6">Transaction {{ transaction.id }}</h4>
+        <div class="col-md-6 text-end align-self-center">
+          {{ transaction.creationDate?.toLocaleDateString('es-ES', dateOptions) }}
+        </div>
+      </div>
+    </div>
+    <div class="card-body row m-1">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-5 text-end">
+            <h5>Announcement: </h5>
+          </div>
+          <div class="col-md-7">
+            <p>Announcement name</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5 text-end">
+            <h5>Price: </h5>
+          </div>
+          <div class="col-md-7">
+            <p>{{ transaction.price }} €</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5 text-end">
+            <h5>Status: </h5>
+          </div>
+          <div class="col-md-7">
+            <p>{{ transaction.status }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 align-self-center">
+        <div class="row">
+          <div class="col-md-5 text-end">
+            <h5>Seller: </h5>
+          </div>
+          <div class="col-md-7">
+            <a [routerLink]="['/users', transaction.seller.id]">{{ transaction.seller.id }}</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5 text-end">
+            <h5>Buyer: </h5>
+          </div>
+          <div class="col-md-7">
+            <a [routerLink]="['/users', transaction.buyer.id]">{{ transaction.buyer.id }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-right">
+      <button id="listBtn" type="button" [routerLink]=""
+              class="btn m-1 btn-outline-primary">Transaction list
+      </button>
+      <button id="listBtn" type="button" (click)="completeTransaction()" *ngIf="transaction.status !== 'CLOSED'"
+              class="btn m-1 btn-outline-success"> Finalize transaction
+      </button>
+      <button id="listBtn" type="button" (click)="cancelTransaction()" *ngIf="transaction.status !== 'CANCELED'"
+              class="btn m-1 btn-outline-danger">Cancel transaction
+      </button>
+    </div>
+  </div>
+</div>

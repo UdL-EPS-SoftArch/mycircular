@@ -8,8 +8,11 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserDeleteComponent } from './user/user-delete/user-delete.component';
+import { TransactionDetailComponent } from './transaction/transaction-detail/transaction-detail.component';
 
 const routes: Routes = [
+  { path: 'transactions/:id' , component: TransactionDetailComponent, canActivate: [LoggedInGuard] },
+
   { path: 'users/create', component: UserRegisterComponent},
   { path: 'users/:id/delete', component: UserDeleteComponent, canActivate: [LoggedInGuard]},
   { path: 'users/:id/edit', component: UserEditComponent, canActivate: [LoggedInGuard]},
