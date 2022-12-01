@@ -4,7 +4,7 @@ import { HateoasResourceOperation, ResourceCollection } from '@lagoshny/ngx-hate
 import { ServiceOffer } from "./serviceoffer";
 
 @Injectable({ providedIn: 'root' })
-export class ServiceofferService extends HateoasResourceOperation<ServiceOffer>{
+export class ServiceOfferService extends HateoasResourceOperation<ServiceOffer>{
 
   constructor() { super(ServiceOffer); }
 

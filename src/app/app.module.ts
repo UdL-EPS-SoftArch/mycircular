@@ -34,6 +34,9 @@ import { ServiceofferDeleteComponent } from './offer/serviceoffer-delete/service
 import { ServiceofferEditComponent } from './offer/serviceoffer-edit/serviceoffer-edit.component';
 import { ServiceofferDetailComponent } from './offer/serviceoffer-detail/serviceoffer-detail.component';
 import { ServiceofferRegisterComponent } from './offer/serviceoffer-register/serviceoffer-register.component';
+import {OfferService} from "./offer/offer.service";
+import {ProductOfferService} from "./offer/productoffer.service";
+import {ServiceOfferService} from "./offer/serviceoffer.service";
 
 @NgModule({
   declarations: [
@@ -76,7 +79,7 @@ import { ServiceofferRegisterComponent } from './offer/serviceoffer-register/ser
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
-    AuthenticationBasicService, LoggedInGuard, UserService
+    AuthenticationBasicService, LoggedInGuard, UserService, OfferService, ProductOfferService, ServiceOfferService
   ],
   bootstrap: [AppComponent]
 })
