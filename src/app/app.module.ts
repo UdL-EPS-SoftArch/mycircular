@@ -28,8 +28,8 @@ import { ProductofferEditComponent } from './offer/productoffer-edit/productoffe
 import { ProductofferDeleteComponent } from './offer/productoffer-delete/productoffer-delete.component';
 import { ProductofferDetailComponent } from './offer/productoffer-detail/productoffer-detail.component';
 import { ProductofferRegisterComponent } from './offer/productoffer-register/productoffer-register.component';
-import { ProductofferListComponent } from './offer/productoffer-list/productoffer-list.component';
-import { ServiceofferListComponent } from './offer/serviceoffer-list/serviceoffer-list.component';
+import { ProductOfferListComponent } from './offer/productoffer-list/product-offer-list.component';
+import { ServiceOfferListComponent } from './offer/serviceoffer-list/service-offer-list.component';
 import { ServiceofferDeleteComponent } from './offer/serviceoffer-delete/serviceoffer-delete.component';
 import { ServiceofferEditComponent } from './offer/serviceoffer-edit/serviceoffer-edit.component';
 import { ServiceofferDetailComponent } from './offer/serviceoffer-detail/serviceoffer-detail.component';
@@ -55,8 +55,8 @@ import {ServiceOfferService} from "./offer/serviceoffer.service";
     ProductofferDeleteComponent,
     ProductofferDetailComponent,
     ProductofferRegisterComponent,
-    ProductofferListComponent,
-    ServiceofferListComponent,
+    ProductOfferListComponent,
+    ServiceOfferListComponent,
     ServiceofferDeleteComponent,
     ServiceofferEditComponent,
     ServiceofferDetailComponent,
