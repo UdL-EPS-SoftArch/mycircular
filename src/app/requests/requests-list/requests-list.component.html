@@ -1,1 +1,42 @@
-<p>requests-list works!</p>
+<p>Hello user! These are your requests:</p>
+<p>
+  If nothing is displayed, it means that you haven't any request yet.
+</p>
+<p>
+  Aqui se supone que va el buscador, cuando esté bien puesto
+</p>
+
+
+<app-requests-search (emitResults)="detail($event)"></app-requests-search>
+
+<div class="card mb-1" *ngFor="let request of requests">
+  <div class="card-block row m-1 col-12">
+    <div class="card-body row align-items-center">
+      <div class="col-6 mt-1">
+        <h6 class="card-subtitle text-muted">Name</h6>
+        <a class="card-text" [routerLink]="['/requests', request.id]">{{request.id}}</a>
+      </div>
+      <div class="col-6 mt-1">
+        <h6 class="card-subtitle text-muted">Description</h6>
+        <p class="card-text">{{request.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<p>
+  esto no se que es
+</p>
+<ngb-pagination class="d-flex justify-content-center"
+                [(page)]="page" [pageSize]="pageSize" [collectionSize]="totalRequests"
+                (pageChange)="changePage()"></ngb-pagination>
+
+
+
+<p>
+  aqui voy a intentar una query
+</p>
+
+<p>
+  primero de todo vamos a hacer el boton para crear una request, luego la obtendremos.
+</p>
+

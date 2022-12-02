@@ -25,6 +25,8 @@ import {LoggedInGuard} from './login-basic/loggedin.guard';
 import {UserService} from './user/user.service';
 //import { RequestsComponent } from './requests/requests.component';
 import { RequestsListComponent } from './requests/requests-list/requests-list.component';
+import { RequestsSearchComponent } from './requests/requests-search/requests-search.component';
+import { RequestsRegisterComponent } from './requests/requests-register/requests-register.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { RequestsListComponent } from './requests/requests-list/requests-list.co
     UserDeleteComponent,
     UserSearchComponent,
 //    RequestsComponent,
-    RequestsListComponent
+    RequestsListComponent,
+RequestsSearchComponent,
+RequestsRegisterComponent
   ],
   imports: [
     BrowserModule,
