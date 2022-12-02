@@ -32,34 +32,36 @@ export class RequestsListComponent implements OnInit {
 
   ngOnInit(): void {
 
+    console.log("empecemos")
+    this.requestService.customQuery(HttpMethod.GET, '?username=demo')
+      .subscribe(
+        (requests: Request) => {
+          console.log("i got it")
+          console.log(requests.name)
+        }
+      )
  //   console.log("holi")
  //   console.log(this.authenticationBasicService.getCurrentUser().id)
 
  //   this.fake()
-
+/*
     this.requestService.getPage(
       {
         pageParams: {
           size: this.pageSize,
-          //username: this.authenticationBasicService().getCurrentUser().id,
         },
         sort: {
           name: 'ASC'
         },
-        /*
-        username: {
-          username: this.authenticationBasicService.getCurrentUser().id
-        }
-
-         */
       }
     ).subscribe(
       (page: PagedResourceCollection<Request>) => {
         this.requests = page.resources;
         this.totalRequests = page.totalElements;
- //       console.log("me cago en todo" + this.requests);
       }
     )
+
+ */
   }
 
   changePage(): void {

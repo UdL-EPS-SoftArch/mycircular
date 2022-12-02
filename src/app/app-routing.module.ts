@@ -9,6 +9,7 @@ import {UserRegisterComponent} from './user/user-register/user-register.componen
 import {UserEditComponent} from './user/user-edit/user-edit.component';
 import {UserDeleteComponent} from './user/user-delete/user-delete.component';
 import {RequestsListComponent} from './requests/requests-list/requests-list.component';
+import {RequestsRegisterComponent} from "./requests/requests-register/requests-register.component";
 
 const routes: Routes = [
   {path: 'users/create', component: UserRegisterComponent},
@@ -16,7 +17,12 @@ const routes: Routes = [
   {path: 'users/:id/edit', component: UserEditComponent, canActivate: [LoggedInGuard]},
   {path: 'users/:id', component: UserDetailComponent, canActivate: [LoggedInGuard]},
   {path: 'users', component: UserListComponent, canActivate: [LoggedInGuard]},
-  {path: 'requests-list', component: RequestsListComponent, canActivate: [LoggedInGuard]},
+  //{path: 'requests-list', component: RequestsListComponent, canActivate: [LoggedInGuard]},
+  {path: 'requests', component: RequestsListComponent, canActivate: [LoggedInGuard]},
+  {path: 'requests/create', component: RequestsRegisterComponent, canActivate: [LoggedInGuard]},
+//  {path: 'requests/:id', component: RequestsDetailComponent, canActivate: [LoggedInGuard]},
+//  {path: 'requests/:id/delete', component: RequestsDeleteComponent, canActivate: [LoggedInGuard]},
+
   {path: 'about', component: AboutComponent},
   {path: '404', component: NotFoundComponent},
   {path: '', redirectTo: 'about', pathMatch: 'full'},
