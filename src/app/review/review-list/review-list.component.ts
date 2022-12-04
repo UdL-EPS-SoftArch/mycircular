@@ -3,6 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { ReviewService } from '../review.service';
 import { Review } from '../review';
 import { PagedResourceCollection } from '@lagoshny/ngx-hateoas-client';
+import { UserService } from 'src/app/user/user.service';
+import { Observable } from 'rxjs';
+import { query } from '@angular/animations';
+import { User } from 'src/app/login-basic/user';
 
 @Component({
   selector: 'app-review-list',
@@ -15,16 +19,34 @@ export class ReviewListComponent implements OnInit {
   public page = 1;
   public totalUsers = 0;
 
+
   constructor(
     public router: Router,
-    private reviewService: ReviewService) {
+    private reviewService: ReviewService,
+    private userService: UserService) {
   }
 
   ngOnInit(): void {
-    this.reviewService.getPage({ pageParams:  { size: this.pageSize }, sort: { username: 'ASC' } }).subscribe(
+    this.reviewService.getPage({ pageParams: { size: this.pageSize }, sort: { username: 'ASC' } }).subscribe(
       (page: PagedResourceCollection<Review>) => {
         this.reviews = page.resources;
         this.totalUsers = page.totalElements;
+
+        this.reviews.map(review => {
+          review.getRelation('author').subscribe((user: User) => {
+            review.author = user;
+          });
+        });
+
+        this.reviews.map(review => {
+          review.getRelation('about').subscribe((user: User) => {
+            review.about = user;
+          });
+        });
       });
   }
+
+  
+
+
 }

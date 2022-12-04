@@ -24,6 +24,7 @@ import {AuthenticationBasicService} from './login-basic/authentication-basic.ser
 import {LoggedInGuard} from './login-basic/loggedin.guard';
 import {UserService} from './user/user.service';
 import { ReviewListComponent } from './review/review-list/review-list.component';
+import { ReviewUpdateComponent } from './review/review-update/review-update.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ReviewListComponent } from './review/review-list/review-list.component'
     UserEditComponent,
     UserDeleteComponent,
     UserSearchComponent,
-    ReviewListComponent
+    ReviewListComponent,
+    ReviewUpdateComponent
   ],
   imports: [
     BrowserModule,
