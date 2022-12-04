@@ -9,6 +9,10 @@
 
 <app-requests-search (emitResults)="detail($event)"></app-requests-search>
 
+<p>
+  aqui va la paginacion de todos las requests
+</p>
+
 <div class="card mb-1" *ngFor="let request of requests">
   <div class="card-block row m-1 col-12">
     <div class="card-body row align-items-center">
@@ -23,9 +27,11 @@
     </div>
   </div>
 </div>
+
 <p>
   esto no se que es
 </p>
+
 <ngb-pagination class="d-flex justify-content-center"
                 [(page)]="page" [pageSize]="pageSize" [collectionSize]="totalRequests"
                 (pageChange)="changePage()"></ngb-pagination>
@@ -40,6 +46,12 @@
   primero de todo vamos a hacer el boton para crear una request, luego la obtendremos.
 </p>
 
+
+<p>
+  Este es el boton que permite crear una request. <br>
+  Esto estará en la parte de offers, cogiendo automaticamente los
+  datos de esa offer y poniedolos al nuevo objeto request.
+</p>
 <app-requests-register>
 
 </app-requests-register>
