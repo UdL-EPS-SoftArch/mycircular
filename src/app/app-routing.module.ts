@@ -11,6 +11,8 @@ import { UserDeleteComponent } from './user/user-delete/user-delete.component';
 import {OfferListComponent} from "./offer/offer-list/offer-list.component";
 import {ProductOfferListComponent} from "./offer/productoffer-list/product-offer-list.component";
 import {ServiceOfferListComponent} from "./offer/serviceoffer-list/service-offer-list.component";
+import {ProductofferCreateComponent} from "./offer/productoffer-create/productoffer-create.component";
+import {ServiceofferCreateComponent} from "./offer/serviceoffer-create/serviceoffer-create.component";
 
 const routes: Routes = [
   { path: 'users/create', component: UserRegisterComponent},
@@ -20,7 +22,9 @@ const routes: Routes = [
   { path: 'users', component: UserListComponent, canActivate: [LoggedInGuard]},
   { path: 'offers', component: OfferListComponent},
   { path: 'productOffers', component: ProductOfferListComponent},
+  { path: 'productOffers/create', component: ProductofferCreateComponent},
   { path: 'serviceOffers', component: ServiceOfferListComponent},
+  { path: 'serviceOffers/create', component: ServiceofferCreateComponent},
   { path: 'about', component: AboutComponent},
   { path: '404', component: NotFoundComponent},
   { path: '', redirectTo: 'about', pathMatch: 'full'},
