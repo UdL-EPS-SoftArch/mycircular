@@ -27,6 +27,7 @@ import {UserService} from './user/user.service';
 import { RequestsListComponent } from './requests/requests-list/requests-list.component';
 import { RequestsSearchComponent } from './requests/requests-search/requests-search.component';
 import { RequestsRegisterComponent } from './requests/requests-register/requests-register.component';
+import { RequestsDetailComponent } from './requests/requests-detail/requests-detail.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { RequestsRegisterComponent } from './requests/requests-register/requests
 //    RequestsComponent,
     RequestsListComponent,
 RequestsSearchComponent,
-RequestsRegisterComponent
+RequestsRegisterComponent,
+RequestsDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -12,7 +12,9 @@
 <p>
   aqui va la paginacion de todos las requests
 </p>
-
+<p>
+  aaa {{requests}}
+</p>
 <div class="card mb-1" *ngFor="let request of requests">
   <div class="card-block row m-1 col-12">
     <div class="card-body row align-items-center">
@@ -35,17 +37,6 @@
 <ngb-pagination class="d-flex justify-content-center"
                 [(page)]="page" [pageSize]="pageSize" [collectionSize]="totalRequests"
                 (pageChange)="changePage()"></ngb-pagination>
-
-
-
-<p>
-  aqui voy a intentar una query
-</p>
-
-<p>
-  primero de todo vamos a hacer el boton para crear una request, luego la obtendremos.
-</p>
-
 
 <p>
   Este es el boton que permite crear una request. <br>
