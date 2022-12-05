@@ -4,13 +4,14 @@ import { ProductOffer } from "../productoffer";
 import { ProductOfferService } from "../productoffer.service";
 import {AuthenticationBasicService} from '../../login-basic/authentication-basic.service';
 import {PagedResourceCollection} from "@lagoshny/ngx-hateoas-client";
+import {Offer} from "../offer";
 
 @Component({
   selector: 'app-productoffer-list',
   templateUrl: './product-offer-list.component.html',
 })
 export class ProductOfferListComponent implements OnInit {
-  public ProductOffers: ProductOffer[] = [];
+  public productOffers: ProductOffer[] = [];
   public pageSize = 5;
   public page = 1;
   public totalProductOffers = 0;
@@ -27,10 +28,27 @@ export class ProductOfferListComponent implements OnInit {
     this.productOfferService.getPage({pageParams: {size: this.pageSize }, sort: {name: 'ASC'}}).subscribe(
       (page: PagedResourceCollection<ProductOffer>) => {
         this.productOfferPagedResource = page;
-        this.ProductOffers = page.resources;
+        this.productOffers = page.resources;
         this.totalProductOffers = page.totalElements;
-        console.log(this.ProductOffers)
+        console.log(this.productOffers)
       });
+  }
+
+  changePage(): void {
+    this.productOfferPagedResource.customPage({pageParams: {page: this.page - 1, size: this.pageSize}, sort: {name: 'ASC'}}).subscribe(
+      (page: PagedResourceCollection<ProductOffer>) => {
+        this.productOffers = page.resources;
+      });
+  }
+
+  modifyList(productOfferPagedResource: PagedResourceCollection<ProductOffer>): void {
+    this.productOfferPagedResource = productOfferPagedResource;
+    this.productOffers = this.productOfferPagedResource.resources;
+    this.totalProductOffers = this.productOfferPagedResource.totalElements;
+  }
+
+  isRole(role: string): boolean {
+    return  this.authenticationService.isRole(role);
   }
 
 }

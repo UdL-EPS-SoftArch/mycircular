@@ -1,1 +1,42 @@
-<p>productoffer-detail works!</p>
+<div class="card mb-4">
+  <div class="card-block">
+    <h4 id="subjectTitleName" class="card-title col-md-12 p-3">{{productOffer.name}}</h4>
+    <div class="col">
+      <h6 class="card-subtitle text-muted">Description</h6>
+      <p class="card-text">{{productOffer.description}}</p>
+    </div>
+    <div class="col">
+      <h6 class="card-subtitle text-muted">Price</h6>
+      <p class="card-text">{{productOffer.price}}</p>
+    </div>
+    <div class="col">
+      <h6 class="card-subtitle text-muted">Date</h6>
+      <p class="card-text">{{productOffer.dateTime}}</p>
+    </div>
+    <div class="col">
+      <h6 class="card-subtitle text-muted">Offerer</h6>
+      <p class="card-text">{{productOffer.offerer}}</p>
+    </div>
+    <div class="col">
+      <h6 class="card-subtitle text-muted">Manufacturer</h6>
+      <p class="card-text">{{productOffer.manufacturer}}</p>
+    </div>
+    <div class="col">
+      <h6 class="card-subtitle text-muted">Brand</h6>
+      <p class="card-text">{{productOffer.brand}}</p>
+    </div>
+    <div class="col">
+      <h6 class="card-subtitle text-muted">Product Code</h6>
+      <p class="card-text">{{productOffer.productCode}}</p>
+    </div>
+    <div class="card-footer text-right">
+      <button id="listBtn" type="button" [routerLink]="['/productOffers']"
+              class="btn m-1 btn-outline-primary">Product Offer List</button>
+      <button id="editBtn" type="button" *ngIf="isRole('USER')" [routerLink]="['edit']"
+              class="btn m-1 btn-outline-success">Edit</button>
+      <button id="deleteBtn" type="button" *ngIf="isRole('USER')" [routerLink]="['delete']"
+              class="btn m-1 btn-outline-danger">Delete</button>
+    </div>
+  </div>
+</div>
+

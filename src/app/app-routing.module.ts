@@ -13,6 +13,12 @@ import {ProductOfferListComponent} from "./offer/productoffer-list/product-offer
 import {ServiceOfferListComponent} from "./offer/serviceoffer-list/service-offer-list.component";
 import {ProductofferCreateComponent} from "./offer/productoffer-create/productoffer-create.component";
 import {ServiceofferCreateComponent} from "./offer/serviceoffer-create/serviceoffer-create.component";
+import {ProductofferDeleteComponent} from "./offer/productoffer-delete/productoffer-delete.component";
+import {ServiceofferDeleteComponent} from "./offer/serviceoffer-delete/serviceoffer-delete.component";
+import {ProductofferEditComponent} from "./offer/productoffer-edit/productoffer-edit.component";
+import {ServiceofferEditComponent} from "./offer/serviceoffer-edit/serviceoffer-edit.component";
+import {ProductofferDetailComponent} from "./offer/productoffer-detail/productoffer-detail.component";
+import {ServiceofferDetailComponent} from "./offer/serviceoffer-detail/serviceoffer-detail.component";
 
 const routes: Routes = [
   { path: 'users/create', component: UserRegisterComponent},
@@ -22,9 +28,15 @@ const routes: Routes = [
   { path: 'users', component: UserListComponent, canActivate: [LoggedInGuard]},
   { path: 'offers', component: OfferListComponent},
   { path: 'productOffers', component: ProductOfferListComponent},
+  { path: 'productOffers/:id', component: ProductofferDetailComponent },
   { path: 'productOffers/create', component: ProductofferCreateComponent},
+  { path: 'productOffers/:id/delete', component: ProductofferDeleteComponent },
+  { path: 'productOffers/:id/edit', component: ProductofferEditComponent },
   { path: 'serviceOffers', component: ServiceOfferListComponent},
+  { path: 'serviceOffers/:id', component: ServiceofferDetailComponent },
   { path: 'serviceOffers/create', component: ServiceofferCreateComponent},
+  { path: 'serviceOffers/:id/delete', component: ServiceofferDeleteComponent },
+  { path: 'serviceOffers/:id/edit', component: ServiceofferEditComponent },
   { path: 'about', component: AboutComponent},
   { path: '404', component: NotFoundComponent},
   { path: '', redirectTo: 'about', pathMatch: 'full'},

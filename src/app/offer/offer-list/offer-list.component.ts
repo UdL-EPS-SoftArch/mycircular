@@ -10,7 +10,7 @@ import {PagedResourceCollection} from "@lagoshny/ngx-hateoas-client";
   templateUrl: './offer-list.component.html',
 })
 export class OfferListComponent implements OnInit {
-  public Offers: Offer[] = [];
+  public offers: Offer[] = [];
   public pageSize = 5;
   public page = 1;
   public totalOffers = 0;
@@ -28,10 +28,27 @@ export class OfferListComponent implements OnInit {
     this.offerService.getPage({pageParams: {size: this.pageSize }, sort: {name: 'ASC'}}).subscribe(
       (page: PagedResourceCollection<Offer>) => {
         this.offerPagedResource = page;
-        this.Offers = page.resources;
+        this.offers = page.resources;
         this.totalOffers = page.totalElements;
-        console.log(this.Offers)
+        console.log(this.offers)
       });
+  }
+
+  changePage(): void {
+    this.offerPagedResource.customPage({pageParams: {page: this.page - 1, size: this.pageSize}, sort: {name: 'ASC'}}).subscribe(
+      (page: PagedResourceCollection<Offer>) => {
+        this.offers = page.resources;
+      });
+  }
+
+  modifyList(offerPagedResource: PagedResourceCollection<Offer>): void {
+    this.offerPagedResource = offerPagedResource;
+    this.offers = this.offerPagedResource.resources;
+    this.totalOffers = this.offerPagedResource.totalElements;
+  }
+
+  isRole(role: string): boolean {
+    return  this.authenticationService.isRole(role);
   }
 
 }

@@ -1,1 +1,44 @@
-<p>serviceoffer-list works!</p>
+<div class="card mb-1" *ngFor="let serviceOffer of serviceOffers">
+  <div class="card-block row">
+    <div class="card-body row align-items-center">
+      <div class="col">
+        <h6 class="card-subtitle text-muted">Offer</h6>
+        <a class="card-text" [routerLink]="['/offers', serviceOffer.id]">{{serviceOffer.name}}</a>
+      </div>
+      <div class="col">
+        <h6 class="card-subtitle text-muted">Description</h6>
+        <p class="card-text">{{serviceOffer.description}}</p>
+      </div>
+      <div class="col">
+        <h6 class="card-subtitle text-muted">Price</h6>
+        <p class="card-text">{{serviceOffer.price}}</p>
+      </div>
+      <div class="col">
+        <h6 class="card-subtitle text-muted">Date</h6>
+        <p class="card-text">{{serviceOffer.dateTime}}</p>
+      </div>
+      <div class="col">
+        <h6 class="card-subtitle text-muted">Offerer</h6>
+        <p class="card-text">{{serviceOffer.offerer}}</p>
+      </div>
+      <div class="col">
+        <h6 class="card-subtitle text-muted">Availability</h6>
+        <p class="card-text">{{serviceOffer.availability}}</p>
+      </div>
+      <div class="col">
+        <h6 class="card-subtitle text-muted">Duration (In Hours)</h6>
+        <p class="card-text">{{serviceOffer.durationInHours}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card-footer text-right" *ngIf="isRole('USER')">
+  <button id="createBtn" type="button" [routerLink]="['create']"
+          class="btn m-1 btn-outline-primary">Create Service Offer</button>
+</div>
+
+<ngb-pagination class="d-flex justify-content-center"
+                [(page)]="page" [pageSize]="pageSize" [collectionSize]="totalServiceOffers"
+                (pageChange)="changePage()"></ngb-pagination>
+
