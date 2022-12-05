@@ -10,6 +10,7 @@ import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserDeleteComponent } from './user/user-delete/user-delete.component';
 import { ReviewListComponent } from './review/review-list/review-list.component';
 import { ReviewUpdateComponent } from './review/review-update/review-update.component';
+import { ReviewDeleteComponent } from './review/review-delete/review-delete.component';
 
 const routes: Routes = [
   { path: 'users/create', component: UserRegisterComponent },
@@ -20,8 +21,11 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: '404', component: NotFoundComponent },
   { path: '', redirectTo: 'about', pathMatch: 'full' },
+  
+  { path: 'reviews/:id/delete', component: ReviewDeleteComponent, canActivate: [LoggedInGuard] },
+  { path: 'reviews/:id/update', component: ReviewUpdateComponent, canActivate: [LoggedInGuard] },
   { path: 'reviews', component: ReviewListComponent, canActivate: [LoggedInGuard] },
-  { path: 'reviews/:id/update', component: ReviewUpdateComponent, canActivate: [LoggedInGuard] }
+
 ];
 
 @NgModule({
