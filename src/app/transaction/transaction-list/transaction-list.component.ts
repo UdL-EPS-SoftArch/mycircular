@@ -1,4 +1,10 @@
+import { User } from './../../login-basic/user';
+import { AuthenticationBasicService } from './../../login-basic/authentication-basic.service';
+import { TransactionService } from './../transaction.service';
+import { Router } from '@angular/router';
+import { PagedResourceCollection } from '@lagoshny/ngx-hateoas-client';
 import { Component, OnInit } from '@angular/core';
+import { Transaction } from '../transaction';
 
 @Component({
   selector: 'app-transaction-list',
@@ -6,10 +12,44 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./transaction-list.component.css']
 })
 export class TransactionListComponent implements OnInit {
+  public transactionPagedResource: PagedResourceCollection<Transaction>;
+  public transactionList: Transaction[];
+  public transactionSize = 0;
+  public pageSize = 10;
+  public currentPage = 0;
+  public currentUsername = this.authenticationService.getCurrentUser().id;
 
-  constructor() { }
+
+  constructor(public router: Router,
+              private transactionService: TransactionService,
+              private authenticationService: AuthenticationBasicService) { }
 
   ngOnInit(): void {
+    this.transactionService.searchPage('findByBuyer_UsernameOrSeller_Username', { params: { buyerUsername: this.currentUsername, sellerUsername: this.currentUsername },
+      pageParams: { page: this.currentPage, size: this.pageSize },
+      sort: {name: 'ASC'}}).subscribe(
+      (page: PagedResourceCollection<Transaction>) => {
+        this.transactionPagedResource = page;
+        this.transactionList = page.resources;
+        this.transactionSize = page.totalElements;
+        this.transactionList.map(transaction => {
+          transaction.getRelation('seller').subscribe((seller: User) => {
+            transaction.seller = seller;
+          });
+          transaction.getRelation('buyer').subscribe((buyer: User) => {
+            transaction.buyer = buyer;
+          });
+        });
+      }
+    );
+  }
+
+  changePage() {
+    this.transactionPagedResource.customPage({pageParams: {page: this.currentPage - 1, size: this.pageSize}, sort: {name: 'ASC'}}).subscribe(
+      (page: PagedResourceCollection<Transaction>) => {
+        this.transactionList = page.resources;
+      }
+    )
   }
 
 }

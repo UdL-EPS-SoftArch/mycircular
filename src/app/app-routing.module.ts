@@ -1,3 +1,4 @@
+import { TransactionListComponent } from './transaction/transaction-list/transaction-list.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoggedInGuard } from './login-basic/loggedin.guard';
@@ -12,6 +13,7 @@ import { TransactionDetailComponent } from './transaction/transaction-detail/tra
 
 const routes: Routes = [
   { path: 'transactions/:id' , component: TransactionDetailComponent, canActivate: [LoggedInGuard] },
+  { path: 'transactions', component: TransactionListComponent, canActivate: [LoggedInGuard] },
 
   { path: 'users/create', component: UserRegisterComponent},
   { path: 'users/:id/delete', component: UserDeleteComponent, canActivate: [LoggedInGuard]},
