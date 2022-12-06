@@ -55,7 +55,7 @@
       </div>
     </div>
     <div class="card-footer text-right">
-      <button id="listBtn" type="button" [routerLink]=""
+      <button id="listBtn" type="button" [routerLink]="'/transactions'"
               class="btn m-1 btn-outline-primary">Transaction list
       </button>
       <button id="listBtn" type="button" (click)="completeTransaction()" *ngIf="transaction.status !== 'CLOSED'"
