@@ -1,26 +1,17 @@
-<p>Hello user! These are your requests:</p>
-<p>
+<h1>Hello {{currentUsername}}! These are your requests.</h1>
+<h2>
   If nothing is displayed, it means that you haven't any request yet.
-</p>
+</h2>
 <p>
-  Aqui se supone que va el buscador, cuando esté bien puesto
+  Todo: corregir el buscador
 </p>
-
-
 <app-requests-search (emitResults)="detail($event)"></app-requests-search>
-
-<p>
-  aqui va la paginacion de todos las requests
-</p>
-<p>
-  aaa {{requests}}
-</p>
 <div class="card mb-1" *ngFor="let request of requests">
   <div class="card-block row m-1 col-12">
     <div class="card-body row align-items-center">
       <div class="col-6 mt-1">
         <h6 class="card-subtitle text-muted">Name</h6>
-        <a class="card-text" [routerLink]="['/requests', request.id]">{{request.id}}</a>
+        <a class="card-text" [routerLink]="['/requests', request.id]">{{request.name}}</a>
       </div>
       <div class="col-6 mt-1">
         <h6 class="card-subtitle text-muted">Description</h6>
@@ -30,19 +21,17 @@
   </div>
 </div>
 
-<p>
-  esto no se que es
-</p>
-
 <ngb-pagination class="d-flex justify-content-center"
                 [(page)]="page" [pageSize]="pageSize" [collectionSize]="totalRequests"
                 (pageChange)="changePage()"></ngb-pagination>
 
+<hr>
 <p>
   Este es el boton que permite crear una request. <br>
   Esto estará en la parte de offers, cogiendo automaticamente los
   datos de esa offer y poniedolos al nuevo objeto request.
 </p>
-<app-requests-register>
 
+
+<app-requests-register>
 </app-requests-register>

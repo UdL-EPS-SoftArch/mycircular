@@ -18,9 +18,9 @@ import {User} from "../../login-basic/user";
 export class RequestsListComponent implements OnInit {
 
   public requests: Request[] = [];
-  public pageSize = 5;
-  public page = 1;
-  public totalRequests = 0;
+  public pageSize: number = 5;
+  public page: number = 1;
+  public totalRequests: number = 0;
   public currentUsername: string = this.authenticationBasicService.getCurrentUser().id
   //todo creo que es un poco guarro
   public userParam : string = this.getUsernameParam()
@@ -28,9 +28,7 @@ export class RequestsListComponent implements OnInit {
   constructor(public router: Router,
               private requestService: RequestService,
               private authenticationBasicService: AuthenticationBasicService,
-              private httpClient: HttpClientModule
               ) {
-    //this.httpClient.get()
   }
 
   getUsernameParam(): string {
@@ -78,6 +76,7 @@ export class RequestsListComponent implements OnInit {
  */
   }
 
+  //todo: corregir la paginacion
   changePage(): void {
     this.requestService.getPage({
       pageParams: {page: this.page - 1, size: this.pageSize},
