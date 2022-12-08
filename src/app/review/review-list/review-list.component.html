@@ -10,14 +10,6 @@
     <p class="card-text">{{r.message}}</p>
   </div>
   <div class="card-footer d-flex gap-2">
-    <button class="btn btn-primary" [routerLink]="['reviews/update']">
-      <span><i class="fa-solid fa-pen"></i></span>
-      Update
-    </button>
-    <button class="btn btn-danger" [routerLink]="['reviews/delete']">
-      <span><i class="fa-solid fa-trash"></i></span>
-      Delete
-    </button>
     <div class="card-footer">
       <p class="card-text">Author: {{r.author.id}}</p>
     </div>

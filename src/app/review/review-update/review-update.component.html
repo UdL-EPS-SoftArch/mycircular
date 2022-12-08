@@ -1,1 +1,33 @@
-<p>review-update works!</p>
+<form id="rating-form" (ngSubmit)="onSubmit()" #form="ngForm">
+    <fieldset>
+  
+      <!-- Message input -->
+      <div class="form-group mb-3">
+        <label class="control-label" for="comment">Message</label>
+        <input id="comment" name="comment" type="text" class="form-control" required [(ngModel)]="review.message">
+        <div class="invalid-feedback">A comment name is required</div>
+      </div>
+  
+      <!-- Rating input -->
+      <div class="form-group mb-3">
+        <label class="control-label" for="ratingvalue">Rating</label>
+        <input id="ratingvalue"
+               name="ratingvalue"
+               type="text"
+               class="form-control"
+               #ratingvalue="ngModel" required [(ngModel)]="review.stars">
+        <div class="invalid-feedback">A rating is required</div>
+      </div>
+  
+      <!-- Button -->
+      <div class="form-group fa-pull-right">
+        <button id="RatingDetail" type="button" [routerLink]="['/reviews/'+getCurrentReviewMessage()]"
+                class="btn btn-outline-primary">Back
+        </button>
+        <button id="submit" type="submit" [disabled]="!form.form.valid"
+                class="btn btn-success ms-3">Update
+        </button>
+      </div>
+  
+    </fieldset>
+  </form>

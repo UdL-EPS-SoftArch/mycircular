@@ -11,7 +11,7 @@ export class ReviewService extends HateoasResourceOperation<Review> {
   }
 
   public findByMessage(query: string): Observable<ResourceCollection<Review>> {
-    return this.searchCollection("findByMessage", { params: { text: query } })
+    return this.searchCollection("findByMessage", { params: { review: query } })
   }
 
 }

@@ -12,15 +12,15 @@ import { ReviewService } from '../review.service';
 export class ReviewDeleteComponent implements OnInit {
 
   public review: Review = new Review();
-  private message: string;
+  private id: string;
 
   constructor(private route: ActivatedRoute,
     private router: Router,
     private reviewService: ReviewService) { }
 
   ngOnInit(): void {
-    this.message = this.route.snapshot.paramMap.get('message');
-    this.reviewService.getResource(this.message).subscribe(
+    this.id = this.route.snapshot.paramMap.get('id');
+    this.reviewService.getResource(this.id).subscribe(
       r => this.review = r
     );
   }
