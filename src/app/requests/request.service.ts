@@ -2,6 +2,7 @@ import {HateoasResourceOperation, ResourceCollection} from "@lagoshny/ngx-hateoa
 import { Request } from './request'
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
+import {User} from "../login-basic/user";
 
 @Injectable({providedIn: 'root'}) //no se si es de request. en user lo sacan de 'root
 export class RequestService extends HateoasResourceOperation<Request> {
@@ -20,4 +21,9 @@ export class RequestService extends HateoasResourceOperation<Request> {
       }
     })
   }
+
+  public findByNameContaining(query: string): Observable<ResourceCollection<Request>> {
+    return this.searchCollection('findByNameContaining', { params: { text: query } });
+  }
+
 }
