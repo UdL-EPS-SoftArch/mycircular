@@ -1,0 +1,31 @@
+<div class="card mb-1" *ngFor="let offer of offers">
+  <div class="card-block row">
+    <div class="card-body row align-items-center">
+      <div class="col">
+        <h6 class="card-subtitle text-muted">Offer</h6>
+        <a class="card-text" [routerLink]="['/offers', offer.id]">{{offer.name}}</a>
+      </div>
+      <div class="col">
+        <h6 class="card-subtitle text-muted">Description</h6>
+        <p class="card-text">{{offer.description}}</p>
+      </div>
+      <div class="col">
+        <h6 class="card-subtitle text-muted">Price</h6>
+        <p class="card-text">{{offer.price}}</p>
+      </div>
+      <div class="col">
+        <h6 class="card-subtitle text-muted">Date</h6>
+        <p class="card-text">{{offer.dateTime}}</p>
+      </div>
+      <div class="col">
+        <h6 class="card-subtitle text-muted">Offerer</h6>
+        <p class="card-text">{{offer.offerer}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ngb-pagination class="d-flex justify-content-center"
+                [(page)]="page" [pageSize]="pageSize" [collectionSize]="totalOffers"
+                (pageChange)="changePage()"></ngb-pagination>
+
