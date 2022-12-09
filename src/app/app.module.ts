@@ -28,6 +28,7 @@ import { RequestsListComponent } from './requests/requests-list/requests-list.co
 import { RequestsSearchComponent } from './requests/requests-search/requests-search.component';
 import { RequestsRegisterComponent } from './requests/requests-register/requests-register.component';
 import { RequestsDetailComponent } from './requests/requests-detail/requests-detail.component';
+import { RequestsDeleteComponent } from './requests/requests-delete/requests-delete.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { RequestsDetailComponent } from './requests/requests-detail/requests-det
     RequestsListComponent,
 RequestsSearchComponent,
 RequestsRegisterComponent,
-RequestsDetailComponent
+RequestsDetailComponent,
+RequestsDeleteComponent
   ],
   imports: [
     BrowserModule,

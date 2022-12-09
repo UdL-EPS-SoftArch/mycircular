@@ -7,7 +7,6 @@ import {HttpMethod, PagedResourceCollection} from '@lagoshny/ngx-hateoas-client'
 import {AuthenticationBasicService} from "../../login-basic/authentication-basic.service";
 
 
-import {HttpClientModule} from "@angular/common/http";
 import {User} from "../../login-basic/user";
 
 @Component({
@@ -38,6 +37,7 @@ export class RequestsListComponent implements OnInit {
   ngOnInit(): void {
 
     console.log(this.userParam)
+    //todo nota mental: usar customquery y no el otro metodo si quiero tener las ids
     this.requestService.customQuery(HttpMethod.GET, this.userParam)
       .subscribe(
         (requests: Request[]) => {
