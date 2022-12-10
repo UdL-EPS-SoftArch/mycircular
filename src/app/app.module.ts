@@ -26,6 +26,7 @@ import {UserService} from './user/user.service';
 import { ReviewListComponent } from './review/review-list/review-list.component';
 import { ReviewUpdateComponent } from './review/review-update/review-update.component';
 import { ReviewDeleteComponent } from './review/review-delete/review-delete.component';
+import { ReviewDetailComponent } from './review/review-detail/review-detail.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ReviewDeleteComponent } from './review/review-delete/review-delete.comp
     UserSearchComponent,
     ReviewListComponent,
     ReviewUpdateComponent,
-    ReviewDeleteComponent
+    ReviewDeleteComponent,
+    ReviewDetailComponent
   ],
   imports: [
     BrowserModule,
