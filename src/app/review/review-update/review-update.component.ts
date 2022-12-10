@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { switchMap } from 'rxjs';
 import { Review } from '../review';
 import { ReviewService } from '../review.service';
+import { User } from 'src/app/login-basic/user';
 
 @Component({
   selector: 'app-review-update',
@@ -17,12 +19,27 @@ export class ReviewUpdateComponent implements OnInit {
     private reviewService: ReviewService) { }
 
   ngOnInit(): void {
-    const message = this.route.snapshot.paramMap.get('message');
-    this.reviewService.getResource(message).subscribe(
-      (r: Review) => this.review = r );
+    
+    const id = this.route.snapshot.paramMap.get('id');
+    this.reviewService.getResource(id).subscribe(
+      (r: Review) => this.review = r);
+
+    this.reviewService.getResource(id).pipe(
+      switchMap(r => {
+        this.review = r;
+        return this.review.getRelation<User>('about');
+      }),
+      switchMap((user: User) => {
+        this.review.about = user;
+        return this.review.getRelation<User>('author');
+      })
+    ).subscribe(user => {
+      this.review.author = user;
+    });
+
   }
 
-  onSubmit(){
+  onSubmit() {
     this.reviewService.patchResource(this.review).subscribe(
       (patchedRating: Review) => {
         this.router.navigate(['reviews', patchedRating.id]);
@@ -30,7 +47,7 @@ export class ReviewUpdateComponent implements OnInit {
   }
 
   getCurrentReviewMessage(): string {
-    return this.review.message;
+    return this.review.id;
   }
 
 }
