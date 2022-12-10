@@ -20,4 +20,15 @@
             </div>
         </div>
     </div>
+    <div class="card-footer text-right">
+        <button id="listBtn" type="button" [routerLink]="['/reviews']"
+                class="btn m-1 btn-outline-primary">Review List
+        </button>
+        <button id="editBtn" type="button" 
+                class="btn m-1 btn-outline-success">Edit
+        </button>
+        <button id="deleteBtn" type="button" [routerLink]="['delete']"
+                class="btn m-1 btn-outline-danger">Delete
+        </button>
+      </div>
 </div>

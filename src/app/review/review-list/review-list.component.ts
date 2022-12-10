@@ -16,6 +16,7 @@ import { ThisReceiver } from '@angular/compiler';
 })
 
 export class ReviewListComponent implements OnInit {
+  public reviewsPagedResource: PagedResourceCollection<Review>;
   public reviews: Review[] = [];
   public pageSize = 5;
   public page = 1;
@@ -33,6 +34,7 @@ export class ReviewListComponent implements OnInit {
       (page: PagedResourceCollection<Review>) => {
         this.reviews = page.resources;
         this.totalRatings = page.totalElements;
+        this.reviewsPagedResource = page;
         
 
         this.reviews.map(review => {
