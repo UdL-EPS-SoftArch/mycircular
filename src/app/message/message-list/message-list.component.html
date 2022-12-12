@@ -1,1 +1,25 @@
-<p>message-list works!</p>
+<div class="card mb-1" *ngFor="let message of messages">
+  <div class="card-block row">
+    <div class="card-body row align-items-center">
+      <div class="col">
+        <h6 class="card-subtitle text-muted">Sent by:</h6>
+        <a class="card-text" [routerLink]="['/message', message.id]">{{message.author}}</a>
+      </div>
+      <div class="col">
+        <h6 class="card-subtitle text-muted">To:</h6>
+        <p class="card-text">{{message.about}}</p>
+      </div>
+      <div class="col">
+        <h6 class="card-subtitle text-muted">Date:</h6>
+        <p class="card-text">{{message.when}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card-footer text-right" *ngIf="isRole('USER')">
+  <button id="createBtn" type="button" [routerLink]="['create']"
+          class="btn m-1 btn-outline-primary">Create Message</button>
+</div>
+<ngb-pagination class="d-flex justify-content-center"
+                [(page)]="page" [pageSize]="pageSize" [collectionSize]="totalMessages"
+                (pageChange)="changePage()"></ngb-pagination>

@@ -9,8 +9,4 @@ export class MessageService extends HateoasResourceOperation<Message> {
   constructor() {
     super(Message);
   }
-
-  public findById(query: string): Observable<ResourceCollection<Message>> {
-    return this.searchCollection('findById', { params: { text: query } });
-  }
 }

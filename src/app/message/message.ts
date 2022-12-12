@@ -1,12 +1,12 @@
 import { HateoasResource, Resource } from '@lagoshny/ngx-hateoas-client';
 
-@HateoasResource('message')
+@HateoasResource('messages')
 export class Message extends Resource {
   id: string;
   author: string
   about: string
   when: string
-  text?: string
+  text: string
 
   constructor(values: object = {}) {
     super();
