@@ -27,6 +27,7 @@ import { ReviewListComponent } from './review/review-list/review-list.component'
 import { ReviewUpdateComponent } from './review/review-update/review-update.component';
 import { ReviewDeleteComponent } from './review/review-delete/review-delete.component';
 import { ReviewDetailComponent } from './review/review-detail/review-detail.component';
+import { ReviewCreateComponent } from './review/review-create/review-create.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ReviewDetailComponent } from './review/review-detail/review-detail.comp
     ReviewListComponent,
     ReviewUpdateComponent,
     ReviewDeleteComponent,
-    ReviewDetailComponent
+    ReviewDetailComponent,
+    ReviewCreateComponent
   ],
   imports: [
     BrowserModule,

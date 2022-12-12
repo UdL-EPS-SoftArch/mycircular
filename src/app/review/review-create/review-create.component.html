@@ -1,0 +1,41 @@
+<form id="user-form" (ngSubmit)="onSubmit()" #form="ngForm">
+    <fieldset>
+
+        <!-- Author input -->
+        <div class="form-group mb-3">
+            <label class="control-label" for="author">Author</label>
+            <input id="author" name="author" type="text" class="form-control" readonly [(ngModel)]="user.id">
+        </div>
+
+        <!-- Message input -->
+        <div class="form-group mb-3">
+            <label class="control-label" for="message">Message</label>
+            <input id="message" name="message" type="text" class="form-control" [(ngModel)]="review.message"
+                #message="ngModel">
+        </div>
+
+        <!-- Rating input -->
+        <div class="form-group mb-3">
+            <label class="control-label">Rating</label>
+            <input id="stars" name="stars" type="text" class="form-control" [(ngModel)]="review.stars" #stars="ngModel">
+            <div class="invalid-feedback">You must set a rating</div>
+        </div>
+
+        <!-- About input -->
+        <div class="form-group mb-3">
+            <label class="control-label" for="about">About</label>
+            <input id="about" name="about" type="text" class="form-control" required [(ngModel)]="review.about" #about="ngModel">
+        </div>
+
+        <!-- Buttons -->
+        <div class=" form-group fa-pull-right">
+            <button id="listBtn" type="button" [routerLink]="['/reviews']"
+                class="btn btn-outline-primary pull-right">Back
+            </button>
+            <button id="submit" type="submit" [disabled]="!form.form.valid"
+                class="btn ms-3 btn-success pull-right">Submit
+            </button>
+        </div>
+
+    </fieldset>
+</form>

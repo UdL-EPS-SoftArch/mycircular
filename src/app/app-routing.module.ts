@@ -12,6 +12,7 @@ import { ReviewListComponent } from './review/review-list/review-list.component'
 import { ReviewUpdateComponent } from './review/review-update/review-update.component';
 import { ReviewDeleteComponent } from './review/review-delete/review-delete.component';
 import { ReviewDetailComponent } from './review/review-detail/review-detail.component';
+import { ReviewCreateComponent } from './review/review-create/review-create.component';
 
 const routes: Routes = [
   { path: 'users/create', component: UserRegisterComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: '404', component: NotFoundComponent },
   { path: '', redirectTo: 'about', pathMatch: 'full' },
 
+  { path: 'reviews/create', component: ReviewCreateComponent, canActivate: [LoggedInGuard] },
   { path: 'reviews/:id/delete', component: ReviewDeleteComponent, canActivate: [LoggedInGuard] },
   { path: 'reviews/:id/update', component: ReviewUpdateComponent, canActivate: [LoggedInGuard] },
   { path: 'reviews/:id', component: ReviewDetailComponent, canActivate: [LoggedInGuard] },
