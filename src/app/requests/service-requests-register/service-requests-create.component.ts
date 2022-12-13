@@ -61,6 +61,7 @@ export class ServiceRequestsCreateComponent implements OnInit {
       () => {
         console.log("Product Request created", this.serviceRequest)
         this.location.back()
+        //this.router.navigate
       });
   }
 
