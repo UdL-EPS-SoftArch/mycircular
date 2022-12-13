@@ -23,15 +23,14 @@ When('I click the {string} button', (label) => {
   cy.get('button').contains(label).click();
 });
 
-Then('Go to Service offer create page', () => {
-  cy.visit('http://localhost:4200/serviceOffers/create');
+Then('Go to Service offer delete page with id {string}', (id) => {
+  cy.visit('http://localhost:4200/serviceOffers/'+id+'/delete');
 });
 
-When('I fill the create service offer form with', (table: DataTable) => {
-  table.rows().forEach((pair: string[]) =>
-    cy.get('#' + pair[0]).type(pair[1]).blur() );
+When('I click the {string} button', (label) => {
+  cy.get('button').contains(label).click({ force: true });
 });
 
-Then('i create a new service offer with id {string}', (id) => {
-  cy.visit('http://localhost:4200/serviceOffers/'+id);
+Then('i check the service offer list', () => {
+  cy.visit('http://localhost:4200/serviceOffers/');
 });

@@ -1,7 +1,7 @@
-Feature: Create a new ServiceOffer
+Feature: Edit a ServiceOffer
   In order to use the app
   As a user
-  I want to register a new Service Offer
+  I want to edit a Service Offer
 
   Scenario: Edit Service Offer
     Given I'm in the homepage
@@ -13,7 +13,7 @@ Feature: Create a new ServiceOffer
       | password | password      |
     And I click the "Submit" button
     Given I'm in the homepage
-    Then Go to Service offer edit page with id "3"
+    Then Go to Service offer edit page with id "1"
     And I fill the edit service offer form with
       | FIELD    | VALUE         |
       | name | Repair Laptop Asus          |
@@ -24,4 +24,4 @@ Feature: Create a new ServiceOffer
       | availability | true      |
       | durationInHours | 10      |
     And I click the "Submit" button
-    Then i check the service offer with id "3"
+    Then i check the service offer with id "1"
