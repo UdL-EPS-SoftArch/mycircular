@@ -45,8 +45,16 @@ Then('The {string} button is disabled', (label) => {
     .should('be.disabled');
 });
 
-Then('I see error message {string}', (message) => {
+Then('I see error message for input name product {string}', (message) => {
   cy.get('.alert')
     .invoke('text')
     .should('contains', message);
+});
+
+Then('Go to Product offer {string}', (id) => {
+  cy.visit('http://localhost:4200/productOffers/1');
+});
+
+When('I click the {string} button', (label) => {
+  cy.get('button').contains(label).click();
 });
