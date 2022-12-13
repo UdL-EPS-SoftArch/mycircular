@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthenticationBasicService } from '../../login-basic/authentication-basic.service';
 import { RequestService } from '../request.service';
 import { Request } from '../request';
-import {User} from "../../login-basic/user";
-import {UserService} from "../../user/user.service";
 
 @Component({
   selector: 'app-requests-delete',
@@ -19,7 +16,6 @@ export class RequestsDeleteComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private requestService: RequestService,
-    private authenticationService: AuthenticationBasicService
   ) { }
 
   ngOnInit(): void {
