@@ -1,11 +1,10 @@
 import { HateoasResource } from '@lagoshny/ngx-hateoas-client';
 import { Request } from "./request";
 
-@HateoasResource('prodRequests')
-export class ProductRequest extends Request {
-  manufacturer: string;
-  brand: string;
-  productCode: string;
+@HateoasResource('servRequests')
+export class ServiceRequest extends Request {
+  availability: boolean;
+  durationInHours: number;
 
   constructor(values: object = {}) {
     super();

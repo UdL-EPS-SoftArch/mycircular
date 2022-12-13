@@ -29,6 +29,16 @@
         <h6 class="card-subtitle text-muted">Duration (In Hours)</h6>
         <p class="card-text">{{serviceOffer.durationInHours}}</p>
       </div>
+      <app-service-requests-register
+        [name]="serviceOffer.name"
+        [description]=serviceOffer.description
+        [price]=serviceOffer.price
+        [dateTime]=serviceOffer.dateTime
+        [availability]=serviceOffer.availability
+        [durationInHours]=serviceOffer.durationInHours
+      >
+
+      </app-service-requests-register>
     </div>
   </div>
 </div>

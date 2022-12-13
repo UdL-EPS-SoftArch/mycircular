@@ -47,6 +47,10 @@ import { ProductRequestsRegisterComponent } from './requests/product-requests-re
 import { ProductRequestsListComponent } from './requests/product-requests-list/product-requests-list.component';
 import { ProductRequestsDetailComponent } from './requests/product-requests-detail/product-requests-detail.component';
 import { ProductRequestsDeleteComponent } from './requests/product-requests-delete/product-requests-delete.component';
+import { ServiceRequestsCreateComponent } from './requests/service-requests-register/service-requests-create.component';
+import { ServiceRequestsListComponent } from './requests/service-requests-list/service-requests-list.component';
+import { ServiceRequestsDetailComponent } from './requests/service-requests-detail/service-requests-detail.component';
+import { ServiceRequestsDeleteComponent } from './requests/service-requests-delete/service-requests-delete.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +85,11 @@ RequestsDeleteComponent,
     ProductRequestsRegisterComponent,
     ProductRequestsListComponent,
     ProductRequestsDetailComponent,
-    ProductRequestsDeleteComponent
+    ProductRequestsDeleteComponent,
+    ServiceRequestsCreateComponent,
+    ServiceRequestsListComponent,
+    ServiceRequestsDetailComponent,
+    ServiceRequestsDeleteComponent
   ],
   imports: [
     BrowserModule,
