@@ -2,7 +2,7 @@ import { HateoasResource, Resource } from '@lagoshny/ngx-hateoas-client';
 import {User} from "../login-basic/user";
 import { Request } from "./request";
 
-@HateoasResource('productRequests')
+@HateoasResource('prodRequests')
 export class ProductRequest extends Request {
 //  manufacturer: string;
 //  brand: string;
