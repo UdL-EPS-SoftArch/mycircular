@@ -1,0 +1,39 @@
+<div class="card mb-4">
+  <div class="card-block">
+    <h4 class="card-title col-md-12 p-3">{{request.name}}</h4>
+    <div class="card-body row m-1">
+      <div class="col-md-4 p-3">
+        <h6 class="card-subtitle text-muted">Name</h6>
+        <p class="card-text">{{request.name}}</p>
+      </div>
+      <div class="col-md-4 p-3">
+        <h6 class="card-subtitle text-muted">Description</h6>
+        <p class="card-text">{{request.description}}</p>
+      </div>
+      <div class="col-md-4 p-3">
+        <h6 class="card-subtitle text-muted">Price</h6>
+        <p class="card-text">{{request.price}}</p>
+      </div>
+      {{request.name}}
+      {{request.id}}
+
+    </div>
+
+
+
+    <div class="card-footer text-right">
+      <button id="listBtn" type="button" [routerLink]="['/requests']"
+              class="btn m-1 btn-outline-primary">Requests List
+      </button>
+      <!--
+      <button id="editBtn" type="button" *ngIf="getCurrentUser().id === request.requester.id" [routerLink]="['edit']"
+              class="btn m-1 btn-outline-success">Edit
+      </button>
+      -->
+      <button id="deleteBtn" type="button" [routerLink]="['delete']"
+              class="btn m-1 btn-outline-danger">Delete
+      </button>
+    </div>
+  </div>
+</div>
+
