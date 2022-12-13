@@ -17,9 +17,41 @@ Feature: Create Request
       | brand | Asus      |
       | productCode | 123456789      |
 
-  Scenario: Register new Request
-    Given I go to
+  Scenario: Register new Product Request
+    Given I click the "Offer Product" menu (not_linked)
+    # ESTO DE AQUI ABAJO NO ES MI PROBLEMA Y LO DE ARRIBA CAMBIARLO A SOLO VISITAR EL ENLACE
+    Then I see the offer list
+    When I click the "Request" button
+    And I click the "Aceptar" button
+    When I click the "Request" menu
+    Then I see my Product Request list
+    And There is the new product request with name "name" and description "description"
+
+    # TODO: if u are not logged in, when u press the request button, the web forces u to go to login page
+  Scenario: Register new Product Request when I'm not logged in
+    Given I'm not logged in
+    Given I click the "Offer Product" menu
+    # ESTO DE AQUI ABAJO NO ES MI PROBLEMA Y LO DE ARRIBA CAMBIARLO A SOLO VISITAR EL ENLACE
+    Then I see the offer list
+    When I click the "Request" button
+    Then I get redirect to "Login" page
 
 
+  Scenario: Cancel the Register Request process
+    Given I click the "Offer Product" menu (not_linked)
+    # ESTO DE AQUI ABAJO NO ES MI PROBLEMA Y LO DE ARRIBA CAMBIARLO A SOLO VISITAR EL ENLACE
+    Then I see the offer list
+    When I click the "Request" button
+    And I click the "Canelar" button
+    When I click the "Request" menu
+    Then I see my Product Request list
+    And There is no new product request with name "name" and description "description"
 
+  Scenario:
+    Given I click the "Offer Product" menu (not_linked)
+    # ESTO DE AQUI ABAJO NO ES MI PROBLEMA Y LO DE ARRIBA CAMBIARLO A SOLO VISITAR EL ENLACE
+    Then I see the offer list
+    When I click the "Request" button
+    And I click the "Aceptar" button
+    Then I see error message "Http failure response for http://localhost:8080/prodRequests: 403 OK"
 
