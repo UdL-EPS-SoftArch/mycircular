@@ -43,6 +43,10 @@ import { ServiceofferCreateComponent } from './offer/serviceoffer-create/service
 import {OfferService} from "./offer/offer.service";
 import {ProductOfferService} from "./offer/productoffer.service";
 import {ServiceOfferService} from "./offer/serviceoffer.service";
+import { ProductRequestsRegisterComponent } from './requests/product-requests-register/product-requests-register.component';
+import { ProductRequestsListComponent } from './requests/product-requests-list/product-requests-list.component';
+import { ProductRequestsDetailComponent } from './requests/product-requests-detail/product-requests-detail.component';
+import { ProductRequestsDeleteComponent } from './requests/product-requests-delete/product-requests-delete.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +77,11 @@ RequestsDeleteComponent,
     ServiceofferDeleteComponent,
     ServiceofferEditComponent,
     ServiceofferDetailComponent,
-    ServiceofferCreateComponent
+    ServiceofferCreateComponent,
+    ProductRequestsRegisterComponent,
+    ProductRequestsListComponent,
+    ProductRequestsDetailComponent,
+    ProductRequestsDeleteComponent
   ],
   imports: [
     BrowserModule,
