@@ -50,9 +50,9 @@ export class ProductRequestsRegisterComponent implements OnInit {
     this.prodRequest.name = this.name
     this.prodRequest.price = this.price
     this.prodRequest.date = this.dateTime
-//    this.prodRequest.brand = this.brand
-//    this.prodRequest.manufacturer = this.manufacturer
-//    this.prodRequest.productCode = this.productCode
+    this.prodRequest.brand = this.brand
+    this.prodRequest.manufacturer = this.manufacturer
+    this.prodRequest.productCode = this.productCode
     this.prodRequest.requester = this.authenticationBasicService.getCurrentUser()
     console.log(this.prodRequest)
     this.productRequestService.createResource(

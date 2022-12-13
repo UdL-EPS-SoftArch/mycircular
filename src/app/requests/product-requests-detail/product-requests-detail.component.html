@@ -14,6 +14,22 @@
         <h6 class="card-subtitle text-muted">Price</h6>
         <p class="card-text">{{productRequest.price}}</p>
       </div>
+      <div class="col-md-4 p-3">
+        <h6 class="card-subtitle text-muted">Date</h6>
+        <p class="card-text">{{productRequest.date}}</p>
+      </div>
+      <div class="col-md-4 p-3">
+        <h6 class="card-subtitle text-muted">Manufacturer</h6>
+        <p class="card-text">{{productRequest.manufacturer}}</p>
+      </div>
+      <div class="col-md-4 p-3">
+        <h6 class="card-subtitle text-muted">Brand</h6>
+        <p class="card-text">{{productRequest.brand}}</p>
+      </div>
+      <div class="col-md-4 p-3">
+        <h6 class="card-subtitle text-muted">Product Code</h6>
+        <p class="card-text">{{productRequest.productCode}}</p>
+      </div>
       {{productRequest.name}}
       {{productRequest.id}}
 
@@ -25,11 +41,7 @@
       <button id="listBtn" type="button" [routerLink]="['/prodRequests']"
               class="btn m-1 btn-outline-primary">Product requests List
       </button>
-      <!--
-      <button id="editBtn" type="button" *ngIf="getCurrentUser().id === request.requester.id" [routerLink]="['edit']"
-              class="btn m-1 btn-outline-success">Edit
-      </button>
-      -->
+
       <button id="deleteBtn" type="button" [routerLink]="['delete']"
               class="btn m-1 btn-outline-danger">Delete
       </button>
