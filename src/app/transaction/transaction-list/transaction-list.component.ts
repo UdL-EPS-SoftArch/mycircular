@@ -13,10 +13,10 @@ import { Transaction } from '../transaction';
 })
 export class TransactionListComponent implements OnInit {
   public transactionPagedResource: PagedResourceCollection<Transaction>;
-  public transactionList: Transaction[];
+  public transactionList: Transaction[] = [];
   public transactionSize = 0;
-  public pageSize = 10;
-  public currentPage = 0;
+  public pageSize = 5;
+  public page = 1;
   public currentUsername = this.authenticationService.getCurrentUser().id;
 
 
@@ -26,10 +26,11 @@ export class TransactionListComponent implements OnInit {
 
   ngOnInit(): void {
     this.transactionService.searchPage('findByBuyer_UsernameOrSeller_Username', { params: { buyerUsername: this.currentUsername, sellerUsername: this.currentUsername },
-      pageParams: { page: this.currentPage, size: this.pageSize },
-      sort: {name: 'ASC'}}).subscribe(
+      pageParams: { page: this.page, size: this.pageSize },
+      sort: {name: 'DESC'}}).subscribe(
       (page: PagedResourceCollection<Transaction>) => {
         this.transactionPagedResource = page;
+
         this.transactionList = page.resources;
         this.transactionSize = page.totalElements;
         this.transactionList.map(transaction => {
@@ -45,9 +46,19 @@ export class TransactionListComponent implements OnInit {
   }
 
   changePage() {
-    this.transactionPagedResource.customPage({pageParams: {page: this.currentPage - 1, size: this.pageSize}, sort: {name: 'ASC'}}).subscribe(
+    this.transactionPagedResource.customPage({pageParams: {page: this.page - 1, size: this.pageSize}, sort: {name: 'DESC'}}).subscribe(
       (page: PagedResourceCollection<Transaction>) => {
         this.transactionList = page.resources;
+        this.transactionSize = page.totalElements;
+        this.transactionList.map(transaction => {
+          transaction.getRelation('seller').subscribe((seller: User) => {
+            transaction.seller = seller;
+          });
+          transaction.getRelation('buyer').subscribe((buyer: User) => {
+            transaction.buyer = buyer;
+          });
+        }
+        );
       }
     )
   }
