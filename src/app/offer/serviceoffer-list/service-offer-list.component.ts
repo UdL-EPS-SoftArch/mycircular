@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, Params, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ServiceOffer } from "../serviceoffer";
 import { ServiceOfferService } from "../serviceoffer.service";
 import {AuthenticationBasicService} from '../../login-basic/authentication-basic.service';
 import {PagedResourceCollection} from "@lagoshny/ngx-hateoas-client";
-import {ProductOffer} from "../productoffer";
 
 @Component({
-  selector: 'app-serviceoffer-list',
+  selector: 'app-service-offer-list',
   templateUrl: './service-offer-list.component.html',
 })
 export class ServiceOfferListComponent implements OnInit {

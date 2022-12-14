@@ -59,7 +59,7 @@ export class ServiceRequestsCreateComponent implements OnInit {
       }
     ).subscribe(
       () => {
-        console.log("Product Request created", this.serviceRequest)
+        console.log("service Request created", this.serviceRequest)
         this.location.back()
         //this.router.navigate
       });

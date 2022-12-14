@@ -28,6 +28,9 @@ import {ProductofferEditComponent} from "./offer/productoffer-edit/productoffer-
 import {ServiceofferEditComponent} from "./offer/serviceoffer-edit/serviceoffer-edit.component";
 import {ProductofferDetailComponent} from "./offer/productoffer-detail/productoffer-detail.component";
 import {ServiceofferDetailComponent} from "./offer/serviceoffer-detail/serviceoffer-detail.component";
+import {ServiceRequestsListComponent} from "./requests/service-requests-list/service-requests-list.component";
+import {ServiceRequestsDetailComponent} from "./requests/service-requests-detail/service-requests-detail.component";
+import {ServiceRequestsDeleteComponent} from "./requests/service-requests-delete/service-requests-delete.component";
 
 const routes: Routes = [
   {path: 'users/create', component: UserRegisterComponent},
@@ -43,6 +46,10 @@ const routes: Routes = [
   {path: 'productRequests', component: ProductRequestsListComponent, canActivate: [LoggedInGuard]},
   {path: 'productRequests/:id', component: ProductRequestsDetailComponent, canActivate: [LoggedInGuard]},
   {path: 'productRequests/:id/delete', component: ProductRequestsDeleteComponent, canActivate: [LoggedInGuard]},
+
+  {path: 'serviceRequests', component: ServiceRequestsListComponent, canActivate: [LoggedInGuard]},
+  {path: 'serviceRequests/:id', component: ServiceRequestsDetailComponent, canActivate: [LoggedInGuard]},
+  {path: 'serviceRequests/:id/delete', component: ServiceRequestsDeleteComponent, canActivate: [LoggedInGuard]},
 
   { path: 'users/create', component: UserRegisterComponent},
   { path: 'users/:id/delete', component: UserDeleteComponent, canActivate: [LoggedInGuard]},
