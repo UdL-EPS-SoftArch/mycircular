@@ -33,7 +33,11 @@
               <h5>Status: </h5>
             </div>
             <div class="col-md-7">
-              <select>{{ transaction.status }}</select>
+              <select>
+                <option *ngFor="let status of getStateList()" [value]="status">
+                  {{status}}
+                </option>
+              </select>
             </div>
           </div>
         </div>
