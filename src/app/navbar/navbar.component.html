@@ -20,18 +20,6 @@
         </div>
       </li>
 
-      <li class="nav-item" *ngIf="isRole('user')" ngbDropdown>
-
-        <a class="nav-link dropdown-toggle" id="playerDropdown2" role="button"
-           aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>Requests</a>
-
-        <div class="dropdown-menu" aria-labelledby="playDropdown" ngbDropdownMenu>
-          <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
-             [routerLink]="['/requests-list']">
-            <span class="fas fa-user-circle"></span> List</a>
-        </div>
-      </li>
-
       <li *ngIf="isRole('user')"
           class="nav-item" [routerLinkActive]="'active'"
           [routerLinkActiveOptions]="{ exact: true }">
