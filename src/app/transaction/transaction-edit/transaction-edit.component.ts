@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Transaction} from "../transaction";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {TransactionService} from "../transaction.service";
 import {User} from "../../login-basic/user";
 
@@ -14,8 +14,8 @@ export class TransactionEditComponent implements OnInit {
   public dateOptions = { };
   public statusOptions = ["INITIALIZED", "IN_PROGRESS", "CLOSED", "CANCELED" ];
   public statusChanges = [];
-
   constructor(private route: ActivatedRoute,
+              private router: Router,
               private transactionService: TransactionService) { }
 
   ngOnInit(): void {
@@ -47,6 +47,9 @@ export class TransactionEditComponent implements OnInit {
     return this.statusChanges;
   }
   onSubmit(): void{
-    
+    this.transactionService.patchResource(this.transaction).subscribe(
+      (patchedTransaction: Transaction) => {
+        this.router.navigate(['transactions',patchedTransaction.id])
+      });
   }
 }
