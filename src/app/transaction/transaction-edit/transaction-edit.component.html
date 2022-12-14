@@ -1,1 +1,74 @@
-<p>transaction-edit works!</p>
+<form id="user-form" (ngSubmit)="onSubit()" #form="ngForm">
+  <fieldset>
+  <div class="card my-4">
+    <div class="card-block">
+      <div class="card-header">
+        <div class="row">
+          <h4 class="card-title p-1 col-md-6">Transaction {{ transaction.id }}</h4>
+          <div class="col-md-6 text-end align-self-center">
+            {{ transaction.creationDate?.toLocaleDateString('es-ES', dateOptions) }}
+          </div>
+        </div>
+      </div>
+      <div class="card-body row m-1">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-5 text-end">
+              <h5>Announcement: </h5>
+            </div>
+            <div class="col-md-7">
+              <p>Announcement name</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-5 text-end">
+              <h5>Price: </h5>
+            </div>
+            <div class="col-md-7" [class.was-validated]="price.dirty || price.touched">
+              <input id="price" name="price" type="text" class="form-control" required [ngModel]="transaction.price" #price="ngModel">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-5 text-end">
+              <h5>Status: </h5>
+            </div>
+            <div class="col-md-7">
+              <select>{{ transaction.status }}</select>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 align-self-center">
+          <div class="row">
+            <div class="col-md-5 text-end">
+              <h5>Seller: </h5>
+            </div>
+            <div class="col-md-7">
+              <a [routerLink]="['/users', transaction.seller.id]">{{ transaction.seller.id }}</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-5 text-end">
+              <h5>Buyer: </h5>
+            </div>
+            <div class="col-md-7">
+              <a [routerLink]="['/users', transaction.buyer.id]">{{ transaction.buyer.id }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer text-right">
+        <button id="listBtn" type="button" [routerLink]="'/transactions'"
+                class="btn m-1 btn-outline-primary">Transaction list
+        </button>
+        <button id="submit" type="submit" [disabled]="!form.form.valid"
+                class="btn btn-success ms-3">Submit</button>
+
+        <button id="editBtn" type="button" *ngIf="getCurrentTransaction().id === transaction.id" [routerLink]="['/transactions', transaction.id]"
+                class="btn m-1 btn-outline-danger">Cancel
+        </button>
+
+      </div>
+    </div>
+  </div>
+  </fieldset>
+</form>

@@ -10,11 +10,11 @@ import { UserRegisterComponent } from './user/user-register/user-register.compon
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserDeleteComponent } from './user/user-delete/user-delete.component';
 import { TransactionDetailComponent } from './transaction/transaction-detail/transaction-detail.component';
-
+import { TransactionEditComponent } from './transaction/transaction-edit/transaction-edit.component';
 const routes: Routes = [
   { path: 'transactions/:id' , component: TransactionDetailComponent, canActivate: [LoggedInGuard] },
   { path: 'transactions', component: TransactionListComponent, canActivate: [LoggedInGuard] },
-
+  { path: 'transactions/:id/edit', component: TransactionEditComponent, canActivate: [LoggedInGuard]},
   { path: 'users/create', component: UserRegisterComponent},
   { path: 'users/:id/delete', component: UserDeleteComponent, canActivate: [LoggedInGuard]},
   { path: 'users/:id/edit', component: UserEditComponent, canActivate: [LoggedInGuard]},
