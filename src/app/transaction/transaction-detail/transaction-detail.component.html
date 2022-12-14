@@ -58,12 +58,10 @@
       <button id="listBtn" type="button" [routerLink]="'/transactions'"
               class="btn m-1 btn-outline-primary">Transaction list
       </button>
-      <button id="listBtn" type="button" (click)="completeTransaction()" *ngIf="transaction.status !== 'CLOSED'"
-              class="btn m-1 btn-outline-success"> Finalize transaction
+      <button id="editBtn" type="button" *ngIf="getCurrentTransaction().id === transaction.id" [routerLink]="['edit']"
+              class="btn m-1 btn-outline-success">Edit transaction
       </button>
-      <button id="listBtn" type="button" (click)="cancelTransaction()" *ngIf="transaction.status !== 'CANCELED'"
-              class="btn m-1 btn-outline-danger">Cancel transaction
-      </button>
+
     </div>
   </div>
 </div>

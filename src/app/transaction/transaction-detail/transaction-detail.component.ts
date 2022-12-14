@@ -41,6 +41,9 @@ export class TransactionDetailComponent implements OnInit {
       }
     );
   }
+  getCurrentTransaction(): Transaction{
+    return this.transaction;
+  }
 
   cancelTransaction() {
     const id = this.route.snapshot.paramMap.get('id');
