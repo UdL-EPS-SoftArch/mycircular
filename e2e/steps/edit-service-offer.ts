@@ -13,12 +13,6 @@ Given('I click the {string} menu', (option) => {
   cy.get('.nav-link').contains(option).click();
 });
 
-When('fill the login form with', (table: DataTable) => {
-  table.rows().forEach((pair: string[]) =>
-    cy.get('#' + pair[0]).type(pair[1]).blur() );
-  cy.get('button').contains('Submit').click();
-});
-
 When('I click the {string} button', (label) => {
   cy.get('button').contains(label).click();
 });

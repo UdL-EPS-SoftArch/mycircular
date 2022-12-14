@@ -5,17 +5,12 @@ Feature: edit a exist ProductOffer
 
   Scenario: Edit Product Offer
     Given I'm in the homepage
-    And I'm not logged in
-    When I click the "Login" menu
-    And fill the login form with
-      | FIELD    | VALUE         |
-      | username | demo          |
-      | password | password      |
-    And I click the "Submit" button
+    And I log in as "demo" with password "password"
+    And I'm logged in as user "demo"
     Then Go to Product offer edit page with id "1"
     And I fill the edit service offer form with
       | FIELD    | VALUE         |
-      | name | Laptop EVGA          |
+      | name | Laptop Cosas          |
       | description    | Asus DashF15 with 3060RTX and 16gb of ram  |
       | price | 700      |
       | dateTime | 2018-02-12T12:08:23Z     |

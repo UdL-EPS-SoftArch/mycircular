@@ -6,14 +6,9 @@ Feature: Create a new ServiceOffer
   Scenario: Edit Service Offer
     Given I'm in the homepage
     And I'm not logged in
-    When I click the "Login" menu
-    And fill the login form with
-      | FIELD    | VALUE         |
-      | username | demo          |
-      | password | password      |
-    And I click the "Submit" button
-    Given I'm in the homepage
-    Then Go to Service offer edit page with id "3"
+    And I log in as "demo" with password "password"
+    And I'm logged in as user "demo"
+    Then Go to Service offer edit page with id "1"
     And I fill the edit service offer form with
       | FIELD    | VALUE         |
       | name | Repair Laptop Asus          |
@@ -24,4 +19,4 @@ Feature: Create a new ServiceOffer
       | availability | true      |
       | durationInHours | 10      |
     And I click the "Submit" button
-    Then i check the service offer with id "3"
+    Then i check the service offer with id "1"

@@ -6,12 +6,8 @@ Feature: Create a new ProductOffer
   Scenario: Register new Product Offer
     Given I'm in the homepage
     And I'm not logged in
-    When I click the "Login" menu
-    And fill the login form with
-      | FIELD    | VALUE         |
-      | username | demo          |
-      | password | password      |
-    And I click the "Submit" button
+    And I log in as "demo" with password "password"
+    And I'm logged in as user "demo"
     Then Go to Product offer create page
     And I fill the create product offer form with
       | FIELD    | VALUE         |
@@ -29,12 +25,8 @@ Feature: Create a new ProductOffer
   Scenario: Register new Product Offer with empty fields
     Given I'm in the homepage
     And I'm not logged in
-    When I click the "Login" menu
-    And fill the login form with
-      | FIELD    | VALUE         |
-      | username | demo          |
-      | password | password      |
-    And I click the "Submit" button
+    And I log in as "demo" with password "password"
+    And I'm logged in as user "demo"
     Then Go to Product offer create page
     And I fill the create product offer form with
       | FIELD    | VALUE         |
@@ -50,12 +42,8 @@ Feature: Create a new ProductOffer
   Scenario: Register new Product Offer with mistakes in field name product
     Given I'm in the homepage
     And I'm not logged in
-    When I click the "Login" menu
-    And fill the login form with
-      | FIELD    | VALUE         |
-      | username | demo          |
-      | password | password      |
-    And I click the "Submit" button
+    And I log in as "demo" with password "password"
+    And I'm logged in as user "demo"
     Then Go to Product offer create page
     And I fill the create product offer form with
       | FIELD    | VALUE         |
@@ -73,12 +61,8 @@ Feature: Create a new ProductOffer
   Scenario: Register new Product Offer with mistakes in field description product
     Given I'm in the homepage
     And I'm not logged in
-    When I click the "Login" menu
-    And fill the login form with
-      | FIELD    | VALUE         |
-      | username | demo          |
-      | password | password      |
-    And I click the "Submit" button
+    And I log in as "demo" with password "password"
+    And I'm logged in as user "demo"
     Then Go to Product offer create page
     And I fill the create product offer form with
       | FIELD    | VALUE         |
@@ -96,12 +80,8 @@ Feature: Create a new ProductOffer
   Scenario: Register new Product Offer with mistakes in field date product
     Given I'm in the homepage
     And I'm not logged in
-    When I click the "Login" menu
-    And fill the login form with
-      | FIELD    | VALUE         |
-      | username | demo          |
-      | password | password      |
-    And I click the "Submit" button
+    And I log in as "demo" with password "password"
+    And I'm logged in as user "demo"
     Then Go to Product offer create page
     And I fill the create product offer form with
       | FIELD    | VALUE         |
@@ -120,12 +100,8 @@ Feature: Create a new ProductOffer
   Scenario: Register new Product Offer with mistakes in field Offerer product
     Given I'm in the homepage
     And I'm not logged in
-    When I click the "Login" menu
-    And fill the login form with
-      | FIELD    | VALUE         |
-      | username | demo          |
-      | password | password      |
-    And I click the "Submit" button
+    And I log in as "demo" with password "password"
+    And I'm logged in as user "demo"
     Then Go to Product offer create page
     And I fill the create product offer form with
       | FIELD    | VALUE         |
