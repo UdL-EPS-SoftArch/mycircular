@@ -5,8 +5,11 @@ Feature: Create Product Request
 
   Background:
     Given I'm in the homepage
-    And I log in as "user" with password "password"
-    Given There is a product offer already created with
+    And I'm not logged in
+    Then I log in as "demo" with password "password"
+    And I'm logged in as user "demo"
+    Given I go to Product offer creation page
+    Then I fill the product offer creation form with
       | FIELD    | VALUE         |
       | name | Laptop Asus          |
       | description    | Asus DashF15 with 3060RTX and 16gb of ram |
@@ -16,6 +19,7 @@ Feature: Create Product Request
       | manufacturer | Asus      |
       | brand | Asus      |
       | productCode | 123456789      |
+    And I click the "Submit" button
 
   Scenario: Register new Product Request
     Given I click the "Offer Product" menu (not_linked)
@@ -23,7 +27,7 @@ Feature: Create Product Request
     Then I see the product offer list
     When I click the "Request" button
     And I click the "Aceptar" button
-    When I click the "Request" menu
+    When I click the "Requests" menu
     Then I see my Product Request list
     And There is the new product request with name "name" and description "description"
 
