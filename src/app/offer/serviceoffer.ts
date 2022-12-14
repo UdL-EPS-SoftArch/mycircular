@@ -1,4 +1,5 @@
 import { HateoasResource, Resource} from '@lagoshny/ngx-hateoas-client';
+import {User} from "../login-basic/user";
 
 @HateoasResource('serviceOffers')
 export class ServiceOffer extends Resource{
@@ -7,7 +8,7 @@ export class ServiceOffer extends Resource{
   description: string;
   price: number;
   dateTime: Date;
-  offerer: string;
+  offerer: User;
   availability: boolean;
   durationInHours: number;
 

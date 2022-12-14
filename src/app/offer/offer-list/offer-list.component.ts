@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router, Params, ActivatedRoute } from '@angular/router';
 import { OfferService } from '../offer.service';
 import { Offer } from '../offer';
-import {AuthenticationBasicService} from '../../login-basic/authentication-basic.service';
-import {PagedResourceCollection} from "@lagoshny/ngx-hateoas-client";
+import { AuthenticationBasicService } from '../../login-basic/authentication-basic.service';
+import { PagedResourceCollection } from "@lagoshny/ngx-hateoas-client";
+import { switchMap, map } from 'rxjs/operators';
+import { User } from '../../login-basic/user';
 
 @Component({
   selector: 'app-offer-list',
@@ -30,6 +32,11 @@ export class OfferListComponent implements OnInit {
         this.offerPagedResource = page;
         this.offers = page.resources;
         this.totalOffers = page.totalElements;
+        this.offers.map(offer => {
+          offer.getRelation('offerer').subscribe((user: User) => {
+            offer.offerer = user;
+          });
+        });
         console.log(this.offers)
       });
   }
