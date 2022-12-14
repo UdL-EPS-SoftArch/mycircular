@@ -41,7 +41,7 @@
             <h5>Seller: </h5>
           </div>
           <div class="col-md-7">
-            <a [routerLink]="['/users', transaction.seller.id]">{{ transaction.seller.id }}</a>
+            <a [routerLink]="['/users', transaction?.seller?.id]">{{ transaction?.seller?.id }}</a>
           </div>
         </div>
         <div class="row">
@@ -49,7 +49,7 @@
             <h5>Buyer: </h5>
           </div>
           <div class="col-md-7">
-            <a [routerLink]="['/users', transaction.buyer.id]">{{ transaction.buyer.id }}</a>
+            <a [routerLink]="['/users', transaction?.buyer?.id]">{{ transaction?.buyer?.id }}</a>
           </div>
         </div>
       </div>
