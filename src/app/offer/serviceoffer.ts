@@ -11,6 +11,7 @@ export class ServiceOffer extends Resource{
   offerer: User;
   availability: boolean;
   durationInHours: number;
+  uri: string;
 
 
   constructor(values: object = {}) {

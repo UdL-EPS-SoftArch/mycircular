@@ -12,6 +12,7 @@ export class ProductOffer extends Resource{
   manufacturer: string;
   brand: string;
   productCode: string;
+  uri: string;
 
 
   constructor(values: object = {}) {
