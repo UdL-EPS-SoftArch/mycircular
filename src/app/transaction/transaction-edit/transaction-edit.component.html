@@ -36,7 +36,9 @@
               <h5>Status: </h5>
             </div>
             <div class="col-md-7">
-              <select>
+              <label hidden class="control-label" for="status"></label>
+              <select id="status" name="status" class="form-control" required
+                      [(ngModel)]="transaction.status" #selectElement="ngModel">
                 <option *ngFor="let status of getStateList()" [value]="status">
                   {{status}}
                 </option>
