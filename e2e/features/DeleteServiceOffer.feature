@@ -12,6 +12,7 @@ Feature: Delete a ServiceOffer
   | username | demo          |
   | password | password      |
   And I click the "Submit" button
+    And I'm logged in as user "demo"
   Given I'm in the homepage
   Then Go to Service offer delete page with id "1"
   And I click the "Delete" button
