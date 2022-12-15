@@ -26,6 +26,7 @@ import {UserService} from './user/user.service';
 import { TransactionListComponent } from './transaction/transaction-list/transaction-list.component';
 import { TransactionDetailComponent } from './transaction/transaction-detail/transaction-detail.component';
 import { TransactionEditComponent } from './transaction/transaction-edit/transaction-edit.component';
+import { TransactionSearchComponent } from './Transaction/transaction-search/transaction-search.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { TransactionEditComponent } from './transaction/transaction-edit/transac
     UserSearchComponent,
     TransactionListComponent,
     TransactionDetailComponent,
-    TransactionEditComponent
+    TransactionEditComponent,
+    TransactionSearchComponent
   ],
   imports: [
     BrowserModule,

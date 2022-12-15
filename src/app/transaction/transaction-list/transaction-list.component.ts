@@ -1,6 +1,6 @@
-import { User } from './../../login-basic/user';
-import { AuthenticationBasicService } from './../../login-basic/authentication-basic.service';
-import { TransactionService } from './../transaction.service';
+import { User } from '../../login-basic/user';
+import { AuthenticationBasicService } from '../../login-basic/authentication-basic.service';
+import { TransactionService } from '../transaction.service';
 import { Router } from '@angular/router';
 import { PagedResourceCollection } from '@lagoshny/ngx-hateoas-client';
 import { Component, OnInit } from '@angular/core';
@@ -13,11 +13,12 @@ import { Transaction } from '../transaction';
 })
 export class TransactionListComponent implements OnInit {
   public transactionPagedResource: PagedResourceCollection<Transaction>;
-  public transactionList: Transaction[] = [];
+  public transactionList: Transaction[];
   public transactionSize = 0;
   public pageSize = 5;
-  public page = 1;
+  public page = 0;
   public currentUsername = this.authenticationService.getCurrentUser().id;
+  public dateOptions = {};
 
 
   constructor(public router: Router,
@@ -40,9 +41,11 @@ export class TransactionListComponent implements OnInit {
           transaction.getRelation('buyer').subscribe((buyer: User) => {
             transaction.buyer = buyer;
           });
+          transaction.creationDate = new Date(transaction.creationDate);
         });
       }
     );
+    this.dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   }
 
   changePage() {
@@ -63,4 +66,7 @@ export class TransactionListComponent implements OnInit {
     )
   }
 
+    detail(transaction: Transaction) {
+    this.router.navigate(['transactions',transaction.id]);
+  }
 }

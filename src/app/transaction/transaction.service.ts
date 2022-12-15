@@ -23,4 +23,9 @@ export class TransactionService extends HateoasResourceOperation<Transaction> {
   public findByBuyerOrSeller(buyerUsername: string, sellerUsername: string): Observable<ResourceCollection<Transaction>> {
     return this.searchCollection('findByBuyer_UsernameOrSeller_Username', { params: { buyerUsername: buyerUsername, sellerUsername: sellerUsername } });
   }
+  /**
+  public findByDate(date: Date): Observable<ResourceCollection<Transaction>>{
+    return this.searchCollection('findByDate',{params: {date: date}})
+  }
+   **/
 }

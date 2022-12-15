@@ -1,23 +1,29 @@
+<app-transaction-search (emitResults)="detail($event)"></app-transaction-search>
+
+
 <h1 class="mb-4">Transaction List</h1>
 
 <div class="card mb-2" *ngFor="let transaction of transactionList">
-  <div class="card-block row">
-    <div class="card-body row align-itams-center">
-      <div class="col-md-3">
-        <h6 class="card-subtitle text-muted">Announcement</h6>
-        <a class="card-text">...</a>
-      </div>
-      <div class="col-md-3">
-        <h6 class="card-subtitle text-muted">Price</h6>
-        <p class="card-text">{{ transaction.price }} €</p>
-      </div>
-      <div class="col-md-3">
-        <h6 class="card-subtitle text-muted">Status</h6>
-        <p class="card-text">{{ transaction.status }}</p>
-      </div>
-      <div class="col-md-3 d-flex">
-        <a class="align-self-center btn btn-outline-info" [routerLink]="['/transactions', transaction.id]">Details</a>
-      </div>
+  <div class="card-header">
+    <h4 class="card-text col-md-12 p-3">
+      {{ transaction.creationDate?.toLocaleDateString('es-ES', dateOptions) }}
+    </h4>
+  </div>
+  <div class="card-body row align-items-center">
+    <div class="col-md-3">
+      <h6 class="card-subtitle text-muted">Announcement</h6>
+      <a class="card-text">...</a>
+    </div>
+    <div class="col-md-3">
+      <h6 class="card-subtitle text-muted">Price</h6>
+      <p class="card-text">{{ transaction.price }} €</p>
+    </div>
+    <div class="col-md-3">
+      <h6 class="card-subtitle text-muted">Status</h6>
+      <p class="card-text">{{ transaction.status }}</p>
+    </div>
+    <div class="col-md-3 d-flex">
+      <a class="align-self-center btn btn-outline-info" [routerLink]="['/transactions', transaction.id]">Details</a>
     </div>
   </div>
 </div>
