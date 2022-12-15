@@ -9,6 +9,7 @@ export class Offer extends Resource{
   price: number;
   dateTime: Date;
   offerer: User;
+  uri: string;
 
 
   constructor(values: object = {}) {
