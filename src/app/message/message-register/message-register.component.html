@@ -3,12 +3,12 @@
     <!-- Author input -->
     <div class="form-group mb-3">
       <label class="control-label" for="author">Author</label>
-      <input id="author" name="author" type="text" class="form-control" readonly [(ngModel)]="message.author">
+      <input id="author" name="author" type="text" class="form-control" readonly [(ngModel)]="user.id">
     </div>
     <!-- About input -->
     <div class="form-group mb-3">
       <label class="control-label" for="about">About</label>
-      <input id="about" name="about" type="text" class="form-control" required [(ngModel)]="message.about" #about="ngModel">
+      <input id="about" name="about" type="text" class="form-control" required [(ngModel)]="message.product" #about="ngModel">
       <div class="invalid-feedback">A message about is required!</div>
     </div>
     <!-- Text input -->

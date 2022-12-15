@@ -4,6 +4,7 @@ import {Message} from "../message";
 import {AuthenticationBasicService} from "../../login-basic/authentication-basic.service";
 import {PagedResourceCollection} from "@lagoshny/ngx-hateoas-client";
 import {MessageService} from "../message.service";
+import {User} from "../../login-basic/user";
 
 @Component({
   selector: 'app-message-list',
@@ -28,7 +29,14 @@ export class MessageListComponent implements OnInit{
         this.messagePagedResource =page;
         this.messages =page.resources;
         this.totalMessages = page.totalElements;
-        console.log(this.messages)
+
+
+        this.messages.map(message => {
+          message.getRelation('user').subscribe((user: User) => {
+            message.user = user;
+          });
+        });
+
       });
   }
   changePage(): void {

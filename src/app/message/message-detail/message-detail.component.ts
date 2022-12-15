@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { MessageService} from "../message.service";
 import { Message} from "../message";
 import { AuthenticationBasicService } from '../../login-basic/authentication-basic.service';
+import {User} from "../../login-basic/user";
 
 @Component({
   selector: 'app-message-detail',
@@ -21,7 +22,12 @@ export class MessageDetailComponent implements OnInit {
     this.messageService.getResource(id).subscribe(
       message => {
         this.message = message;
+        this.message.getRelation('user').subscribe((user: User) => {
+          this.message.user = user;
+        });
       });
+
+
   }
 
 

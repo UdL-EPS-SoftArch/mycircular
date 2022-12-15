@@ -3,11 +3,11 @@
     <div class="card-body row align-items-center">
       <div class="col">
         <h6 class="card-subtitle text-muted">Sent by:</h6>
-        <a class="card-text" [routerLink]="['/message', message.id]">{{message.author}}</a>
+        <a class="card-text" [routerLink]="[message.uri]">{{message.user?.id}}</a>
       </div>
       <div class="col">
         <h6 class="card-subtitle text-muted">To:</h6>
-        <p class="card-text">{{message.about}}</p>
+        <p class="card-text">{{message.product}}</p>
       </div>
       <div class="col">
         <h6 class="card-subtitle text-muted">Date:</h6>

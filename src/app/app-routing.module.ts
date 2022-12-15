@@ -13,9 +13,9 @@ import { MessageListComponent } from './message/message-list/message-list.compon
 import { MessageRegisterComponent } from './message/message-register/message-register.component';
 
 const routes: Routes = [
-  { path: 'message', component: MessageListComponent, canActivate: [LoggedInGuard]},
-  { path: 'message/:id', component: MessageDetailComponent, canActivate: [LoggedInGuard]},
-  { path: 'message/create', component: MessageRegisterComponent, canActivate: [LoggedInGuard]},
+  { path: 'messages', component: MessageListComponent, canActivate: [LoggedInGuard]},
+  { path: 'messages/create', component: MessageRegisterComponent, canActivate: [LoggedInGuard]},
+  { path: 'messages/:id', component: MessageDetailComponent, canActivate: [LoggedInGuard]},
   { path: 'users/create', component: UserRegisterComponent},
   { path: 'users/:id/delete', component: UserDeleteComponent, canActivate: [LoggedInGuard]},
   { path: 'users/:id/edit', component: UserEditComponent, canActivate: [LoggedInGuard]},
