@@ -8,7 +8,7 @@ Feature: edit a exist ProductOffer
     And I log in as "demo" with password "password"
     And I'm logged in as user "demo"
     Then Go to Product offer edit page with id "1"
-    And I fill the edit service offer form with
+    And I fill the edit product offer form with
       | FIELD    | VALUE         |
       | name | Laptop EditTest          |
       | description    | Asus DashF15 with 3060RTX and 16gb of ram  |

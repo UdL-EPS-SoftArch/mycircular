@@ -1,18 +1,6 @@
 import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps';
 import { DataTable } from '@cucumber/cucumber';
 
-Given('I\'m in the homepage', () => {
-  cy.visit('http://localhost:4200');
-});
-
-Given('I click the {string} menu', (option) => {
-  cy.get('.nav-link').contains(option).click();
-});
-
-When('I click the {string} button', (label) => {
-  cy.get('button').contains(label).click();
-});
-
 Then('Go to Service offer edit page with id {string}', (id) => {
   cy.visit('http://localhost:4200/serviceOffers/'+id+'/edit');
 });

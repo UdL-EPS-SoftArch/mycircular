@@ -1,7 +1,7 @@
-Feature: Create a new ServiceOffer
+Feature: Edit a exist ServiceOffer
   In order to use the app
   As a user
-  I want to register a new Service Offer
+  I want to edit a exist Service Offer
 
   Scenario: Edit Service Offer
     Given I'm in the homepage
@@ -10,7 +10,7 @@ Feature: Create a new ServiceOffer
     Then Go to Service offer edit page with id "1"
     And I fill the edit service offer form with
       | FIELD    | VALUE         |
-      | name | Repair Laptop Asus  EditTest        |
+      | name | Repair Laptop EditTest      |
       | description    | Asus DashF15 with 3060RTX and 16gb of ram |
       | price | 100     |
       | dateTime | 2018-02-12T12:08:23Z      |

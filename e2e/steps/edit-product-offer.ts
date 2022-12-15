@@ -14,7 +14,7 @@ Then('Go to Product offer edit page with id {string}', (id) => {
   cy.visit('http://localhost:4200/productOffers/'+id+'/edit');
 });
 
-When('I fill the edit service offer form with', (table: DataTable) => {
+When('I fill the edit product offer form with', (table: DataTable) => {
   table.rows().forEach((pair: string[]) =>
     cy.get('#' + pair[0]).clear().type(pair[1]).blur() );
 });

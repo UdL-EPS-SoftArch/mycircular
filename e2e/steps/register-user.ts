@@ -27,7 +27,6 @@ When('I fill the form with', (table: DataTable) => {
 
 When('I click the {string} button', (label) => {
     cy.get('button').contains(label).click();
-    cy.wait(1000000)
   });
 
 Then('I\'m logged in as user {string}', (username) => {
