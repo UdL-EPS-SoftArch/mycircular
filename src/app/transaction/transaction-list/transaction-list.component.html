@@ -3,11 +3,11 @@
 
 <h1 class="mb-4">Transaction List</h1>
 
-<div class="card mb-2" *ngFor="let transaction of transactionList">
+<div class="card mb-2" *ngFor="let transaction of transactionList ">
   <div class="card-header">
-    <h4 class="card-text col-md-12 p-3">
-      {{ transaction.creationDate?.toLocaleDateString('es-ES', dateOptions) }}
-    </h4>
+    <p class="card-text col-md-12 p-3">
+      {{ transaction.creationDate | date: "dd.MM.yyy"}}
+    </p>
   </div>
   <div class="card-body row align-items-center">
     <div class="col-md-3">

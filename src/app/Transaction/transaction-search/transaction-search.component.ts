@@ -1,9 +1,9 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { Transaction } from '../transaction';
 import {TransactionService} from "../transaction.service";
-import {Observable, of, OperatorFunction} from "rxjs";
-import {catchError, debounceTime, distinctUntilChanged, map, switchMap, tap} from "rxjs/operators";
-import {ResourceCollection} from "@lagoshny/ngx-hateoas-client";
+import {Observable, of, OperatorFunction} from 'rxjs';
+import { catchError, debounceTime, distinctUntilChanged, switchMap, tap } from 'rxjs/operators';
+import {User} from "../../login-basic/user";
 
 @Component({
   selector: 'app-transaction-search',
@@ -18,26 +18,5 @@ export class TransactionSearchComponent{
   searching = false;
 
   constructor(private transactionService: TransactionService) { }
-  /**
-  autocomplete: OperatorFunction<string, readonly Transaction[]> = (text$: Observable<string>) =>
-    text$.pipe(
-      debounceTime(500),
-      distinctUntilChanged(),
-      tap(() => this.searching = true),
-      switchMap(term => term.length < 3 ? of([]) :
-        this.transactionService.findbyDate(term).pipe(
-          map((collection: ResourceCollection<Transaction>) => collection.resources),
-          tap(() => this.searchFailed = false),
-          catchError(() => {
-            this.searchFailed = true;
-            return of([]);
-          })
-        )
-      ),
-      tap(() => this.searching = false )
-    )
-  **/
-  select(item: any): void {
-    this.emitResults.emit(item as Transaction);
-  }
+
 }
