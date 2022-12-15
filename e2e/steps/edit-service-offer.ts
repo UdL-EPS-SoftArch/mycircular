@@ -5,10 +5,6 @@ Given('I\'m in the homepage', () => {
   cy.visit('http://localhost:4200');
 });
 
-Given('I\'m not logged in', () => {
-  cy.get('.nav-link').contains('Login');
-});
-
 Given('I click the {string} menu', (option) => {
   cy.get('.nav-link').contains(option).click();
 });

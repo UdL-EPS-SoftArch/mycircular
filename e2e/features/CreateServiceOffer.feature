@@ -20,16 +20,3 @@ Feature: Create a new ServiceOffer
       | durationInHours | 5      |
     And I click the "Submit" button
     Then i create a new service offer with id "1"
-
-    Then Go to Service offer create page
-    And I fill the create service offer form with
-      | FIELD    | VALUE         |
-      | name | Laptop MSI          |
-      | description    | MSI Leopard |
-      | price | 800      |
-      | dateTime | 2018-02-12T12:08:23Z      |
-      | offerer | users/demo      |
-      | availability | true      |
-      | durationInHours | 3      |
-    And I click the "Submit" button
-    Then i create a new service offer with id "2"

@@ -5,13 +5,12 @@ Feature: Create a new ServiceOffer
 
   Scenario: Edit Service Offer
     Given I'm in the homepage
-    And I'm not logged in
     And I log in as "demo" with password "password"
     And I'm logged in as user "demo"
     Then Go to Service offer edit page with id "1"
     And I fill the edit service offer form with
       | FIELD    | VALUE         |
-      | name | Repair Laptop Asus          |
+      | name | Repair Laptop Asus  EditTest        |
       | description    | Asus DashF15 with 3060RTX and 16gb of ram |
       | price | 100     |
       | dateTime | 2018-02-12T12:08:23Z      |

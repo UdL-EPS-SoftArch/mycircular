@@ -10,7 +10,7 @@ Feature: edit a exist ProductOffer
     Then Go to Product offer edit page with id "1"
     And I fill the edit service offer form with
       | FIELD    | VALUE         |
-      | name | Laptop Cosas          |
+      | name | Laptop EditTest          |
       | description    | Asus DashF15 with 3060RTX and 16gb of ram  |
       | price | 700      |
       | dateTime | 2018-02-12T12:08:23Z     |
