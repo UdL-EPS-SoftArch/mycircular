@@ -33,24 +33,8 @@ export class TransactionDetailComponent implements OnInit {
       });
   }
 
-  completeTransaction() {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.transactionService.patchResourceById(id, {body: {status: 'CLOSED'}}).subscribe(
-      transaction => {
-        this.transaction.status = transaction.status;
-      }
-    );
-  }
   getCurrentTransaction(): Transaction{
     return this.transaction;
   }
 
-  cancelTransaction() {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.transactionService.patchResourceById(id, {body: {status: 'CANCELED'}}).subscribe(
-      transaction => {
-        this.transaction.status = transaction.status;
-      }
-    );
-  }
 }
