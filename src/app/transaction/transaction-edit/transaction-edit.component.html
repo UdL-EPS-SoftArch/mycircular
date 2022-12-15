@@ -35,14 +35,16 @@
             <div class="col-md-5 text-end">
               <h5>Status: </h5>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-7" [class.was-validated]="selectElement">
               <label hidden class="control-label" for="status"></label>
               <select id="status" name="status" class="form-control" required
                       [(ngModel)]="transaction.status" #selectElement="ngModel">
+                <option class="form-control-name" disabled hidden>{{transaction.status}}</option>
                 <option *ngFor="let status of getStateList()" [value]="status">
                   {{status}}
                 </option>
               </select>
+              <div class="invalid-feedback">Select an status</div>
             </div>
           </div>
         </div>
