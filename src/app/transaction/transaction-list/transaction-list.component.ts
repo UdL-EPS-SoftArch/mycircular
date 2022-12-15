@@ -18,7 +18,6 @@ export class TransactionListComponent implements OnInit {
   public pageSize = 5;
   public page = 0;
   public currentUsername = this.authenticationService.getCurrentUser().id;
-  public dateOptions = {};
 
 
   constructor(public router: Router,
@@ -41,11 +40,9 @@ export class TransactionListComponent implements OnInit {
           transaction.getRelation('buyer').subscribe((buyer: User) => {
             transaction.buyer = buyer;
           });
-          transaction.creationDate = new Date(transaction.creationDate);
         });
       }
     );
-    this.dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   }
 
   changePage() {
