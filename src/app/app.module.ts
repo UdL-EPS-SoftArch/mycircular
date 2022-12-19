@@ -23,6 +23,20 @@ import {HttpErrorInterceptor} from './error-handler/http-error-interceptor';
 import {AuthenticationBasicService} from './login-basic/authentication-basic.service';
 import {LoggedInGuard} from './login-basic/loggedin.guard';
 import {UserService} from './user/user.service';
+import { OfferListComponent } from './offer/offer-list/offer-list.component';
+import { ProductofferEditComponent } from './offer/productoffer-edit/productoffer-edit.component';
+import { ProductofferDeleteComponent } from './offer/productoffer-delete/productoffer-delete.component';
+import { ProductofferDetailComponent } from './offer/productoffer-detail/productoffer-detail.component';
+import { ProductofferCreateComponent } from './offer/productoffer-create/productoffer-create.component';
+import { ProductOfferListComponent } from './offer/productoffer-list/product-offer-list.component';
+import { ServiceOfferListComponent } from './offer/serviceoffer-list/service-offer-list.component';
+import { ServiceofferDeleteComponent } from './offer/serviceoffer-delete/serviceoffer-delete.component';
+import { ServiceofferEditComponent } from './offer/serviceoffer-edit/serviceoffer-edit.component';
+import { ServiceofferDetailComponent } from './offer/serviceoffer-detail/serviceoffer-detail.component';
+import { ServiceofferCreateComponent } from './offer/serviceoffer-create/serviceoffer-create.component';
+import {OfferService} from "./offer/offer.service";
+import {ProductOfferService} from "./offer/productoffer.service";
+import {ServiceOfferService} from "./offer/serviceoffer.service";
 
 @NgModule({
   declarations: [
@@ -35,7 +49,18 @@ import {UserService} from './user/user.service';
     UserRegisterComponent,
     UserEditComponent,
     UserDeleteComponent,
-    UserSearchComponent
+    UserSearchComponent,
+    OfferListComponent,
+    ProductofferEditComponent,
+    ProductofferDeleteComponent,
+    ProductofferDetailComponent,
+    ProductofferCreateComponent,
+    ProductOfferListComponent,
+    ServiceOfferListComponent,
+    ServiceofferDeleteComponent,
+    ServiceofferEditComponent,
+    ServiceofferDetailComponent,
+    ServiceofferCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +79,7 @@ import {UserService} from './user/user.service';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
-    AuthenticationBasicService, LoggedInGuard, UserService
+    AuthenticationBasicService, LoggedInGuard, UserService, OfferService, ProductOfferService, ServiceOfferService
   ],
   bootstrap: [AppComponent]
 })

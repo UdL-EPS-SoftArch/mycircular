@@ -1,0 +1,48 @@
+<div class="card mb-1" *ngFor="let productOffer of productOffers">
+  <div class="card-block row">
+    <div class="card-body row align-items-center">
+      <div class="col">
+        <h6 class="card-subtitle text-muted">Offer</h6>
+        <a class="card-text" [routerLink]="[productOffer?.uri]">{{productOffer.name}}</a>
+      </div>
+      <div class="col">
+        <h6 class="card-subtitle text-muted">Description</h6>
+        <p class="card-text">{{productOffer.description}}</p>
+      </div>
+      <div class="col">
+        <h6 class="card-subtitle text-muted">Price</h6>
+        <p class="card-text">{{productOffer.price}}</p>
+      </div>
+      <div class="col">
+        <h6 class="card-subtitle text-muted">Date</h6>
+        <p class="card-text">{{productOffer.dateTime}}</p>
+      </div>
+      <div class="col">
+        <h6 class="card-subtitle text-muted">Offerer</h6>
+        <p class="card-text">{{productOffer.offerer?.id}}</p>
+      </div>
+      <div class="col">
+        <h6 class="card-subtitle text-muted">Manufacturer</h6>
+        <p class="card-text">{{productOffer.manufacturer}}</p>
+      </div>
+      <div class="col">
+        <h6 class="card-subtitle text-muted">Brand</h6>
+        <p class="card-text">{{productOffer.brand}}</p>
+      </div>
+      <div class="col">
+        <h6 class="card-subtitle text-muted">Product Code</h6>
+        <p class="card-text">{{productOffer.productCode}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card-footer text-right" *ngIf="isRole('USER')">
+  <button id="createBtn" type="button" [routerLink]="['create']"
+          class="btn m-1 btn-outline-primary">Create Product Offer</button>
+</div>
+
+<ngb-pagination class="d-flex justify-content-center"
+                [(page)]="page" [pageSize]="pageSize" [collectionSize]="totalProductOffers"
+                (pageChange)="changePage()"></ngb-pagination>
+
