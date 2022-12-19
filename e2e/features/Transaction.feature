@@ -8,5 +8,5 @@
     And I'm not logged in
     And I log in as "demo" with password "password"
     And I'm logged in as user "demo"
-    And I am on the transactions list page
+    When I click the "List" option in menu "Transaction"
     Then I should see "Transaction List"
