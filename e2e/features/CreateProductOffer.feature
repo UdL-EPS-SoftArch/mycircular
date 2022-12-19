@@ -56,7 +56,7 @@ Feature: Create a new ProductOffer
       | brand | Asus      |
       | productCode | 123456789      |
     And I click the "Submit" button
-    Then I see error message for input name product "ProductOffer name: la longitud debe estar entre 2 y 24"
+    Then I see error message for input name product "ProductOffer name: length must be between 2 and 24"
 
   Scenario: Register new Product Offer with mistakes in field description product
     Given I'm in the homepage
@@ -75,7 +75,7 @@ Feature: Create a new ProductOffer
       | brand | Asus      |
       | productCode | 123456789      |
     And I click the "Submit" button
-    Then I see error message for input name product "ProductOffer description: la longitud debe estar entre 10 y 200"
+    Then I see error message for input name product "ProductOffer description: length must be between 10 and 200"
 
   Scenario: Register new Product Offer with mistakes in field date product
     Given I'm in the homepage
