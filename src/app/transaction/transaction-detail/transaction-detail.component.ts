@@ -1,4 +1,4 @@
-import { TransactionService } from './../transaction.service';
+import { TransactionService } from '../transaction.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Transaction } from '../transaction';

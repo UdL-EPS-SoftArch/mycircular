@@ -1,4 +1,4 @@
-import { HateoasResourceOperation, ResourceCollection, PagedResourceCollection } from '@lagoshny/ngx-hateoas-client';
+import { HateoasResourceOperation, ResourceCollection } from '@lagoshny/ngx-hateoas-client';
 import { Injectable } from '@angular/core';
 import { Transaction } from './transaction';
 import { Observable } from 'rxjs/internal/Observable';

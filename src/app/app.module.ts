@@ -40,7 +40,7 @@ import {ServiceOfferService} from "./offer/serviceoffer.service";
 import {TransactionListComponent} from './transaction/transaction-list/transaction-list.component';
 import {TransactionDetailComponent} from './transaction/transaction-detail/transaction-detail.component';
 import {TransactionEditComponent} from './transaction/transaction-edit/transaction-edit.component';
-import {TransactionSearchComponent} from './Transaction/transaction-search/transaction-search.component';
+import {TransactionSearchComponent} from './transaction/transaction-search/transaction-search.component';
 
 @NgModule({
   declarations: [
