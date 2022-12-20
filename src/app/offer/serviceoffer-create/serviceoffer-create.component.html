@@ -1,0 +1,64 @@
+<form id="subject-form" (ngSubmit)="onSubmit()" #form="ngForm">
+  <fieldset>
+
+    <!-- Name Input -->
+    <div class="form-group mb-3" >
+      <label class="control-label" for="name">Service Offer Name*</label>
+      <input id="name" name="name" type="text" class="form-control" required [(ngModel)]="serviceOffer.name" #name="ngModel">
+      <div class="invalid-feedback">A product offer name is required! </div>
+    </div>
+
+    <!-- Description Input -->
+    <div class="form-group mb-3" >
+      <label class="control-label" for="description">Description*</label>
+      <input id="description" name="description" type="text" class="form-control" required [(ngModel)]="serviceOffer.description" #description="ngModel">
+      <div class="invalid-feedback">A description is required</div>
+    </div>
+
+    <!-- Price Input -->
+    <div class="form-group mb-3" >
+      <label class="control-label" for="price">Price*</label>
+      <input id="price" name="price" type="text" class="form-control" required [(ngModel)]="serviceOffer.price" #price="ngModel">
+      <div class="invalid-feedback">A price is required</div>
+    </div>
+
+    <!-- Date Input -->
+    <div class="form-group mb-3" >
+      <label class="control-label" for="dateTime">Date*</label>
+      <input id="dateTime" name="dateTime" type="text" class="form-control" value="2018-02-12T12:08:23Z"
+             required [(ngModel)]="serviceOffer.dateTime" #dateTime="ngModel">
+      <div class="invalid-feedback">A date is required</div>
+    </div>
+
+    <!-- Offerer Input -->
+    <div class="form-group mb-3" >
+      <label class="control-label" for="offerer">Offerer*</label>
+      <input id="offerer" name="offerer" type="text" class="form-control" required [(ngModel)]="serviceOffer.offerer" #offerer="ngModel">
+      <div class="invalid-feedback">An offerer is required</div>
+    </div>
+
+    <!-- Availability Input -->
+    <div class="form-group mb-3" >
+      <label class="control-label" for="availability">Availability*</label>
+      <input id="availability" name="availability" type="text" class="form-control" required [(ngModel)]="serviceOffer.availability" #availability="ngModel">
+      <div class="invalid-feedback">An availability of true or false is required</div>
+    </div>
+
+    <!-- Duration in hours Input -->
+    <div class="form-group mb-3" >
+      <label class="control-label" for="durationInHours">Duration in hours*</label>
+      <input id="durationInHours" name="durationInHours" type="text" class="form-control" required [(ngModel)]="serviceOffer.durationInHours" #durationInHours="ngModel">
+      <div class="invalid-feedback">A duration in hours is required</div>
+    </div>
+
+    <!-- Button -->
+    <div class="form-group fa-pull-right" >
+      <button id="listBtn" type="button" (click)="onCancel()"
+              class="btn btn-outline-primary pull-right">Back</button>
+      <button id="submit" type="submit" [disabled]="!form.form.valid"
+              class="btn ms-3 btn-success pull-right">Submit</button>
+    </div>
+
+  </fieldset>
+</form>
+

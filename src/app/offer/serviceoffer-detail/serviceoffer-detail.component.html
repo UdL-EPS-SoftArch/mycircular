@@ -1,0 +1,38 @@
+<div class="card mb-4">
+  <div class="card-block">
+    <h4 id="subjectTitleName" class="card-title col-md-12 p-3">{{serviceOffer.name}}</h4>
+    <div class="col">
+      <h6 class="card-subtitle text-muted">Description</h6>
+      <p class="card-text">{{serviceOffer.description}}</p>
+    </div>
+    <div class="col">
+      <h6 class="card-subtitle text-muted">Price</h6>
+      <p class="card-text">{{serviceOffer.price}}</p>
+    </div>
+    <div class="col">
+      <h6 class="card-subtitle text-muted">Date</h6>
+      <p class="card-text">{{serviceOffer.dateTime}}</p>
+    </div>
+    <div class="col">
+      <h6 class="card-subtitle text-muted">Offerer</h6>
+      <p class="card-text">{{serviceOffer.offerer?.id}}</p>
+    </div>
+    <div class="col">
+      <h6 class="card-subtitle text-muted">Availability</h6>
+      <p class="card-text">{{serviceOffer.availability}}</p>
+    </div>
+    <div class="col">
+      <h6 class="card-subtitle text-muted">Duration (In Hours)</h6>
+      <p class="card-text">{{serviceOffer.durationInHours}}</p>
+    </div>
+    <div class="card-footer text-right">
+      <button id="listBtn" type="button" [routerLink]="['/serviceOffers']"
+              class="btn m-1 btn-outline-primary">Product Offer List</button>
+      <button id="editBtn" type="button" *ngIf="isRole('USER')" [routerLink]="['edit']"
+              class="btn m-1 btn-outline-success">Edit</button>
+      <button id="deleteBtn" type="button" *ngIf="isRole('USER')" [routerLink]="['delete']"
+              class="btn m-1 btn-outline-danger">Delete</button>
+    </div>
+  </div>
+</div>
+

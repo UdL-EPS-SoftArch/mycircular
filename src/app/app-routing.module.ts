@@ -8,14 +8,8 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserDeleteComponent } from './user/user-delete/user-delete.component';
-import { MessageDetailComponent } from './message/message-detail/message-detail.component';
-import { MessageListComponent } from './message/message-list/message-list.component';
-import { MessageRegisterComponent } from './message/message-register/message-register.component';
 
 const routes: Routes = [
-  { path: 'messages', component: MessageListComponent, canActivate: [LoggedInGuard]},
-  { path: 'messages/create', component: MessageRegisterComponent, canActivate: [LoggedInGuard]},
-  { path: 'messages/:id', component: MessageDetailComponent, canActivate: [LoggedInGuard]},
   { path: 'users/create', component: UserRegisterComponent},
   { path: 'users/:id/delete', component: UserDeleteComponent, canActivate: [LoggedInGuard]},
   { path: 'users/:id/edit', component: UserEditComponent, canActivate: [LoggedInGuard]},
