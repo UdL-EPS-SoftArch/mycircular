@@ -1,5 +1,6 @@
 import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps';
 import { DataTable } from '@cucumber/cucumber';
+import type = Mocha.utils.type;
 
 // Background part to create an offer in order to create a request on it
 Given(/^I go to Product offer creation page$/, function () {
@@ -18,16 +19,20 @@ Given(/^I click the "([^"]*)" menu \(not_linked\)$/, (option) => {
 });
 
 Then('I see the product offer list', () => {
-  cy.visit('http://localhost:4200/productOffers');
+  cy.wait(1000);
 });
 
-Then(/^I see my Product Request list$/,  () => {
-
+Then(/^I wait to see my Product Request list$/,  () => {
+  cy.wait(1000);
+  cy.url().should('include', '/requests')
 });
 
-Then(/^There is the new product request with name "([^"]*)" and description "([^"]*)"$/, () => {
-
-});
 Given(/^I visit the product offer creation page \(link\)$/, function () {
   cy.visit('http://localhost:4200/productOffers/create');
+});
+
+Then(/^There is the new product request with name "([^"]*)"$/,  (name) => {
+  //cy.get('link').contains(name);
+  //cy.findByLabelText("Label text", { timeout: 7000 }).should("exist");
+  cy.contains(name);
 });

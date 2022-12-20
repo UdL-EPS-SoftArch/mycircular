@@ -11,7 +11,7 @@ Feature: Create Product Request
     Given I go to Product offer creation page
     Then I fill the product offer creation form with
       | FIELD    | VALUE         |
-      | name | Laptop Asus          |
+      | name | mondongo          |
       | description    | Asus DashF15 with 3060RTX and 16gb of ram |
       | price | 700      |
       | dateTime | 2018-02-12T12:08:23Z      |
@@ -26,36 +26,27 @@ Feature: Create Product Request
     # ESTO DE AQUI ABAJO NO ES MI PROBLEMA Y LO DE ARRIBA CAMBIARLO A SOLO VISITAR EL ENLACE
     Then I see the product offer list
     When I click the "Request" button
-    And I click the "Aceptar" button
-    When I click the "Requests" menu
-    Then I see my Product Request list
-    And There is the new product request with name "name" and description "description"
+    And I click the "Requests" menu
+    Then I wait to see my Product Request list
+    And There is the new product request with name "mondongo"
+
 
     # TODO: if u are not logged in, when u press the request button, the web forces u to go to login page
-  Scenario: Register new Product Request when I'm not logged in
-    Given I'm not logged in
-    Given I click the "Offer Product" menu
+  #Scenario: Register new Product Request when I'm not logged in
+    #Given I'm not logged in
+    #Given I click the "Offer Product" menu
     # ESTO DE AQUI ABAJO NO ES MI PROBLEMA Y LO DE ARRIBA CAMBIARLO A SOLO VISITAR EL ENLACE
-    Then I see the product offer list
-    When I click the "Request" button
-    Then I get redirect to "Login" page
+    #Then I see the product offer list
+    #When I click the "Request" button
+    #Then I get redirect to "Login" page
 
-
-  Scenario: Cancel the Register Request process
-    Given I click the "Offer Product" menu (not_linked)
+  #Scenario:
+    #Given I click the "Offer Product" menu (not_linked)
     # ESTO DE AQUI ABAJO NO ES MI PROBLEMA Y LO DE ARRIBA CAMBIARLO A SOLO VISITAR EL ENLACE
-    Then I see the product offer list
-    When I click the "Request" button
-    And I click the "Canelar" button
-    When I click the "Request" menu
-    Then I see my Product Request list
-    And There is no new product request with name "name" and description "description"
+    #Then I see the product offer list
+    #When I click the "Request" button
+    #And I click the "Aceptar" button
+    #Then I see error message "Http failure response for http://localhost:8080/prodRequests: 403 OK"
 
-  Scenario:
-    Given I click the "Offer Product" menu (not_linked)
-    # ESTO DE AQUI ABAJO NO ES MI PROBLEMA Y LO DE ARRIBA CAMBIARLO A SOLO VISITAR EL ENLACE
-    Then I see the product offer list
-    When I click the "Request" button
-    And I click the "Aceptar" button
-    Then I see error message "Http failure response for http://localhost:8080/prodRequests: 403 OK"
-
+  # TODO: we need to test or do something about creating multiple offers to do the tests.
+  #           Maybe we should delete de offer once the scenario is done
