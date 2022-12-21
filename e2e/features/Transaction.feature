@@ -15,15 +15,10 @@
    Scenario: Change transaction price
     Given I'm in the homepage
     And I'm not logged in
-    When I click the "Register" menu
-    And I fill the form with
-      | FIELD    | VALUE         |
-      | username | user222          |
-      | email    | user222@demo.app |
-      | password | password222      |
-    And I click the "Submit" button
-    Then I'm logged in as user "user"
-    And I am on the transactions list page
+    And I log in as "demo" with password "password"
+    And I'm logged in as user "demo"
+    When I click the "List" option in menu "Transaction"
     Then I should see "Transaction List"
     Then I click the "Details" button
     Then I click the "Edit transaction" button
+    Then I edit the price with the new value "23"
