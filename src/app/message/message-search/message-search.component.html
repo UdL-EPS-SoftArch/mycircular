@@ -3,10 +3,13 @@
          [class.is-invalid]="searchFailed" [ngbTypeahead]="autocomplete" placeholder="Search
          all messages"
          [class.loading]="searching" (selectItem)="select($event.item)"/>
+  {{rt.elementRef}}
+  {{rt}}
   <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
+  {{rt}}
 </div>
 
 <ng-template #rt let-r="result" let-t="term">
-  <div class="row"><ngb-highlight [result]="r.id" [term]="t"></ngb-highlight></div>
-  <div class="row"><small>{{r.text}}</small></div>
+  <div class="row"><ngb-highlight [result]="r.user" [term]="t"></ngb-highlight></div>
+  <div class="row"><small>{{r.user}}</small></div>
 </ng-template>

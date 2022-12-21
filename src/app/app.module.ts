@@ -37,6 +37,11 @@ import { ServiceofferCreateComponent } from './offer/serviceoffer-create/service
 import {OfferService} from "./offer/offer.service";
 import {ProductOfferService} from "./offer/productoffer.service";
 import {ServiceOfferService} from "./offer/serviceoffer.service";
+import {MessageService} from "./message/message.service";
+import {MessageListComponent} from "./message/message-list/message-list.component";
+import {MessageRegisterComponent} from "./message/message-register/message-register.component";
+import {MessageDetailComponent} from "./message/message-detail/message-detail.component";
+import {MessageSearchComponent} from "./message/message-search/message-search.component";
 
 @NgModule({
   declarations: [
@@ -60,7 +65,11 @@ import {ServiceOfferService} from "./offer/serviceoffer.service";
     ServiceofferDeleteComponent,
     ServiceofferEditComponent,
     ServiceofferDetailComponent,
-    ServiceofferCreateComponent
+    ServiceofferCreateComponent,
+    MessageSearchComponent,
+    MessageDetailComponent,
+    MessageRegisterComponent,
+    MessageListComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +88,7 @@ import {ServiceOfferService} from "./offer/serviceoffer.service";
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
-    AuthenticationBasicService, LoggedInGuard, UserService, OfferService, ProductOfferService, ServiceOfferService
+    AuthenticationBasicService, LoggedInGuard, UserService, OfferService, ProductOfferService, ServiceOfferService, MessageService
   ],
   bootstrap: [AppComponent]
 })

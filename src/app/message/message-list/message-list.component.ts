@@ -5,6 +5,7 @@ import {AuthenticationBasicService} from "../../login-basic/authentication-basic
 import {PagedResourceCollection} from "@lagoshny/ngx-hateoas-client";
 import {MessageService} from "../message.service";
 import {User} from "../../login-basic/user";
+import {Announcement} from "../../announcement/announcement";
 
 @Component({
   selector: 'app-message-list',
@@ -36,6 +37,11 @@ export class MessageListComponent implements OnInit{
             message.user = user;
           });
         });
+        this.messages.map(message => {
+          message.getRelation('product').subscribe((product: Announcement) => {
+            message.product = product;
+          });
+        });
 
       });
   }
@@ -55,5 +61,7 @@ export class MessageListComponent implements OnInit{
   }
 
 
-
+  detail(message: Message) {
+    this.router.navigate(['messages', message.id]);
+  }
 }

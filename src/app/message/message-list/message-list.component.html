@@ -1,3 +1,4 @@
+<app-message-search (emitResults)="detail($event)"></app-message-search>
 <div class="card mb-1" *ngFor="let message of messages">
   <div class="card-block row">
     <div class="card-body row align-items-center">
@@ -7,7 +8,7 @@
       </div>
       <div class="col">
         <h6 class="card-subtitle text-muted">To:</h6>
-        <p class="card-text">{{message.product}}</p>
+        <p class="card-text">{{message.product?.name}}</p>
       </div>
       <div class="col">
         <h6 class="card-subtitle text-muted">Date:</h6>
