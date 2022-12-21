@@ -35,11 +35,9 @@ export class ReviewCreateComponent implements OnInit {
     this.review.author = this.authenticationService.getCurrentUser();
 
     this.http.get<User>(`http://localhost:8080/users/${this.review.about}`).subscribe(data => {
-      console.log("nino", data)
       this.review.about = data;
 
       this.reviewService.createResource({ body: this.review }).subscribe(() => this.router.navigate(['/reviews']));
-      console.log(this.review);
     })
 
 

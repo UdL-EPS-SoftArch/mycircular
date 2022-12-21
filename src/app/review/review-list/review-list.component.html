@@ -1,6 +1,6 @@
 <div class="card mb-3" *ngFor="let r of reviews">
   <div class="card-header">
-    <p class="card-text">Review delivered for: {{r.about.id}}</p>
+    <p class="card-text">Review delivered for: {{r.about?.id}}</p>
   </div>
   <div class="card-body">
     <div class="d-flex gap-1 mb-3">
@@ -11,7 +11,7 @@
   </div>
   <div class="card-footer d-flex gap-2">
     <div class="card-footer">
-      <p class="card-text">Author: {{r.author.id}}</p>
+      <p class="card-text">Author: {{r.author?.id}}</p>
     </div>
   </div>
 </div>
