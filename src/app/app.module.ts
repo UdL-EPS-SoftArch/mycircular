@@ -23,17 +23,22 @@ import {HttpErrorInterceptor} from './error-handler/http-error-interceptor';
 import {AuthenticationBasicService} from './login-basic/authentication-basic.service';
 import {LoggedInGuard} from './login-basic/loggedin.guard';
 import {UserService} from './user/user.service';
-import {OfferListComponent} from './offer/offer-list/offer-list.component';
-import {ProductofferEditComponent} from './offer/productoffer-edit/productoffer-edit.component';
-import {ProductofferDeleteComponent} from './offer/productoffer-delete/productoffer-delete.component';
-import {ProductofferDetailComponent} from './offer/productoffer-detail/productoffer-detail.component';
-import {ProductofferCreateComponent} from './offer/productoffer-create/productoffer-create.component';
-import {ProductOfferListComponent} from './offer/productoffer-list/product-offer-list.component';
-import {ServiceOfferListComponent} from './offer/serviceoffer-list/service-offer-list.component';
-import {ServiceofferDeleteComponent} from './offer/serviceoffer-delete/serviceoffer-delete.component';
-import {ServiceofferEditComponent} from './offer/serviceoffer-edit/serviceoffer-edit.component';
-import {ServiceofferDetailComponent} from './offer/serviceoffer-detail/serviceoffer-detail.component';
-import {ServiceofferCreateComponent} from './offer/serviceoffer-create/serviceoffer-create.component';
+import { ReviewListComponent } from './review/review-list/review-list.component';
+import { ReviewUpdateComponent } from './review/review-update/review-update.component';
+import { ReviewDeleteComponent } from './review/review-delete/review-delete.component';
+import { ReviewDetailComponent } from './review/review-detail/review-detail.component';
+import { ReviewCreateComponent } from './review/review-create/review-create.component';
+import { OfferListComponent } from './offer/offer-list/offer-list.component';
+import { ProductofferEditComponent } from './offer/productoffer-edit/productoffer-edit.component';
+import { ProductofferDeleteComponent } from './offer/productoffer-delete/productoffer-delete.component';
+import { ProductofferDetailComponent } from './offer/productoffer-detail/productoffer-detail.component';
+import { ProductofferCreateComponent } from './offer/productoffer-create/productoffer-create.component';
+import { ProductOfferListComponent } from './offer/productoffer-list/product-offer-list.component';
+import { ServiceOfferListComponent } from './offer/serviceoffer-list/service-offer-list.component';
+import { ServiceofferDeleteComponent } from './offer/serviceoffer-delete/serviceoffer-delete.component';
+import { ServiceofferEditComponent } from './offer/serviceoffer-edit/serviceoffer-edit.component';
+import { ServiceofferDetailComponent } from './offer/serviceoffer-detail/serviceoffer-detail.component';
+import { ServiceofferCreateComponent } from './offer/serviceoffer-create/serviceoffer-create.component';
 import {OfferService} from "./offer/offer.service";
 import {ProductOfferService} from "./offer/productoffer.service";
 import {ServiceOfferService} from "./offer/serviceoffer.service";
@@ -54,6 +59,11 @@ import {TransactionSearchComponent} from './transaction/transaction-search/trans
     UserEditComponent,
     UserDeleteComponent,
     UserSearchComponent,
+    ReviewListComponent,
+    ReviewUpdateComponent,
+    ReviewDeleteComponent,
+    ReviewDetailComponent,
+    ReviewCreateComponent,
     OfferListComponent,
     ProductofferEditComponent,
     ProductofferDeleteComponent,

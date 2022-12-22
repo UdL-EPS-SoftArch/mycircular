@@ -8,6 +8,11 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserDeleteComponent } from './user/user-delete/user-delete.component';
+import { ReviewListComponent } from './review/review-list/review-list.component';
+import { ReviewUpdateComponent } from './review/review-update/review-update.component';
+import { ReviewDeleteComponent } from './review/review-delete/review-delete.component';
+import { ReviewDetailComponent } from './review/review-detail/review-detail.component';
+import { ReviewCreateComponent } from './review/review-create/review-create.component';
 import {OfferListComponent} from "./offer/offer-list/offer-list.component";
 import {ProductOfferListComponent} from "./offer/productoffer-list/product-offer-list.component";
 import {ServiceOfferListComponent} from "./offer/serviceoffer-list/service-offer-list.component";
@@ -32,6 +37,11 @@ const routes: Routes = [
   { path: 'users/:id/edit', component: UserEditComponent, canActivate: [LoggedInGuard]},
   { path: 'users/:id', component: UserDetailComponent, canActivate: [LoggedInGuard]},
   { path: 'users', component: UserListComponent, canActivate: [LoggedInGuard]},
+  { path: 'reviews/create', component: ReviewCreateComponent, canActivate: [LoggedInGuard] },
+  { path: 'reviews/:id/delete', component: ReviewDeleteComponent, canActivate: [LoggedInGuard] },
+  { path: 'reviews/:id/update', component: ReviewUpdateComponent, canActivate: [LoggedInGuard] },
+  { path: 'reviews/:id', component: ReviewDetailComponent, canActivate: [LoggedInGuard] },
+  { path: 'reviews', component: ReviewListComponent, canActivate: [LoggedInGuard] },
   { path: 'offers', component: OfferListComponent},
   { path: 'productOffers', component: ProductOfferListComponent},
   { path: 'productOffers/create', component: ProductofferCreateComponent},
@@ -52,4 +62,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
