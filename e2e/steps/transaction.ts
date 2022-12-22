@@ -18,7 +18,7 @@ Then ('It creates an announcment',()=>{
       "name": "portatil",
       "description": "Nuevo y reluciente, listo para usar"
     });
-    cy.wait(500);
+    cy.wait(1500);
 });
 
 Then('It creates a transaction',()=>{
@@ -28,7 +28,7 @@ Then('It creates a transaction',()=>{
       "buyer": "/users/demo",
       "price" : 12
   });
-    cy.wait(500);
+    cy.wait(1000);
 });
 
 Then ('I edit the price with the new value {string}',(price)=>{
