@@ -4,6 +4,7 @@ import {toInteger} from "@ng-bootstrap/ng-bootstrap/util/util";
 
 And ('I am on the transactions list page', () => {
   cy.visit('http://localhost:4200/transactions');
+  cy.wait(1000);
 });
 
 Then ('I should see {string}', (text) => {
@@ -16,6 +17,7 @@ Then ('It creates an announcment',()=>{
       "name": "portatil",
       "description": "Nuevo y reluciente, listo para usar"
     });
+    cy.wait(500);
 });
 
 Then('It creates a transaction',()=>{
