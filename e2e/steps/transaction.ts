@@ -12,29 +12,27 @@ Then ('I should see {string}', (text) => {
     cy.contains(text);
 });
 
-Then ('It creates an announcment',()=>{
+Then ('It creates an announcement and Transaction',()=>{
     cy.request('POST',`${environment.API}/announcements`,{
       "price": "20",
       "name": "portatil",
       "description": "Nuevo y reluciente, listo para usar"
-    }).should(
+    }).then((announcement) =>{
+      cy.request('POST',`${environment.API}/transactions`, {
+        "seller": "/users/demo",
+        "announcementAbout": announcement.body.uri,
+        "buyer": "/users/demo",
+        "price" : 12
+      }).should(
+        (response) => {
+          expect(response.status).to.eq(201)
+        }
+      )
+      }).should(
       (response) => {
         expect(response.status).to.eq(201)
       }
-    )
-});
-
-Then('It creates a transaction',()=>{
-    cy.request('POST',`${environment.API}/transactions`, {
-      "seller": "/users/demo",
-      "announcementAbout": "/announcements/1",
-      "buyer": "/users/demo",
-      "price" : 12
-  }).should(
-      (response) => {
-        expect(response.status).to.eq(201)
-      }
-    )
+    );
 });
 
 Then ('I edit the price with the new value {string}',(price)=>{
