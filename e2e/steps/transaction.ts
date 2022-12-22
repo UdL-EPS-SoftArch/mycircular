@@ -7,6 +7,7 @@ And ('I am on the transactions list page', () => {
 });
 
 Then ('I should see {string}', (text) => {
+    cy.wait(500);
     cy.contains(text);
 });
 
@@ -16,6 +17,7 @@ Then ('It creates an announcment',()=>{
       "name": "portatil",
       "description": "Nuevo y reluciente, listo para usar"
     });
+    cy.wait(500);
 });
 
 Then('It creates a transaction',()=>{
