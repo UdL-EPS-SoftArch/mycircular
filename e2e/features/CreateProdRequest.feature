@@ -5,8 +5,11 @@ Feature: Create Product Request
 
   Background:
     Given I'm in the homepage
-    And I log in as "user" with password "password"
-    Given There is a product offer already created with
+    And I'm not logged in
+    Then I log in as "demo" with password "password"
+    And I'm logged in as user "demo"
+    Given I go to Product offer creation page
+    Then I fill the product offer creation form with
       | FIELD    | VALUE         |
       | name | Laptop Asus          |
       | description    | Asus DashF15 with 3060RTX and 16gb of ram |
