@@ -23,13 +23,11 @@ import {HttpErrorInterceptor} from './error-handler/http-error-interceptor';
 import {AuthenticationBasicService} from './login-basic/authentication-basic.service';
 import {LoggedInGuard} from './login-basic/loggedin.guard';
 import {UserService} from './user/user.service';
-<<<<<<< HEAD
 import { ReviewListComponent } from './review/review-list/review-list.component';
 import { ReviewUpdateComponent } from './review/review-update/review-update.component';
 import { ReviewDeleteComponent } from './review/review-delete/review-delete.component';
 import { ReviewDetailComponent } from './review/review-detail/review-detail.component';
 import { ReviewCreateComponent } from './review/review-create/review-create.component';
-=======
 import { OfferListComponent } from './offer/offer-list/offer-list.component';
 import { ProductofferEditComponent } from './offer/productoffer-edit/productoffer-edit.component';
 import { ProductofferDeleteComponent } from './offer/productoffer-delete/productoffer-delete.component';
@@ -44,7 +42,6 @@ import { ServiceofferCreateComponent } from './offer/serviceoffer-create/service
 import {OfferService} from "./offer/offer.service";
 import {ProductOfferService} from "./offer/productoffer.service";
 import {ServiceOfferService} from "./offer/serviceoffer.service";
->>>>>>> main
 
 @NgModule({
   declarations: [
@@ -58,13 +55,11 @@ import {ServiceOfferService} from "./offer/serviceoffer.service";
     UserEditComponent,
     UserDeleteComponent,
     UserSearchComponent,
-<<<<<<< HEAD
     ReviewListComponent,
     ReviewUpdateComponent,
     ReviewDeleteComponent,
     ReviewDetailComponent,
-    ReviewCreateComponent
-=======
+    ReviewCreateComponent,
     OfferListComponent,
     ProductofferEditComponent,
     ProductofferDeleteComponent,
@@ -76,7 +71,6 @@ import {ServiceOfferService} from "./offer/serviceoffer.service";
     ServiceofferEditComponent,
     ServiceofferDetailComponent,
     ServiceofferCreateComponent
->>>>>>> main
   ],
   imports: [
     BrowserModule,
