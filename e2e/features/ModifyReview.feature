@@ -39,7 +39,7 @@ Scenario: Modify number of stars in a review
  And I log in as "user13" with password "password"
  And I'm logged in as user "user13"
  And I click on nav link "Reviews"
- And I click on card-text item "Nice!"
+ And I click on card-text item "Very good!"
  And I wait for the "Nice!" content to appear
  And I click the "Edit" button
  And I clear and fill the form with

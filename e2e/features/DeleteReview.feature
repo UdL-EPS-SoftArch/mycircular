@@ -3,7 +3,7 @@ Feature: Delete review
 Scenario: Delete review as a user
  Given I'm in the homepage
  When I click the "Register" menu
-    And I fill the form with
+ And I fill the form with
       | FIELD    | VALUE         |
       | username | user12          |
       | email    | user12@demo.app |
