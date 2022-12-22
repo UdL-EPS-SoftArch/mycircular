@@ -1,3 +1,4 @@
+import { environment } from './../../src/environments/environment';
 import { And, Given, Then } from 'cypress-cucumber-preprocessor/steps';
 import {toInteger} from "@ng-bootstrap/ng-bootstrap/util/util";
 
@@ -10,7 +11,7 @@ Then ('I should see {string}', (text) => {
 });
 
 Then ('It creates an announcment',()=>{
-    cy.request('POST','localhost:8080/announcements',{
+    cy.request('POST',`${environment.API}/announcements`,{
       "price": "20",
       "name": "portatil",
       "description": "Nuevo y reluciente, listo para usar"
@@ -18,7 +19,7 @@ Then ('It creates an announcment',()=>{
 });
 
 Then('It creates a transaction',()=>{
-    cy.request('POST','localhost:8080/transactions', {
+    cy.request('POST',`${environment.API}/transactions`, {
       "seller": "/users/demo",
       "announcementAbout": "/announcements/1",
       "buyer": "/users/demo",
