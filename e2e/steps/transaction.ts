@@ -27,7 +27,7 @@ Then ('It creates an announcment',()=>{
 Then('It creates a transaction',()=>{
     cy.request('POST',`${environment.API}/transactions`, {
       "seller": "/users/demo",
-      "announcementAbout": "/announcements/1",
+      "announcementAbout": "/announcements/5",
       "buyer": "/users/demo",
       "price" : 12
   }).should(
@@ -40,6 +40,6 @@ Then('It creates a transaction',()=>{
 Then ('I edit the price with the new value {string}',(price)=>{
   cy.wait(500);
   cy.get("#price").clear();
-  cy.get("#price").type(price).blur();
+  cy.get("#price").type(price);
   cy.get('button').contains('Submit').click();
 })
