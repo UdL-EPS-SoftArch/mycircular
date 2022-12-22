@@ -1,0 +1,34 @@
+<app-transaction-search (emitResults)="detail($event)"></app-transaction-search>
+
+
+<h1 class="mb-4">Transaction List</h1>
+
+<div class="card mb-2" *ngFor="let transaction of transactionList ">
+  <div class="card-header">
+    <p class="card-text col-md-12 p-3">
+      {{ transaction.creationDate | date: "dd.MM.yyy"}}
+    </p>
+  </div>
+  <div class="card-body row align-items-center">
+    <div class="col-md-3">
+      <h6 class="card-subtitle text-muted">Announcement</h6>
+      <a class="card-text">...</a>
+    </div>
+    <div class="col-md-3">
+      <h6 class="card-subtitle text-muted">Price</h6>
+      <p class="card-text">{{ transaction.price }} €</p>
+    </div>
+    <div class="col-md-3">
+      <h6 class="card-subtitle text-muted">Status</h6>
+      <p class="card-text">{{ transaction.status }}</p>
+    </div>
+    <div class="col-md-3 d-flex">
+      <button class="button align-self-center btn btn-outline-info" [routerLink]="['/transactions', transaction.id]">Details</button>
+    </div>
+  </div>
+</div>
+
+<ngb-pagination class="d-flex justify-content-center"
+                [(page)]="page" [pageSize]="pageSize" [collectionSize]="transactionSize"
+                (pageChange)="changePage()">
+</ngb-pagination>

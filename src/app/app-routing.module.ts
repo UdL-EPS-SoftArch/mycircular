@@ -8,11 +8,33 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserDeleteComponent } from './user/user-delete/user-delete.component';
+import { ReviewListComponent } from './review/review-list/review-list.component';
+import { ReviewUpdateComponent } from './review/review-update/review-update.component';
+import { ReviewDeleteComponent } from './review/review-delete/review-delete.component';
+import { ReviewDetailComponent } from './review/review-detail/review-detail.component';
+import { ReviewCreateComponent } from './review/review-create/review-create.component';
+import {OfferListComponent} from "./offer/offer-list/offer-list.component";
+import {ProductOfferListComponent} from "./offer/productoffer-list/product-offer-list.component";
+import {ServiceOfferListComponent} from "./offer/serviceoffer-list/service-offer-list.component";
+import {ProductofferCreateComponent} from "./offer/productoffer-create/productoffer-create.component";
+import {ServiceofferCreateComponent} from "./offer/serviceoffer-create/serviceoffer-create.component";
+import {ProductofferDeleteComponent} from "./offer/productoffer-delete/productoffer-delete.component";
+import {ServiceofferDeleteComponent} from "./offer/serviceoffer-delete/serviceoffer-delete.component";
+import {ProductofferEditComponent} from "./offer/productoffer-edit/productoffer-edit.component";
+import {ServiceofferEditComponent} from "./offer/serviceoffer-edit/serviceoffer-edit.component";
+import {ProductofferDetailComponent} from "./offer/productoffer-detail/productoffer-detail.component";
+import {ServiceofferDetailComponent} from "./offer/serviceoffer-detail/serviceoffer-detail.component";
+import { TransactionListComponent } from './transaction/transaction-list/transaction-list.component';
+import { TransactionDetailComponent } from './transaction/transaction-detail/transaction-detail.component';
+import { TransactionEditComponent } from './transaction/transaction-edit/transaction-edit.component';
 import {MessageListComponent} from "./message/message-list/message-list.component";
 import {MessageDetailComponent} from "./message/message-detail/message-detail.component";
 import {MessageRegisterComponent} from "./message/message-register/message-register.component";
 
 const routes: Routes = [
+  { path: 'transactions/:id/edit', component: TransactionEditComponent, canActivate: [LoggedInGuard]},
+  { path: 'transactions/:id' , component: TransactionDetailComponent, canActivate: [LoggedInGuard] },
+  { path: 'transactions', component: TransactionListComponent, canActivate: [LoggedInGuard] },
   { path: 'messages/create', component: MessageRegisterComponent, canActivate: [LoggedInGuard]},
   { path: 'messages/:id', component: MessageDetailComponent, canActivate: [LoggedInGuard]},
   { path: 'messages', component: MessageListComponent, canActivate: [LoggedInGuard]},
@@ -21,6 +43,22 @@ const routes: Routes = [
   { path: 'users/:id/edit', component: UserEditComponent, canActivate: [LoggedInGuard]},
   { path: 'users/:id', component: UserDetailComponent, canActivate: [LoggedInGuard]},
   { path: 'users', component: UserListComponent, canActivate: [LoggedInGuard]},
+  { path: 'reviews/create', component: ReviewCreateComponent, canActivate: [LoggedInGuard] },
+  { path: 'reviews/:id/delete', component: ReviewDeleteComponent, canActivate: [LoggedInGuard] },
+  { path: 'reviews/:id/update', component: ReviewUpdateComponent, canActivate: [LoggedInGuard] },
+  { path: 'reviews/:id', component: ReviewDetailComponent, canActivate: [LoggedInGuard] },
+  { path: 'reviews', component: ReviewListComponent, canActivate: [LoggedInGuard] },
+  { path: 'offers', component: OfferListComponent},
+  { path: 'productOffers', component: ProductOfferListComponent},
+  { path: 'productOffers/create', component: ProductofferCreateComponent},
+  { path: 'productOffers/:id/delete', component: ProductofferDeleteComponent },
+  { path: 'productOffers/:id/edit', component: ProductofferEditComponent },
+  { path: 'productOffers/:id', component: ProductofferDetailComponent },
+  { path: 'serviceOffers', component: ServiceOfferListComponent},
+  { path: 'serviceOffers/create', component: ServiceofferCreateComponent},
+  { path: 'serviceOffers/:id/delete', component: ServiceofferDeleteComponent },
+  { path: 'serviceOffers/:id/edit', component: ServiceofferEditComponent },
+  { path: 'serviceOffers/:id', component: ServiceofferDetailComponent },
   { path: 'about', component: AboutComponent},
   { path: '404', component: NotFoundComponent},
   { path: '', redirectTo: 'about', pathMatch: 'full'},
@@ -30,4 +68,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

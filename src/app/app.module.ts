@@ -23,6 +23,11 @@ import {HttpErrorInterceptor} from './error-handler/http-error-interceptor';
 import {AuthenticationBasicService} from './login-basic/authentication-basic.service';
 import {LoggedInGuard} from './login-basic/loggedin.guard';
 import {UserService} from './user/user.service';
+import { ReviewListComponent } from './review/review-list/review-list.component';
+import { ReviewUpdateComponent } from './review/review-update/review-update.component';
+import { ReviewDeleteComponent } from './review/review-delete/review-delete.component';
+import { ReviewDetailComponent } from './review/review-detail/review-detail.component';
+import { ReviewCreateComponent } from './review/review-create/review-create.component';
 import { OfferListComponent } from './offer/offer-list/offer-list.component';
 import { ProductofferEditComponent } from './offer/productoffer-edit/productoffer-edit.component';
 import { ProductofferDeleteComponent } from './offer/productoffer-delete/productoffer-delete.component';
@@ -37,6 +42,10 @@ import { ServiceofferCreateComponent } from './offer/serviceoffer-create/service
 import {OfferService} from "./offer/offer.service";
 import {ProductOfferService} from "./offer/productoffer.service";
 import {ServiceOfferService} from "./offer/serviceoffer.service";
+import {TransactionListComponent} from './transaction/transaction-list/transaction-list.component';
+import {TransactionDetailComponent} from './transaction/transaction-detail/transaction-detail.component';
+import {TransactionEditComponent} from './transaction/transaction-edit/transaction-edit.component';
+import {TransactionSearchComponent} from './transaction/transaction-search/transaction-search.component';
 import {MessageService} from "./message/message.service";
 import {MessageListComponent} from "./message/message-list/message-list.component";
 import {MessageRegisterComponent} from "./message/message-register/message-register.component";
@@ -55,6 +64,11 @@ import {MessageSearchComponent} from "./message/message-search/message-search.co
     UserEditComponent,
     UserDeleteComponent,
     UserSearchComponent,
+    ReviewListComponent,
+    ReviewUpdateComponent,
+    ReviewDeleteComponent,
+    ReviewDetailComponent,
+    ReviewCreateComponent,
     OfferListComponent,
     ProductofferEditComponent,
     ProductofferDeleteComponent,
@@ -65,6 +79,12 @@ import {MessageSearchComponent} from "./message/message-search/message-search.co
     ServiceofferDeleteComponent,
     ServiceofferEditComponent,
     ServiceofferDetailComponent,
+    ServiceofferCreateComponent,
+    UserSearchComponent,
+    TransactionListComponent,
+    TransactionDetailComponent,
+    TransactionEditComponent,
+    TransactionSearchComponent,
     ServiceofferCreateComponent,
     MessageSearchComponent,
     MessageDetailComponent,

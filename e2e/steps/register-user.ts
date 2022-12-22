@@ -20,6 +20,11 @@ Given('I click the {string} menu', (option) => {
   cy.get('.nav-link').contains(option).click();
 });
 
+Given('I click the {string} option in menu {string}', (option, menu) => {
+  cy.get('.nav-link').contains(menu).click();
+  cy.get('.nav-item.dropdown.show').find('.dropdown-item').contains(option).click();
+});
+
 When('I fill the form with', (table: DataTable) => {
     table.rows().forEach((pair: string[]) =>
       cy.get('#' + pair[0]).type(pair[1]).blur() );
