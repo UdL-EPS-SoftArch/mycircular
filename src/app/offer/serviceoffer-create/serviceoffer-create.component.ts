@@ -21,7 +21,7 @@ export class ServiceofferCreateComponent implements OnInit {
 
   onSubmit(): void {
     this.serviceOfferService.createResource( {body: this.serviceOffer}).subscribe(
-      (serviceOffer: ServiceOffer) => this.router.navigate(['productOffers', serviceOffer.id]));
+      (serviceOffer: ServiceOffer) => this.router.navigate([serviceOffer.uri]));
   }
 
   onCancel(): void {

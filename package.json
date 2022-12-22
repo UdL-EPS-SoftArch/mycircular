@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "cypress open"
+    "e2e": "ELECTRON_EXTRA_LAUNCH_ARGS=--lang=en npx cypress open"
   },
   "cypress-cucumber-preprocessor": {
     "step_definitions": "./e2e/steps"

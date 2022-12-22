@@ -3,7 +3,7 @@
     <div class="card-body row align-items-center">
       <div class="col">
         <h6 class="card-subtitle text-muted">Offer</h6>
-        <a class="card-text" [routerLink]="['/offers', serviceOffer.id]">{{serviceOffer.name}}</a>
+        <a class="card-text" [routerLink]="[serviceOffer?.uri]">{{serviceOffer.name}}</a>
       </div>
       <div class="col">
         <h6 class="card-subtitle text-muted">Description</h6>
@@ -19,7 +19,7 @@
       </div>
       <div class="col">
         <h6 class="card-subtitle text-muted">Offerer</h6>
-        <p class="card-text">{{serviceOffer.offerer}}</p>
+        <p class="card-text">{{serviceOffer.offerer?.id}}</p>
       </div>
       <div class="col">
         <h6 class="card-subtitle text-muted">Availability</h6>

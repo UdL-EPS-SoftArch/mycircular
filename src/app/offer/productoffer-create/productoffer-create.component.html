@@ -2,28 +2,28 @@
   <fieldset>
 
     <!-- Name Input -->
-    <div class="form-group mb-3" >
+    <div class="form-group mb-3" [class.was-validated]="name.dirty || name.touched">
       <label class="control-label" for="name">Product Offer Name*</label>
       <input id="name" name="name" type="text" class="form-control" required [(ngModel)]="productOffer.name" #name="ngModel">
       <div class="invalid-feedback">A product offer name is required! </div>
     </div>
 
     <!-- Description Input -->
-    <div class="form-group mb-3" >
+    <div class="form-group mb-3" [class.was-validated]="description.dirty || description.touched">
       <label class="control-label" for="description">Description*</label>
       <input id="description" name="description" type="text" class="form-control" required [(ngModel)]="productOffer.description" #description="ngModel">
       <div class="invalid-feedback">A description is required</div>
     </div>
 
     <!-- Price Input -->
-    <div class="form-group mb-3" >
+    <div class="form-group mb-3" [class.was-validated]="price.dirty || price.touched">
       <label class="control-label" for="price">Price*</label>
       <input id="price" name="price" type="text" class="form-control" required [(ngModel)]="productOffer.price" #price="ngModel">
       <div class="invalid-feedback">A price is required</div>
     </div>
 
     <!-- Date Input -->
-    <div class="form-group mb-3" >
+    <div class="form-group mb-3" [class.was-validated]="dateTime.dirty || dateTime.touched">
       <label class="control-label" for="dateTime">Date*</label>
       <input id="dateTime" name="dateTime" type="text" class="form-control" value="2018-02-12T12:08:23Z"
              required [(ngModel)]="productOffer.dateTime" #dateTime="ngModel">
@@ -31,28 +31,28 @@
     </div>
 
     <!-- Offerer Input -->
-    <div class="form-group mb-3" >
+    <div class="form-group mb-3" [class.was-validated]="offerer.dirty || offerer.touched">
       <label class="control-label" for="offerer">Offerer*</label>
       <input id="offerer" name="offerer" type="text" class="form-control" required [(ngModel)]="productOffer.offerer" #offerer="ngModel">
       <div class="invalid-feedback">An offerer is required</div>
     </div>
 
     <!-- Manufacturer Input -->
-    <div class="form-group mb-3" >
+    <div class="form-group mb-3" [class.was-validated]="manufacturer.dirty || manufacturer.touched">
       <label class="control-label" for="manufacturer">Manufacturer*</label>
       <input id="manufacturer" name="manufacturer" type="text" class="form-control" required [(ngModel)]="productOffer.manufacturer" #manufacturer="ngModel">
       <div class="invalid-feedback">A manufacturer is required</div>
     </div>
 
     <!-- Brand Input -->
-    <div class="form-group mb-3" >
+    <div class="form-group mb-3" [class.was-validated]="brand.dirty || brand.touched">
       <label class="control-label" for="brand">Brand*</label>
       <input id="brand" name="brand" type="text" class="form-control" required [(ngModel)]="productOffer.brand" #brand="ngModel">
       <div class="invalid-feedback">A brand is required</div>
     </div>
 
     <!-- Product Code Input -->
-    <div class="form-group mb-3" >
+    <div class="form-group mb-3" [class.was-validated]="productCode.dirty || productCode.touched">
       <label class="control-label" for="productCode">Product Code*</label>
       <input id="productCode" name="productCode" type="text" class="form-control" required [(ngModel)]="productOffer.productCode" #productCode="ngModel">
       <div class="invalid-feedback">A product code is required</div>

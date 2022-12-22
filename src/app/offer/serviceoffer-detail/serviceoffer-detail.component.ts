@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ServiceOfferService } from "../serviceoffer.service";
 import { ServiceOffer } from "../serviceoffer";
 import {AuthenticationBasicService} from '../../login-basic/authentication-basic.service';
+import {User} from "../../login-basic/user";
 
 @Component({
   selector: 'app-serviceoffer-detail',
@@ -20,6 +21,9 @@ export class ServiceofferDetailComponent implements OnInit {
     this.serviceOfferService.getResource(id).subscribe(
       serviceOffer => {
         this.serviceOffer = serviceOffer;
+        this.serviceOffer.getRelation('offerer').subscribe((user: User) => {
+          this.serviceOffer.offerer = user;
+        });
       });
   }
 

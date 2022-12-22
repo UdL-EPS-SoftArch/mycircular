@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProductOfferService } from "../productoffer.service";
 import { ProductOffer } from "../productoffer";
 import {AuthenticationBasicService} from '../../login-basic/authentication-basic.service';
+import { switchMap, map } from 'rxjs/operators';
+import { User } from '../../login-basic/user';
 
 @Component({
   selector: 'app-productoffer-detail',
@@ -21,6 +23,9 @@ export class ProductofferDetailComponent implements OnInit {
     this.productOfferService.getResource(id).subscribe(
       productOffer => {
         this.productOffer = productOffer;
+        this.productOffer.getRelation('offerer').subscribe((user: User) => {
+            this.productOffer.offerer = user;
+        });
       });
   }
 

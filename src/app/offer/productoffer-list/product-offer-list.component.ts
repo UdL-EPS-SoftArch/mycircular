@@ -4,7 +4,8 @@ import { ProductOffer } from "../productoffer";
 import { ProductOfferService } from "../productoffer.service";
 import {AuthenticationBasicService} from '../../login-basic/authentication-basic.service';
 import {PagedResourceCollection} from "@lagoshny/ngx-hateoas-client";
-import {Offer} from "../offer";
+import { switchMap, map } from 'rxjs/operators';
+import { User } from '../../login-basic/user';
 
 @Component({
   selector: 'app-productoffer-list',
@@ -30,6 +31,11 @@ export class ProductOfferListComponent implements OnInit {
         this.productOfferPagedResource = page;
         this.productOffers = page.resources;
         this.totalProductOffers = page.totalElements;
+        this.productOffers.map(offer => {
+          offer.getRelation('offerer').subscribe((user: User) => {
+            offer.offerer = user;
+          });
+        });
         console.log(this.productOffers)
       });
   }

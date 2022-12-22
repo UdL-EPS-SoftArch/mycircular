@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, Params, ActivatedRoute } from '@angular/router';
 import { ServiceOffer } from "../serviceoffer";
 import { ServiceOfferService } from "../serviceoffer.service";
 import {AuthenticationBasicService} from '../../login-basic/authentication-basic.service';
 import {PagedResourceCollection} from "@lagoshny/ngx-hateoas-client";
+import { switchMap, map } from 'rxjs/operators';
+import { User } from '../../login-basic/user';
 
 @Component({
-  selector: 'app-service-offer-list',
+  selector: 'app-serviceoffer-list',
   templateUrl: './service-offer-list.component.html',
 })
 export class ServiceOfferListComponent implements OnInit {
@@ -29,6 +31,11 @@ export class ServiceOfferListComponent implements OnInit {
         this.serviceOfferPagedResource = page;
         this.serviceOffers = page.resources;
         this.totalServiceOffers = page.totalElements;
+        this.serviceOffers.map(offer => {
+          offer.getRelation('offerer').subscribe((user: User) => {
+            offer.offerer = user;
+          });
+        });
         console.log(this.serviceOffers)
       });
   }
