@@ -7,9 +7,8 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {MessageService} from "../message.service";
 import {Location} from "@angular/common";
 import {Announcement} from "../../announcement/announcement";
-import {HttpClient} from "@angular/common/http";
 import {AnnouncementService} from "../../announcement/announcement.service";
-import {switchMap} from "rxjs";
+
 
 @Component({
   selector: 'app-message-register',

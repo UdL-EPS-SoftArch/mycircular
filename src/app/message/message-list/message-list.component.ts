@@ -49,6 +49,16 @@ export class MessageListComponent implements OnInit{
     this.messagePagedResource.customPage({pageParams: {page: this.page -1, size:this.pageSize}, sort:{name: 'ASC'}}).subscribe(
       (page: PagedResourceCollection<Message>) =>{
         this.messages = page.resources;
+        this.messages.map(message => {
+          message.getRelation('user').subscribe((user: User) => {
+            message.user = user;
+          });
+        });
+        this.messages.map(message => {
+          message.getRelation('product').subscribe((product: Announcement) => {
+            message.product = product;
+          });
+        });
       });
   }
   modifyList(messagePagedResource: PagedResourceCollection<Message>):void{
@@ -62,6 +72,6 @@ export class MessageListComponent implements OnInit{
 
 
   detail(message: Message) {
-    this.router.navigate(['messages', message.id]);
+    this.router.navigate([message.uri]);
   }
 }

@@ -24,7 +24,7 @@ export class MessageSearchComponent {
       distinctUntilChanged(),
       tap(() => this.searching = true),
       switchMap(term => term.length < 3 ? of([]) :
-        this.messageService.findById(term).pipe(
+        this.messageService.findByText(term).pipe(
           map((collection: ResourceCollection<Message>) => collection.resources),
           tap(() => this.searchFailed = false),
           catchError(() => {
