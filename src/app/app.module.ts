@@ -23,11 +23,28 @@ import {HttpErrorInterceptor} from './error-handler/http-error-interceptor';
 import {AuthenticationBasicService} from './login-basic/authentication-basic.service';
 import {LoggedInGuard} from './login-basic/loggedin.guard';
 import {UserService} from './user/user.service';
+<<<<<<< HEAD
 import { ReviewListComponent } from './review/review-list/review-list.component';
 import { ReviewUpdateComponent } from './review/review-update/review-update.component';
 import { ReviewDeleteComponent } from './review/review-delete/review-delete.component';
 import { ReviewDetailComponent } from './review/review-detail/review-detail.component';
 import { ReviewCreateComponent } from './review/review-create/review-create.component';
+=======
+import { OfferListComponent } from './offer/offer-list/offer-list.component';
+import { ProductofferEditComponent } from './offer/productoffer-edit/productoffer-edit.component';
+import { ProductofferDeleteComponent } from './offer/productoffer-delete/productoffer-delete.component';
+import { ProductofferDetailComponent } from './offer/productoffer-detail/productoffer-detail.component';
+import { ProductofferCreateComponent } from './offer/productoffer-create/productoffer-create.component';
+import { ProductOfferListComponent } from './offer/productoffer-list/product-offer-list.component';
+import { ServiceOfferListComponent } from './offer/serviceoffer-list/service-offer-list.component';
+import { ServiceofferDeleteComponent } from './offer/serviceoffer-delete/serviceoffer-delete.component';
+import { ServiceofferEditComponent } from './offer/serviceoffer-edit/serviceoffer-edit.component';
+import { ServiceofferDetailComponent } from './offer/serviceoffer-detail/serviceoffer-detail.component';
+import { ServiceofferCreateComponent } from './offer/serviceoffer-create/serviceoffer-create.component';
+import {OfferService} from "./offer/offer.service";
+import {ProductOfferService} from "./offer/productoffer.service";
+import {ServiceOfferService} from "./offer/serviceoffer.service";
+>>>>>>> main
 
 @NgModule({
   declarations: [
@@ -41,11 +58,25 @@ import { ReviewCreateComponent } from './review/review-create/review-create.comp
     UserEditComponent,
     UserDeleteComponent,
     UserSearchComponent,
+<<<<<<< HEAD
     ReviewListComponent,
     ReviewUpdateComponent,
     ReviewDeleteComponent,
     ReviewDetailComponent,
     ReviewCreateComponent
+=======
+    OfferListComponent,
+    ProductofferEditComponent,
+    ProductofferDeleteComponent,
+    ProductofferDetailComponent,
+    ProductofferCreateComponent,
+    ProductOfferListComponent,
+    ServiceOfferListComponent,
+    ServiceofferDeleteComponent,
+    ServiceofferEditComponent,
+    ServiceofferDetailComponent,
+    ServiceofferCreateComponent
+>>>>>>> main
   ],
   imports: [
     BrowserModule,
@@ -64,7 +95,7 @@ import { ReviewCreateComponent } from './review/review-create/review-create.comp
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
-    AuthenticationBasicService, LoggedInGuard, UserService
+    AuthenticationBasicService, LoggedInGuard, UserService, OfferService, ProductOfferService, ServiceOfferService
   ],
   bootstrap: [AppComponent]
 })
