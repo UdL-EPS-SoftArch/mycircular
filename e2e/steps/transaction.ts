@@ -32,12 +32,12 @@ Then ('It creates an announcement and Transaction',()=>{
       (response) => {
         expect(response.status).to.eq(201)
       }
-    );
+    )
 });
 
 Then ('I edit the price with the new value {string}',(price)=>{
   cy.wait(500);
   cy.get("#price").clear();
-  cy.get("#price").type(price).blur();
+  cy.get("#price").type(price);
   cy.get('button').contains('Submit').click();
 })
