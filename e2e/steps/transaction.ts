@@ -8,6 +8,7 @@ And ('I am on the transactions list page', () => {
 });
 
 Then ('I should see {string}', (text) => {
+    cy.wait(500);
     cy.contains(text);
 });
 
