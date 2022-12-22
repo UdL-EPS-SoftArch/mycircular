@@ -7,7 +7,6 @@ import {User} from "../../login-basic/user";
 @Component({
   selector: 'app-transaction-edit',
   templateUrl: './transaction-edit.component.html',
-  styleUrls: ['./transaction-edit.component.css']
 })
 export class TransactionEditComponent implements OnInit {
   public transaction: Transaction = new Transaction();
