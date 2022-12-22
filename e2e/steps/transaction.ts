@@ -13,7 +13,7 @@ Then ('It creates an announcment',()=>{
     cy.request('POST','localhost:8080/announcements',{
       "price": "20",
       "name": "portatil",
-      "description": "Nuevo"
+      "description": "Nuevo y reluciente, listo para usar"
     });
 });
 
