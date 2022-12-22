@@ -17,18 +17,23 @@ Then ('It creates an announcment',()=>{
       "price": "20",
       "name": "portatil",
       "description": "Nuevo y reluciente, listo para usar"
+    }).then((response)=>{
+      response.body.price = 20
+      console.log(`Price is correct`)
     });
-    cy.wait(30000);
 });
 
 Then('It creates a transaction',()=>{
+    let item;
     cy.request('POST',`${environment.API}/transactions`, {
       "seller": "/users/demo",
       "announcementAbout": "/announcements/1",
       "buyer": "/users/demo",
       "price" : 12
-  });
-    cy.wait(30000);
+  }).then((response)=>{
+      response.body.price = 12
+      console.log(`Price is correct`)
+    });
 });
 
 Then ('I edit the price with the new value {string}',(price)=>{
