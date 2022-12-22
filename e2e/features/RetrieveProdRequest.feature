@@ -10,7 +10,7 @@ Feature: Retrieve an existing request
 
   Scenario: Retrieve an existing request successfully
     When I click the "Request" button
-    Then I'm in the request list page
+  #  Then I'm in the request list page
 
   Scenario: Retrieve an existing request but user's not logged in
 
