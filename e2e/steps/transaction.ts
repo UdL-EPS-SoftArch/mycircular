@@ -7,6 +7,23 @@ And ('I am on the transactions list page', () => {
 
 Then ('I should see {string}', (text) => {
     cy.contains(text);
+});
+
+Then ('It creates an announcment',()=>{
+    cy.request('POST','localhost:8080/announcements',{
+      "price": "20",
+      "name": "portatil",
+      "description": "Nuevo"
+    });
+});
+
+Then('It creates a transaction',()=>{
+    cy.request('POST','localhost:8080/transactions', {
+      "seller": "/users/demo",
+      "announcementAbout": "/announcements/1",
+      "buyer": "/users/demo",
+      "price" : 12
+  });
     cy.wait(500);
 });
 
