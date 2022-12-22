@@ -32,7 +32,5 @@ Given(/^I visit the product offer creation page \(link\)$/, function () {
 });
 
 Then(/^There is the new product request with name "([^"]*)"$/,  (name) => {
-  //cy.get('link').contains(name);
-  //cy.findByLabelText("Label text", { timeout: 7000 }).should("exist");
   cy.contains(name);
 });
