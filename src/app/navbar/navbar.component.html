@@ -19,6 +19,14 @@
         </div>
       </li>
       <a class="nav-link" [routerLink]="['/reviews']">Reviews</a>
+      <li class="nav-item" *ngIf="isRole('user')" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="transactionDropdown" role="button"
+           aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>Transactions</a>
+        <div class="dropdown-menu" aria-labelledby="transactionDropdown" ngbDropdownMenu>
+          <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
+             [routerLink]="['/transactions']"><span class="fas fa-money-bill"></span> List</a>
+        </div>
+      </li>
     </ul>
     <ul class="navbar-nav ms-auto me-3" app-login-navbar></ul>
   </div>

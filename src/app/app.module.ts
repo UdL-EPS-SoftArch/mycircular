@@ -42,6 +42,10 @@ import { ServiceofferCreateComponent } from './offer/serviceoffer-create/service
 import {OfferService} from "./offer/offer.service";
 import {ProductOfferService} from "./offer/productoffer.service";
 import {ServiceOfferService} from "./offer/serviceoffer.service";
+import {TransactionListComponent} from './transaction/transaction-list/transaction-list.component';
+import {TransactionDetailComponent} from './transaction/transaction-detail/transaction-detail.component';
+import {TransactionEditComponent} from './transaction/transaction-edit/transaction-edit.component';
+import {TransactionSearchComponent} from './transaction/transaction-search/transaction-search.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +74,12 @@ import {ServiceOfferService} from "./offer/serviceoffer.service";
     ServiceofferDeleteComponent,
     ServiceofferEditComponent,
     ServiceofferDetailComponent,
-    ServiceofferCreateComponent
+    ServiceofferCreateComponent,
+    UserSearchComponent,
+    TransactionListComponent,
+    TransactionDetailComponent,
+    TransactionEditComponent,
+    TransactionSearchComponent
   ],
   imports: [
     BrowserModule,

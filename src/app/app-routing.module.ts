@@ -24,8 +24,14 @@ import {ProductofferEditComponent} from "./offer/productoffer-edit/productoffer-
 import {ServiceofferEditComponent} from "./offer/serviceoffer-edit/serviceoffer-edit.component";
 import {ProductofferDetailComponent} from "./offer/productoffer-detail/productoffer-detail.component";
 import {ServiceofferDetailComponent} from "./offer/serviceoffer-detail/serviceoffer-detail.component";
+import { TransactionListComponent } from './transaction/transaction-list/transaction-list.component';
+import { TransactionDetailComponent } from './transaction/transaction-detail/transaction-detail.component';
+import { TransactionEditComponent } from './transaction/transaction-edit/transaction-edit.component';
 
 const routes: Routes = [
+  { path: 'transactions/:id/edit', component: TransactionEditComponent, canActivate: [LoggedInGuard]},
+  { path: 'transactions/:id' , component: TransactionDetailComponent, canActivate: [LoggedInGuard] },
+  { path: 'transactions', component: TransactionListComponent, canActivate: [LoggedInGuard] },
   { path: 'users/create', component: UserRegisterComponent},
   { path: 'users/:id/delete', component: UserDeleteComponent, canActivate: [LoggedInGuard]},
   { path: 'users/:id/edit', component: UserEditComponent, canActivate: [LoggedInGuard]},
