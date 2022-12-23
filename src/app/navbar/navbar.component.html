@@ -10,6 +10,7 @@
       <li class="nav-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
         <a class="nav-link" [routerLink]="['/about']">About</a>
       </li>
+
       <li class="nav-item" *ngIf="isRole('user')" ngbDropdown>
         <a class="nav-link dropdown-toggle" id="playerDropdown" role="button" aria-haspopup="true" aria-expanded="false"
           ngbDropdownToggle>Users</a>
@@ -35,6 +36,16 @@
              [routerLink]="['/messages']"><span class="fa-solid fa-message"></span> List </a>
         </div>
       </li>
+
+      <li *ngIf="isRole('user')"
+          class="nav-item" [routerLinkActive]="'active'"
+          [routerLinkActiveOptions]="{ exact: true }">
+        <a class="nav-link" [routerLink]="['/requests']">
+          Requests
+        </a>
+      </li>
+
+
     </ul>
     <ul class="navbar-nav ms-auto me-3" app-login-navbar></ul>
   </div>

@@ -1,0 +1,32 @@
+
+<h1>Hello {{currentUsername}}! These are your service requests.</h1>
+<h2>
+  If nothing is displayed, it means that you haven't any service request yet.
+</h2>
+
+<div *ngIf="serviceRequests.length !== 0">
+
+  <p>
+    Todo: corregir el buscador
+  </p>
+
+  <div class="card mb-1" *ngFor="let serviceRequest of serviceRequests">
+    <div class="card-block row m-1 col-12">
+      <div class="card-body row align-items-center">
+        <div class="col-6 mt-1">
+          <h6 class="card-subtitle text-muted">Name</h6>
+          <a class="card-text" [routerLink]="['/serviceRequests', serviceRequest.id]">{{serviceRequest.name}}</a>
+        </div>
+        <div class="col-6 mt-1">
+          <h6 class="card-subtitle text-muted">Description</h6>
+          <p class="card-text">{{serviceRequest.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ngb-pagination class="d-flex justify-content-center"
+                  [(page)]="page" [pageSize]="pageSize" [collectionSize]="totalServRequests"
+                  (pageChange)="changePage()"></ngb-pagination>
+
+</div>

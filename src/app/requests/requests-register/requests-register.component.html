@@ -1,0 +1,17 @@
+<form id="temp_request-form" (ngSubmit)="onSubmit()" #form="ngForm">
+  <fieldset>
+<!--
+Aqui tenemos el componente con los botones robados de submit y cancel.
+La idea es tener el de request solo
+todo: al darle a request, hacer saltar un popup para confirmar la request, y entonces poner el boton de back
+-->
+    <!-- Button -->
+    <div class="form-group fa-pull-right">
+      <button id="listBtn" type="button" (click)="onCancel()"
+              class="btn btn-outline-primary pull-right">Back</button>
+      <button id="submit" type="submit" [disabled]="!form.form.valid"
+              class="btn ms-3 btn-success pull-right">Request</button>
+    </div>
+
+  </fieldset>
+</form>
