@@ -13,4 +13,5 @@ export class UserService extends HateoasResourceOperation<User> {
   public findByUsernameContaining(query: string): Observable<ResourceCollection<User>> {
     return this.searchCollection('findByUsernameContaining', { params: { text: query } });
   }
+
 }

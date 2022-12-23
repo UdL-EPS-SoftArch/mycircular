@@ -19,7 +19,7 @@ jobs:
           node-version: '14.x'
       - name: Test and build
         run: |
-          docker run -d -p 8080:8080 udlepssoftarch/mycircular-api
+          docker run --env PROFILE=test -d -p 8080:8080 udlepssoftarch/mycircular-api
           while ! nc -z localhost 8080; do sleep 10; done
           docker ps -a
           npm ci

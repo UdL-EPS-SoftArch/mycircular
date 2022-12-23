@@ -17,6 +17,11 @@ import {ProductRequestsListComponent} from "./requests/product-requests-list/pro
 import {ProductRequestsDetailComponent} from "./requests/product-requests-detail/product-requests-detail.component";
 import {ProductRequestsDeleteComponent} from "./requests/product-requests-delete/product-requests-delete.component";
 
+import { ReviewListComponent } from './review/review-list/review-list.component';
+import { ReviewUpdateComponent } from './review/review-update/review-update.component';
+import { ReviewDeleteComponent } from './review/review-delete/review-delete.component';
+import { ReviewDetailComponent } from './review/review-detail/review-detail.component';
+import { ReviewCreateComponent } from './review/review-create/review-create.component';
 import {OfferListComponent} from "./offer/offer-list/offer-list.component";
 import {ProductOfferListComponent} from "./offer/productoffer-list/product-offer-list.component";
 import {ServiceOfferListComponent} from "./offer/serviceoffer-list/service-offer-list.component";
@@ -31,6 +36,12 @@ import {ServiceofferDetailComponent} from "./offer/serviceoffer-detail/serviceof
 import {ServiceRequestsListComponent} from "./requests/service-requests-list/service-requests-list.component";
 import {ServiceRequestsDetailComponent} from "./requests/service-requests-detail/service-requests-detail.component";
 import {ServiceRequestsDeleteComponent} from "./requests/service-requests-delete/service-requests-delete.component";
+import { TransactionListComponent } from './transaction/transaction-list/transaction-list.component';
+import { TransactionDetailComponent } from './transaction/transaction-detail/transaction-detail.component';
+import { TransactionEditComponent } from './transaction/transaction-edit/transaction-edit.component';
+import {MessageListComponent} from "./message/message-list/message-list.component";
+import {MessageDetailComponent} from "./message/message-detail/message-detail.component";
+import {MessageRegisterComponent} from "./message/message-register/message-register.component";
 
 const routes: Routes = [
   {path: 'users/create', component: UserRegisterComponent},
@@ -50,12 +61,21 @@ const routes: Routes = [
   {path: 'serviceRequests', component: ServiceRequestsListComponent, canActivate: [LoggedInGuard]},
   {path: 'serviceRequests/:id', component: ServiceRequestsDetailComponent, canActivate: [LoggedInGuard]},
   {path: 'serviceRequests/:id/delete', component: ServiceRequestsDeleteComponent, canActivate: [LoggedInGuard]},
+  { path: 'transactions/:id/edit', component: TransactionEditComponent, canActivate: [LoggedInGuard]},
+  { path: 'transactions/:id' , component: TransactionDetailComponent, canActivate: [LoggedInGuard] },
+  { path: 'transactions', component: TransactionListComponent, canActivate: [LoggedInGuard] },
+  { path: 'messages/create', component: MessageRegisterComponent, canActivate: [LoggedInGuard]},
+  { path: 'messages/:id', component: MessageDetailComponent, canActivate: [LoggedInGuard]},
+  { path: 'messages', component: MessageListComponent, canActivate: [LoggedInGuard]},
 
-  { path: 'users/create', component: UserRegisterComponent},
-  { path: 'users/:id/delete', component: UserDeleteComponent, canActivate: [LoggedInGuard]},
- // reservada para admins { path: 'users/:id/edit', component: UserEditComponent, canActivate: [LoggedInGuard]},
+  // reservada para admins { path: 'users/:id/edit', component: UserEditComponent, canActivate: [LoggedInGuard]},
   { path: 'users/:id', component: UserDetailComponent, canActivate: [LoggedInGuard]},
   { path: 'users', component: UserListComponent, canActivate: [LoggedInGuard]},
+  { path: 'reviews/create', component: ReviewCreateComponent, canActivate: [LoggedInGuard] },
+  { path: 'reviews/:id/delete', component: ReviewDeleteComponent, canActivate: [LoggedInGuard] },
+  { path: 'reviews/:id/update', component: ReviewUpdateComponent, canActivate: [LoggedInGuard] },
+  { path: 'reviews/:id', component: ReviewDetailComponent, canActivate: [LoggedInGuard] },
+  { path: 'reviews', component: ReviewListComponent, canActivate: [LoggedInGuard] },
   { path: 'offers', component: OfferListComponent},
   { path: 'productOffers', component: ProductOfferListComponent},
   { path: 'productOffers/create', component: ProductofferCreateComponent},
@@ -76,5 +96,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-}
+
+export class AppRoutingModule { }

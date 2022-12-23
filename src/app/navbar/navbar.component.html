@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand ms-3" [routerLink]="['/about']"><b>Angular</b>Template</a>
-  <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
-          [attr.aria-expanded]="!isCollapsed" aria-controls="navbarContent" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
+    aria-controls="navbarContent" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -12,11 +12,28 @@
       </li>
 
       <li class="nav-item" *ngIf="isRole('user')" ngbDropdown>
-        <a class="nav-link dropdown-toggle" id="playerDropdown" role="button"
-           aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>Users</a>
+        <a class="nav-link dropdown-toggle" id="playerDropdown" role="button" aria-haspopup="true" aria-expanded="false"
+          ngbDropdownToggle>Users</a>
         <div class="dropdown-menu" aria-labelledby="playDropdown" ngbDropdownMenu>
           <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
-             [routerLink]="['/users']"><span class="fas fa-user-circle"></span> List</a>
+            [routerLink]="['/users']"><span class="fas fa-user-circle"></span> List</a>
+        </div>
+      </li>
+      <a class="nav-link" [routerLink]="['/reviews']">Reviews</a>
+      <li class="nav-item" *ngIf="isRole('user')" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="transactionDropdown" role="button"
+           aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>Transactions</a>
+        <div class="dropdown-menu" aria-labelledby="transactionDropdown" ngbDropdownMenu>
+          <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
+             [routerLink]="['/transactions']"><span class="fas fa-money-bill"></span> List</a>
+        </div>
+      </li>
+      <li class="nav-item" *ngIf="isRole('user')" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="messageDropdown" role="button"
+           aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>Message</a>
+        <div class="dropdown-menu" aria-labelledby="playerDropdown" ngbDropdownMenu>
+          <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true}"
+             [routerLink]="['/messages']"><span class="fa-solid fa-message"></span> List </a>
         </div>
       </li>
 

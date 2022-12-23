@@ -29,6 +29,11 @@ import { RequestsSearchComponent } from './requests/requests-search/requests-sea
 import { RequestsRegisterComponent } from './requests/requests-register/requests-register.component';
 import { RequestsDetailComponent } from './requests/requests-detail/requests-detail.component';
 import { RequestsDeleteComponent } from './requests/requests-delete/requests-delete.component';
+import { ReviewListComponent } from './review/review-list/review-list.component';
+import { ReviewUpdateComponent } from './review/review-update/review-update.component';
+import { ReviewDeleteComponent } from './review/review-delete/review-delete.component';
+import { ReviewDetailComponent } from './review/review-detail/review-detail.component';
+import { ReviewCreateComponent } from './review/review-create/review-create.component';
 import { OfferListComponent } from './offer/offer-list/offer-list.component';
 import { ProductofferEditComponent } from './offer/productoffer-edit/productoffer-edit.component';
 import { ProductofferDeleteComponent } from './offer/productoffer-delete/productoffer-delete.component';
@@ -51,6 +56,15 @@ import { ServiceRequestsCreateComponent } from './requests/service-requests-regi
 import { ServiceRequestsListComponent } from './requests/service-requests-list/service-requests-list.component';
 import { ServiceRequestsDetailComponent } from './requests/service-requests-detail/service-requests-detail.component';
 import { ServiceRequestsDeleteComponent } from './requests/service-requests-delete/service-requests-delete.component';
+import {TransactionListComponent} from './transaction/transaction-list/transaction-list.component';
+import {TransactionDetailComponent} from './transaction/transaction-detail/transaction-detail.component';
+import {TransactionEditComponent} from './transaction/transaction-edit/transaction-edit.component';
+import {TransactionSearchComponent} from './transaction/transaction-search/transaction-search.component';
+import {MessageService} from "./message/message.service";
+import {MessageListComponent} from "./message/message-list/message-list.component";
+import {MessageRegisterComponent} from "./message/message-register/message-register.component";
+import {MessageDetailComponent} from "./message/message-detail/message-detail.component";
+import {MessageSearchComponent} from "./message/message-search/message-search.component";
 
 @NgModule({
   declarations: [
@@ -71,6 +85,11 @@ RequestsRegisterComponent,
 RequestsDetailComponent,
 RequestsDeleteComponent,
     UserSearchComponent,
+    ReviewListComponent,
+    ReviewUpdateComponent,
+    ReviewDeleteComponent,
+    ReviewDetailComponent,
+    ReviewCreateComponent,
     OfferListComponent,
     ProductofferEditComponent,
     ProductofferDeleteComponent,
@@ -89,7 +108,18 @@ RequestsDeleteComponent,
     ServiceRequestsCreateComponent,
     ServiceRequestsListComponent,
     ServiceRequestsDetailComponent,
-    ServiceRequestsDeleteComponent
+    ServiceRequestsDeleteComponent,
+    ServiceofferCreateComponent,
+    UserSearchComponent,
+    TransactionListComponent,
+    TransactionDetailComponent,
+    TransactionEditComponent,
+    TransactionSearchComponent,
+    ServiceofferCreateComponent,
+    MessageSearchComponent,
+    MessageDetailComponent,
+    MessageRegisterComponent,
+    MessageListComponent
   ],
   imports: [
     BrowserModule,
@@ -108,7 +138,7 @@ RequestsDeleteComponent,
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
-    AuthenticationBasicService, LoggedInGuard, UserService, OfferService, ProductOfferService, ServiceOfferService
+    AuthenticationBasicService, LoggedInGuard, UserService, OfferService, ProductOfferService, ServiceOfferService, MessageService
   ],
   bootstrap: [AppComponent]
 })
