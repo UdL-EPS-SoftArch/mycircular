@@ -27,11 +27,17 @@ import {ServiceofferDetailComponent} from "./offer/serviceoffer-detail/serviceof
 import { TransactionListComponent } from './transaction/transaction-list/transaction-list.component';
 import { TransactionDetailComponent } from './transaction/transaction-detail/transaction-detail.component';
 import { TransactionEditComponent } from './transaction/transaction-edit/transaction-edit.component';
+import {MessageListComponent} from "./message/message-list/message-list.component";
+import {MessageDetailComponent} from "./message/message-detail/message-detail.component";
+import {MessageRegisterComponent} from "./message/message-register/message-register.component";
 
 const routes: Routes = [
   { path: 'transactions/:id/edit', component: TransactionEditComponent, canActivate: [LoggedInGuard]},
   { path: 'transactions/:id' , component: TransactionDetailComponent, canActivate: [LoggedInGuard] },
   { path: 'transactions', component: TransactionListComponent, canActivate: [LoggedInGuard] },
+  { path: 'messages/create', component: MessageRegisterComponent, canActivate: [LoggedInGuard]},
+  { path: 'messages/:id', component: MessageDetailComponent, canActivate: [LoggedInGuard]},
+  { path: 'messages', component: MessageListComponent, canActivate: [LoggedInGuard]},
   { path: 'users/create', component: UserRegisterComponent},
   { path: 'users/:id/delete', component: UserDeleteComponent, canActivate: [LoggedInGuard]},
   { path: 'users/:id/edit', component: UserEditComponent, canActivate: [LoggedInGuard]},

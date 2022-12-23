@@ -1,0 +1,28 @@
+<div class="card mb-4">
+  <div class="card-block">
+    <h4 class="card-title col-md-12 p-3">{{message.uri}}</h4>
+    <div class="card-body row m-1">
+      <div class="col-md-4 p-3">
+        <h6 class="card-subtitle text-muted">Author</h6>
+        <p class="card-text">{{message.user?.id}}</p>
+      </div>
+      <div class="col-md-4 p-3">
+        <h6 class="card-subtitle text-muted">About</h6>
+        <p class="card-text">{{message.product?.name}}</p>
+      </div>
+      <div class="col-md-4 p-3">
+        <h6 class="card-subtitle text-muted">Date</h6>
+        <p class="card-text">{{message.when}}</p>
+      </div>
+      <div class="col-md-4 p-3">
+        <h6 class="card-subtitle text-muted">Message</h6>
+        <p class="card-text">{{message.text}}</p>
+      </div>
+    </div>
+    <div class="card-footer text-right">
+      <button id="listBtn" type="button" [routerLink]="['/messages']"
+              class="btn m-1 btn-outline-primary">Message List
+      </button>
+    </div>
+  </div>
+</div>

@@ -46,6 +46,11 @@ import {TransactionListComponent} from './transaction/transaction-list/transacti
 import {TransactionDetailComponent} from './transaction/transaction-detail/transaction-detail.component';
 import {TransactionEditComponent} from './transaction/transaction-edit/transaction-edit.component';
 import {TransactionSearchComponent} from './transaction/transaction-search/transaction-search.component';
+import {MessageService} from "./message/message.service";
+import {MessageListComponent} from "./message/message-list/message-list.component";
+import {MessageRegisterComponent} from "./message/message-register/message-register.component";
+import {MessageDetailComponent} from "./message/message-detail/message-detail.component";
+import {MessageSearchComponent} from "./message/message-search/message-search.component";
 
 @NgModule({
   declarations: [
@@ -79,7 +84,12 @@ import {TransactionSearchComponent} from './transaction/transaction-search/trans
     TransactionListComponent,
     TransactionDetailComponent,
     TransactionEditComponent,
-    TransactionSearchComponent
+    TransactionSearchComponent,
+    ServiceofferCreateComponent,
+    MessageSearchComponent,
+    MessageDetailComponent,
+    MessageRegisterComponent,
+    MessageListComponent
   ],
   imports: [
     BrowserModule,
@@ -98,7 +108,7 @@ import {TransactionSearchComponent} from './transaction/transaction-search/trans
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
-    AuthenticationBasicService, LoggedInGuard, UserService, OfferService, ProductOfferService, ServiceOfferService
+    AuthenticationBasicService, LoggedInGuard, UserService, OfferService, ProductOfferService, ServiceOfferService, MessageService
   ],
   bootstrap: [AppComponent]
 })
