@@ -43,6 +43,7 @@ import {MessageListComponent} from "./message/message-list/message-list.componen
 import {MessageDetailComponent} from "./message/message-detail/message-detail.component";
 import {MessageRegisterComponent} from "./message/message-register/message-register.component";
 import { AdminListComponent } from './admin/admin-list/admin-list.component';
+import { AdminDetailComponent } from './admin/admin-detail/admin-detail.component';
 
 const routes: Routes = [
   {path: 'users/create', component: UserRegisterComponent},
@@ -69,7 +70,9 @@ const routes: Routes = [
   { path: 'messages/:id', component: MessageDetailComponent, canActivate: [LoggedInGuard]},
   { path: 'messages', component: MessageListComponent, canActivate: [LoggedInGuard]},
   
+  { path: 'admins/:id', component: AdminDetailComponent, canActivate: [LoggedInGuard]},
   { path: 'admins', component: AdminListComponent, canActivate: [LoggedInGuard]},
+
 
 
   // reservada para admins { path: 'users/:id/edit', component: UserEditComponent, canActivate: [LoggedInGuard]},
