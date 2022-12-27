@@ -3,7 +3,7 @@ import { Admin } from '../admin';
 import { PagedResourceCollection } from '@lagoshny/ngx-hateoas-client';
 import { UserService } from 'src/app/user/user.service';
 import { ReviewService } from 'src/app/review/review.service';
-import { AdminService } from './admin.service';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'app-admin-list',

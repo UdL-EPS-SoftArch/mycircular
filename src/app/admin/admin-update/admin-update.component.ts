@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationBasicService } from 'src/app/login-basic/authentication-basic.service';
 import { Admin } from '../admin';
-import { AdminService } from '../admin-list/admin.service';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'app-admin-update',

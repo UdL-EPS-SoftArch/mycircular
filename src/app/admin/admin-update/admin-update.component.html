@@ -34,7 +34,7 @@
         </div>
 
         <div class="form-group fa-pull-right">
-            <button id="adminDetail" type="button" class="btn btn-outline-primary">Back</button>
+            <button id="adminDetail" type="button" [routerLink]="['/admins']" class="btn btn-outline-primary">Back</button>
             <button id="submit" type="submit" [disabled]="!form.form.valid" class="btn btn-success ms-3">Submit</button>
         </div>
     </fieldset>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Admin } from '../admin';
+import { Admin } from './admin';
 import { HateoasResourceOperation, ResourceCollection } from '@lagoshny/ngx-hateoas-client';
 
 @Injectable({providedIn: "root"})

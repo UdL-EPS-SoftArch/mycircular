@@ -68,6 +68,7 @@ import {MessageSearchComponent} from "./message/message-search/message-search.co
 import { AdminListComponent } from './admin/admin-list/admin-list.component';
 import { AdminDetailComponent } from './admin/admin-detail/admin-detail.component';
 import { AdminUpdateComponent } from './admin/admin-update/admin-update.component';
+import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
 
 @NgModule({
   declarations: [
@@ -125,7 +126,8 @@ RequestsDeleteComponent,
     MessageListComponent,
     AdminListComponent,
     AdminDetailComponent,
-    AdminUpdateComponent
+    AdminUpdateComponent,
+    AdminDeleteComponent
   ],
   imports: [
     BrowserModule,

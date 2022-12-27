@@ -45,6 +45,7 @@ import {MessageRegisterComponent} from "./message/message-register/message-regis
 import { AdminListComponent } from './admin/admin-list/admin-list.component';
 import { AdminDetailComponent } from './admin/admin-detail/admin-detail.component';
 import { AdminUpdateComponent } from './admin/admin-update/admin-update.component';
+import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
 
 const routes: Routes = [
   {path: 'users/create', component: UserRegisterComponent},
@@ -74,6 +75,8 @@ const routes: Routes = [
   { path: 'admins/:id', component: AdminDetailComponent, canActivate: [LoggedInGuard]},
   { path: 'admins', component: AdminListComponent, canActivate: [LoggedInGuard]},
   { path: 'admins/:id/update', component: AdminUpdateComponent, canActivate: [LoggedInGuard] },
+  { path: 'admins/:id/delete', component: AdminDeleteComponent, canActivate: [LoggedInGuard] },
+
 
   // reservada para admins { path: 'users/:id/edit', component: UserEditComponent, canActivate: [LoggedInGuard]},
   { path: 'users/:id', component: UserDetailComponent, canActivate: [LoggedInGuard]},
