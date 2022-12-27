@@ -65,6 +65,7 @@ import {MessageListComponent} from "./message/message-list/message-list.componen
 import {MessageRegisterComponent} from "./message/message-register/message-register.component";
 import {MessageDetailComponent} from "./message/message-detail/message-detail.component";
 import {MessageSearchComponent} from "./message/message-search/message-search.component";
+import { AdminListComponent } from './admin/admin-list/admin-list.component';
 
 @NgModule({
   declarations: [
@@ -119,7 +120,8 @@ RequestsDeleteComponent,
     MessageSearchComponent,
     MessageDetailComponent,
     MessageRegisterComponent,
-    MessageListComponent
+    MessageListComponent,
+    AdminListComponent
   ],
   imports: [
     BrowserModule,
