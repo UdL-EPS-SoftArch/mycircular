@@ -44,5 +44,9 @@ export class ReviewDetailComponent implements OnInit {
 
   }
 
+  isRole(role: string): boolean {
+    return this.authenticationService.isRole(role);
+  }
+
 }
 
