@@ -24,7 +24,9 @@
         <!-- About input -->
         <div class="form-group mb-3">
             <label class="control-label" for="about">About</label>
-            <input id="about" name="about" type="text" class="form-control" required [(ngModel)]="review.about" #about="ngModel">
+            <select [(ngModel)]="review.about" name="about" ngModel required #about="ngModel"class="form-select" aria-label="Default select example">
+                <option selected *ngFor="let user of users">{{user.id}}</option>
+            </select>
         </div>
 
         <!-- Buttons -->

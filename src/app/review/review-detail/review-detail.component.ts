@@ -48,5 +48,13 @@ export class ReviewDetailComponent implements OnInit {
     return this.authenticationService.isRole(role);
   }
 
+  getCurrentUserName(): string {
+    return this.authenticationService.getCurrentUser().id;
+  }
+
+  currentUserEdit(){
+    return this.getCurrentUserName() == this.reviews.author.id;
+  }
+
 }
 
