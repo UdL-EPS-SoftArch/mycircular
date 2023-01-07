@@ -24,7 +24,7 @@
         <!-- About input -->
         <div class="form-group mb-3">
             <label class="control-label" for="about">About</label>
-            <select [(ngModel)]="review.about" name="about" ngModel required #about="ngModel" class="form-select">
+            <select [(ngModel)]="review.about" id="about" name="about" ngModel required #about="ngModel" class="form-select">
                 <ng-container *ngFor="let user of users">
                     <option *ngIf="user.getRoles() == 'user'" selected [ngValue]="user.id">{{user.id}}</option>
                 </ng-container>

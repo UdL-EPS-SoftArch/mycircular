@@ -4,13 +4,22 @@ Scenario: Modify number of stars in a review
  Given I'm in the homepage
  When I click the "Register" menu
  And I fill the form with
-      | FIELD    | VALUE         |
+      | FIELD    | VALUE           |
       | username | user13          |
       | email    | user13@demo.app |
-      | password | password      |
+      | password | password        |
  And I click the "Submit" button
  And I'm logged in as user "user13"
  And I click on nav link "Reviews"
+ And I click the "Create Rating" button
+ And I click on dropdown menu "demo2"
+ And I fill the form with
+      | FIELD    | VALUE      |
+      | message  | Great!     |
+      | stars    | 5          |
+      | about    | demo2      |
+ When I click the "Submit" button
+ And I wait for the "Great!" content to appear
  And I click on card-text item "Great!"
  And I wait for the "Great!" content to appear
  And I click the "Edit" button
@@ -48,3 +57,23 @@ Scenario: Modify number of stars in a review
       | stars    | 3          |
  When I click the "Update" button
  Then I get redirected to that review page
+
+ Scenario: Modify review as different user than author
+ Given I'm in the homepage
+ And I log in as "demo" with password "password"
+ And I wait for the "Reviews" nav-link to appear
+ And I click on nav link "Reviews"
+ And I wait for the "Not bad!" content to appear
+ And I click on card-text item "Not bad!"
+ Then The button "Edit" does not exist
+
+Scenario: Modify review as admin
+ Given I'm in the homepage
+ And I log in as "admin" with password "password"
+ And I wait for the "Reviews" nav-link to appear
+ And I click on nav link "Reviews"
+ And I wait for the "Not bad!" content to appear
+ And I click on card-text item "Not bad!"
+ Then The button "Edit" does not exist
+
+
