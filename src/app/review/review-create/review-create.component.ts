@@ -23,6 +23,7 @@ export class ReviewCreateComponent implements OnInit {
   public pageSize = 5;
   public page = 1;
   public totalUsers = 0;
+  public authserv: AuthenticationBasicService;
 
   constructor(private router: Router,
     private authenticationService: AuthenticationBasicService,
@@ -33,6 +34,7 @@ export class ReviewCreateComponent implements OnInit {
   ngOnInit(): void {
     this.user.id = this.getCurrentUserName();
 
+    
     this.userService.getPage({ pageParams:  { size: this.pageSize }, sort: { username: 'ASC' } }).subscribe(
       (page: PagedResourceCollection<User>) => {
         this.users = page.resources;
@@ -52,5 +54,9 @@ export class ReviewCreateComponent implements OnInit {
 
   getCurrentUserName(): string {
     return this.authenticationService.getCurrentUser().id;
+  }
+
+  isRole(role: string): boolean {
+    return this.authenticationService.isRole(role);
   }
 }
