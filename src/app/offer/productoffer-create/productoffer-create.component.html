@@ -31,9 +31,9 @@
     </div>
 
     <!-- Offerer Input -->
-    <div class="form-group mb-3" [class.was-validated]="offerer.dirty || offerer.touched">
+    <div hidden class="form-group mb-3" [class.was-validated]="offerer.dirty || offerer.touched">
       <label class="control-label" for="offerer">Offerer*</label>
-      <input id="offerer" name="offerer" type="text" class="form-control" required [(ngModel)]="productOffer.offerer" #offerer="ngModel">
+      <input id="offerer" name="offerer"  class="form-control" readonly [(ngModel)]="productOffer.offerer" #offerer="ngModel">
       <div class="invalid-feedback">An offerer is required</div>
     </div>
 
