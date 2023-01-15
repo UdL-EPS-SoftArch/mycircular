@@ -1,0 +1,11 @@
+<form (ngSubmit)="onSubmit()" #form="ngForm">
+  <fieldset>
+    <!-- Announcement Name -->
+    <div class="form-group mb-3">
+      <label class="control-label" for="name">Announcement Name</label>
+      <input id="name" name="name" type="text" class="form-control" disabled [(ngModel)]="announcement.name" #name="ngModel">
+    </div>
+
+
+  </fieldset>
+</form>
