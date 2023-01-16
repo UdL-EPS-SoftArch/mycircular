@@ -42,6 +42,11 @@ export class TransactionCreateComponent implements OnInit {
   onSubmit(): void {
     console.log(this.transaction);
     this.transaction.announcementAbout = this.announcement;
+    if (this.transaction.price < 0) {
+      alert('Price must be greater than 0');
+      return;
+    }
+
     this.transactionService.createResource({ body: this.transaction }).subscribe(
       (transaction: Transaction) => this.router.navigate(['transactions', transaction.id]));
   }
