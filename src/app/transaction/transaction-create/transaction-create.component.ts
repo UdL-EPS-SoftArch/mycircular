@@ -25,8 +25,9 @@ export class TransactionCreateComponent implements OnInit {
               private userService: UserService) { }
 
   ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id');
     this.transaction = new Transaction();
-    this.announcementService.getResource(1).subscribe(
+    this.announcementService.getResource(id).subscribe(
       announcement => {
         this.announcement = announcement;
       }
