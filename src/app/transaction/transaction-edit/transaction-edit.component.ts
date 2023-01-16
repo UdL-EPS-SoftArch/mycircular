@@ -3,6 +3,7 @@ import {Transaction} from "../transaction";
 import {ActivatedRoute, Router} from "@angular/router";
 import {TransactionService} from "../transaction.service";
 import {User} from "../../login-basic/user";
+import { Announcement } from 'src/app/announcement/announcement';
 
 @Component({
   selector: 'app-transaction-edit',
@@ -26,6 +27,9 @@ export class TransactionEditComponent implements OnInit {
         });
         transaction.getRelation('buyer').subscribe((buyer: User) => {
           transaction.buyer = buyer;
+        });
+        transaction.getRelation('announcementAbout').subscribe((announcementAbout: Announcement) => {
+          transaction.announcementAbout = announcementAbout;
         });
         transaction.creationDate = new Date(transaction.creationDate);
         this.transaction = transaction;
