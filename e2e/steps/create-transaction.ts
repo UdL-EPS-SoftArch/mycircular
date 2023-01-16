@@ -7,6 +7,8 @@ And('There are a announcements created', () => {
     "name": "portatil",
     "description": "Nuevo y reluciente, listo para usar"
   })
+  cy.wait(500);
+
 });
 
 Then('Go to Transaction create page', () => {
