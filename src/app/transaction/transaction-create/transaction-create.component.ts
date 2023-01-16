@@ -26,7 +26,7 @@ export class TransactionCreateComponent implements OnInit {
 
   ngOnInit(): void {
     this.transaction = new Transaction();
-    this.announcementService.getResource(2).subscribe(
+    this.announcementService.getResource(1).subscribe(
       announcement => {
         this.announcement = announcement;
       }
@@ -38,5 +38,10 @@ export class TransactionCreateComponent implements OnInit {
   }
 
 
-  onSubmit(): void {}
+  onSubmit(): void {
+    console.log(this.transaction);
+    this.transaction.announcementAbout = this.announcement;
+    this.transactionService.createResource({ body: this.transaction }).subscribe(
+      (transaction: Transaction) => this.router.navigate(['transactions', transaction.id]));
+  }
 }
