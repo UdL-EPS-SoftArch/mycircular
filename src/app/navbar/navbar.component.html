@@ -45,6 +45,19 @@
         </a>
       </li>
 
+      <li class="nav-item" *ngIf="isRole('user')" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="offersDropdown" role="button"
+           aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>Offers</a>
+        <div class="dropdown-menu" aria-labelledby="playerDropdown" ngbDropdownMenu>
+          <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true}"
+             [routerLink]="['/offers']"><span class="fa-solid fa-message"></span> Offers List </a>
+          <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true}"
+             [routerLink]="['/productOffers']"><span class="fa-solid fa-message"></span> Product Offers List </a>
+          <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true}"
+             [routerLink]="['/serviceOffers']"><span class="fa-solid fa-message"></span> Service Offers List </a>
+        </div>
+      </li>
+
 
     </ul>
     <ul class="navbar-nav ms-auto me-3" app-login-navbar></ul>

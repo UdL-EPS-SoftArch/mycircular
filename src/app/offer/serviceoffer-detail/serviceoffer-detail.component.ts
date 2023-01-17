@@ -30,5 +30,8 @@ export class ServiceofferDetailComponent implements OnInit {
   isRole(role: string): boolean {
     return this.authenticationService.isRole(role);
   }
-
+  isOwner(): boolean {
+    let user = this.authenticationService.getCurrentUser();
+    return user && this.serviceOffer && user.id === this.serviceOffer.offerer.id;
+  }
 }
