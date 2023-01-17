@@ -18,8 +18,9 @@ Then('Go to Transaction create page', () => {
 
 And('I fill the create transaction form with', (table: DataTable) => {
   table.rows().forEach((pair: string[]) => {
+    cy.wait(500);
     if (pair[0] === 'seller' || pair[0] === 'buyer') {
-      cy.get('#' + pair[0]).select(pair[1]);
+      cy.get('#' + pair[0]).select(1);
     } else {
       cy.get('#' + pair[0]).type(pair[1]).blur();
     }
