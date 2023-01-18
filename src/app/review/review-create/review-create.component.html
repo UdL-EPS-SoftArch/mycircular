@@ -27,7 +27,7 @@
             <select [(ngModel)]="review.about" id="about" name="about" ngModel required #about="ngModel"
                 class="form-select">
                 <ng-container *ngFor="let user of users">
-                    <option *ngIf="user.getRoles() == 'user' && user.id != getCurrentUserName()" selected
+                    <option *ngIf="user.getRoles() === 'user' && user.id !== getCurrentUserName()" selected
                         [ngValue]="user.id">{{user.id}}</option>
                 </ng-container>
             </select>
