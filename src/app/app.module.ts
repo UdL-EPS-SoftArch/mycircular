@@ -70,6 +70,7 @@ import { AdminDetailComponent } from './admin/admin-detail/admin-detail.componen
 import { AdminUpdateComponent } from './admin/admin-update/admin-update.component';
 import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -127,7 +128,7 @@ RequestsDeleteComponent,
     AdminListComponent,
     AdminDetailComponent,
     AdminUpdateComponent,
-    AdminDeleteComponent
+    AdminDeleteComponent,
   ],
   imports: [
     BrowserModule,
