@@ -6,12 +6,6 @@
             <input id="username" name="username" type="text" class="form-control" readonly [ngModel]="admin.id">
         </div>
 
-        <!--
-         <div *ngIf="admin.getRoles().length > 0" class="form-group mb-3">
-           <label class="control-label" for="role">Role</label>
-           <input id="role" name="role" type="text" class="form-control" readonly [ngModel]="admin.getRoles().join(', ')">
-         </div>
-     -->
         <div class="form-group mb-3" [class.was-validated]="email.dirty || email.touched">
             <label class="control-label" for="email">Email*</label>
             <input id="email" name="email" type="email" class="form-control" required [(ngModel)]="admin.email"
