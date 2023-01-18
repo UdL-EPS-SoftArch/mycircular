@@ -33,4 +33,8 @@ export class ProductofferDetailComponent implements OnInit {
     return this.authenticationService.isRole(role);
   }
 
+  isOwner(): boolean {
+    let user = this.authenticationService.getCurrentUser();
+    return user && this.productOffer && user.id === this.productOffer.offerer.id;
+  }
 }
