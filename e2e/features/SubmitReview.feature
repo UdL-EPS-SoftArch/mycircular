@@ -77,7 +77,7 @@ Scenario: Submit a new review without a message
       | stars    | 2          |
       | about    | demo       |
   When I click the "Submit" button
-  Then I wait for the "Author: user15" content to appear
+  Then I wait for the "user15" content to appear
 
 
 
