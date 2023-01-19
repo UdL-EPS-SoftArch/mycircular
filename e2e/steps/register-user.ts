@@ -31,6 +31,7 @@ When('I fill the form with', (table: DataTable) => {
  });
 
 When('I click the {string} button', (label) => {
+    cy.contains('button', label).should('be.visible');
     cy.get('button').contains(label).click();
   });
 
