@@ -7,9 +7,13 @@ And('There are a announcements created', () => {
     "price": "20",
     "name": "portatil",
     "description": "Nuevo y reluciente, listo para usar"
+  }).then((response) => {
+    expect(response.status).to.eq(201);
+    const location = response.headers['location'] as string;
+    const transact = 'http://localhost:4200/transactions/create/' + location.split('/').pop();
+    cy.visit(transact);
   })
   cy.wait(500);
-
 });
 
 Then('Go to Transaction create page', () => {

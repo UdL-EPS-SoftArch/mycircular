@@ -9,8 +9,7 @@ Feature: Create a new Transaction
     And I log in as "demo" with password "password"
     And I'm logged in as user "demo"
     And There are a announcements created
-    Then Go to Transaction create page
-    And I fill the create transaction form with
+    When I fill the create transaction form with
       | FIELD    | VALUE |
       | price    | 10    |
       | seller   | demo  |
