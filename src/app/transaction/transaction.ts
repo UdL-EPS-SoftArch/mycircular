@@ -1,4 +1,5 @@
 import { HateoasResource, Resource } from "@lagoshny/ngx-hateoas-client";
+import { Announcement } from "../announcement/announcement";
 import { User } from "../login-basic/user";
 
 @HateoasResource("transactions")
@@ -8,7 +9,7 @@ export class Transaction extends Resource {
   creationDate: Date;
   price: number;
   status: string;
-  // announcementAbout: Announcement;
+  announcementAbout: Announcement;
   seller: User;
   buyer: User;
 

@@ -20,6 +20,7 @@
         </div>
       </li>
       <a class="nav-link" [routerLink]="['/reviews']">Reviews</a>
+      
       <li class="nav-item" *ngIf="isRole('user')" ngbDropdown>
         <a class="nav-link dropdown-toggle" id="transactionDropdown" role="button"
            aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>Transactions</a>
