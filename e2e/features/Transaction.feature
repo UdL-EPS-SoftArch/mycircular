@@ -21,5 +21,6 @@
     When I click the "List" option in menu "Transaction"
     Then I should see "Transaction List"
     Then I click the "Details" button
+    Then I should see "Edit transaction"
     Then I click the "Edit transaction" button
     Then I edit the price with the new value "23"
