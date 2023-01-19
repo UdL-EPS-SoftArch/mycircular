@@ -20,8 +20,8 @@
         </div>
       </li>
       <a class="nav-link" *ngIf="isRole('user') || isRole('admin')" [routerLink]="['/reviews']">Reviews</a>
-      <li class="nav-item" *ngIf="isRole('user') || isRole('admin')" ngbDropdown>
-        <a class="nav-link dropdown-toggle" id="transactionDropdown" role="button" aria-haspopup="true"
+      <li class="nav-item" *ngIf="isRole('user') || isRole('admin')" ngbDropdown>      
+        <a class="nav-link dropdown-toggle" id="transactionDropdown" role="button" aria-haspopup="true" 
         aria-expanded="false" ngbDropdownToggle>Transactions</a>
         <div class="dropdown-menu" aria-labelledby="transactionDropdown" ngbDropdownMenu>
           <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"

@@ -1,3 +1,4 @@
+import { Announcement } from 'src/app/announcement/announcement';
 import { User } from '../../login-basic/user';
 import { AuthenticationBasicService } from '../../login-basic/authentication-basic.service';
 import { TransactionService } from '../transaction.service';
@@ -39,6 +40,9 @@ export class TransactionListComponent implements OnInit {
           transaction.getRelation('buyer').subscribe((buyer: User) => {
             transaction.buyer = buyer;
           });
+          transaction.getRelation('announcementAbout').subscribe((announcementAbout: Announcement) => {
+            transaction.announcementAbout = announcementAbout;
+          });
         });
       }
     );
@@ -55,6 +59,9 @@ export class TransactionListComponent implements OnInit {
           });
           transaction.getRelation('buyer').subscribe((buyer: User) => {
             transaction.buyer = buyer;
+          });
+          transaction.getRelation('announcementAbout').subscribe((announcementAbout: Announcement) => {
+            transaction.announcementAbout = announcementAbout;
           });
         }
         );
