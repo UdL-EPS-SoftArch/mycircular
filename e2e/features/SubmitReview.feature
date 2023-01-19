@@ -40,8 +40,14 @@ Scenario: Submit a new review with overvalued number of stars
 
 Scenario: Submit a new review as user
   Given I'm in the homepage
-  And I log in as "demo" with password "password"
-  And I'm logged in as user "demo"
+  When I click the "Register" menu
+  And I fill the form with
+    | FIELD    | VALUE           |
+    | username | user14          |
+    | email    | user14@demo.app |
+    | password | password        |
+  And I click the "Submit" button
+  And I'm logged in as user "user14"
   And I click on nav link "Reviews"
   And I click the "Create Rating" button
   And I click on dropdown menu "demo2"
@@ -55,8 +61,14 @@ Scenario: Submit a new review as user
 
 Scenario: Submit a new review without a message
   Given I'm in the homepage
-  And I log in as "demo2" with password "password"
-  And I'm logged in as user "demo2"
+  When I click the "Register" menu
+  And I fill the form with
+    | FIELD    | VALUE           |
+    | username | user15          |
+    | email    | user15@demo.app |
+    | password | password        |
+  And I click the "Submit" button
+  And I'm logged in as user "user15"
   And I click on nav link "Reviews"
   And I click the "Create Rating" button
   And I click on dropdown menu "demo"
@@ -65,8 +77,8 @@ Scenario: Submit a new review without a message
       | stars    | 2          |
       | about    | demo       |
   When I click the "Submit" button
-  Then I wait for the "Wonderful" content to appear
-  
+  Then I wait for the "Author: user15" content to appear
 
-  
+
+
 
