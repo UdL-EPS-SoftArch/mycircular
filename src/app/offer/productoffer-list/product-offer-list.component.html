@@ -33,6 +33,17 @@
         <h6 class="card-subtitle text-muted">Product Code</h6>
         <p class="card-text">{{productOffer.productCode}}</p>
       </div>
+      <div class="col">
+        <app-product-requests-register
+          [name]="productOffer.name"
+          [description]=productOffer.description
+          [price]=productOffer.price
+          [dateTime]=productOffer.dateTime
+          [manufacturer]=productOffer.manufacturer
+          [brand]=productOffer.brand
+          [productCode]=productOffer.productCode>
+        </app-product-requests-register>
+      </div>
     </div>
   </div>
 </div>

@@ -23,6 +23,12 @@ import {HttpErrorInterceptor} from './error-handler/http-error-interceptor';
 import {AuthenticationBasicService} from './login-basic/authentication-basic.service';
 import {LoggedInGuard} from './login-basic/loggedin.guard';
 import {UserService} from './user/user.service';
+//import { RequestsComponent } from './requests/requests.component';
+import { RequestsListComponent } from './requests/requests-list/requests-list.component';
+import { RequestsSearchComponent } from './requests/requests-search/requests-search.component';
+import { RequestsRegisterComponent } from './requests/requests-register/requests-register.component';
+import { RequestsDetailComponent } from './requests/requests-detail/requests-detail.component';
+import { RequestsDeleteComponent } from './requests/requests-delete/requests-delete.component';
 import { ReviewListComponent } from './review/review-list/review-list.component';
 import { ReviewUpdateComponent } from './review/review-update/review-update.component';
 import { ReviewDeleteComponent } from './review/review-delete/review-delete.component';
@@ -42,6 +48,14 @@ import { ServiceofferCreateComponent } from './offer/serviceoffer-create/service
 import {OfferService} from "./offer/offer.service";
 import {ProductOfferService} from "./offer/productoffer.service";
 import {ServiceOfferService} from "./offer/serviceoffer.service";
+import { ProductRequestsRegisterComponent } from './requests/product-requests-register/product-requests-register.component';
+import { ProductRequestsListComponent } from './requests/product-requests-list/product-requests-list.component';
+import { ProductRequestsDetailComponent } from './requests/product-requests-detail/product-requests-detail.component';
+import { ProductRequestsDeleteComponent } from './requests/product-requests-delete/product-requests-delete.component';
+import { ServiceRequestsCreateComponent } from './requests/service-requests-register/service-requests-create.component';
+import { ServiceRequestsListComponent } from './requests/service-requests-list/service-requests-list.component';
+import { ServiceRequestsDetailComponent } from './requests/service-requests-detail/service-requests-detail.component';
+import { ServiceRequestsDeleteComponent } from './requests/service-requests-delete/service-requests-delete.component';
 import {TransactionListComponent} from './transaction/transaction-list/transaction-list.component';
 import {TransactionDetailComponent} from './transaction/transaction-detail/transaction-detail.component';
 import {TransactionEditComponent} from './transaction/transaction-edit/transaction-edit.component';
@@ -64,6 +78,13 @@ import {MessageSearchComponent} from "./message/message-search/message-search.co
     UserEditComponent,
     UserDeleteComponent,
     UserSearchComponent,
+//    RequestsComponent,
+    RequestsListComponent,
+RequestsSearchComponent,
+RequestsRegisterComponent,
+RequestsDetailComponent,
+RequestsDeleteComponent,
+    UserSearchComponent,
     ReviewListComponent,
     ReviewUpdateComponent,
     ReviewDeleteComponent,
@@ -79,6 +100,15 @@ import {MessageSearchComponent} from "./message/message-search/message-search.co
     ServiceofferDeleteComponent,
     ServiceofferEditComponent,
     ServiceofferDetailComponent,
+    ServiceofferCreateComponent,
+    ProductRequestsRegisterComponent,
+    ProductRequestsListComponent,
+    ProductRequestsDetailComponent,
+    ProductRequestsDeleteComponent,
+    ServiceRequestsCreateComponent,
+    ServiceRequestsListComponent,
+    ServiceRequestsDetailComponent,
+    ServiceRequestsDeleteComponent,
     ServiceofferCreateComponent,
     UserSearchComponent,
     TransactionListComponent,

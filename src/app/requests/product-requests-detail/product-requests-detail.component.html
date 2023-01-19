@@ -1,0 +1,49 @@
+<div class="card mb-4">
+  <div class="card-block">
+    <h4 class="card-title col-md-12 p-3">{{productRequest.name}}</h4>
+    <div class="card-body row m-1">
+      <div class="col-md-4 p-3">
+        <h6 class="card-subtitle text-muted">Name</h6>
+        <p class="card-text">{{productRequest.name}}</p>
+      </div>
+      <div class="col-md-4 p-3">
+        <h6 class="card-subtitle text-muted">Description</h6>
+        <p class="card-text">{{productRequest.description}}</p>
+      </div>
+      <div class="col-md-4 p-3">
+        <h6 class="card-subtitle text-muted">Price</h6>
+        <p class="card-text">{{productRequest.price}}</p>
+      </div>
+      <div class="col-md-4 p-3">
+        <!-- Cuando hacen el form para crear una date, lo cogen en modo string, no se guarda en la bd y por eso a mi me llega null. -->
+        <h6 class="card-subtitle text-muted">Date</h6>
+        <p class="card-text">{{productRequest.date}}</p>
+      </div>
+      <div class="col-md-4 p-3">
+        <h6 class="card-subtitle text-muted">Manufacturer</h6>
+        <p class="card-text">{{productRequest.manufacturer}}</p>
+      </div>
+      <div class="col-md-4 p-3">
+        <h6 class="card-subtitle text-muted">Brand</h6>
+        <p class="card-text">{{productRequest.brand}}</p>
+      </div>
+      <div class="col-md-4 p-3">
+        <h6 class="card-subtitle text-muted">Product Code</h6>
+        <p class="card-text">{{productRequest.productCode}}</p>
+      </div>
+    </div>
+
+
+
+    <div class="card-footer text-right">
+      <button id="listBtn" type="button" [routerLink]="['/requests']"
+              class="btn m-1 btn-outline-primary">Product requests List
+      </button>
+
+      <button id="deleteBtn" type="button" [routerLink]="['delete']"
+              class="btn m-1 btn-outline-danger">Delete
+      </button>
+    </div>
+  </div>
+</div>
+

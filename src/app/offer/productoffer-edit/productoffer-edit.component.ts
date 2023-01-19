@@ -23,9 +23,10 @@ export class ProductofferEditComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.productOffer.offerer = this.authenticationService.getCurrentUser();
     this.productOfferService.patchResource(this.productOffer).subscribe(
       (patchedProductOffer: ProductOffer) => {
-        this.router.navigate(['productOffers', patchedProductOffer.id]);
+        this.router.navigate([patchedProductOffer.uri]);
       });
   }
 
