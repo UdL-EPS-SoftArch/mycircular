@@ -23,9 +23,9 @@
     <div class="card-footer text-right">
         <button id="listBtn" type="button" [routerLink]="['/reviews']" class="btn m-1 btn-outline-primary">Review List
         </button>
-        <button id="editBtn" type="button" [routerLink]="['update']" class="btn m-1 btn-outline-success">Edit
+        <button id="editBtn" type="button" *ngIf="isRole('user') && currentUserEdit()" [routerLink]="['update']" class="btn m-1 btn-outline-success">Edit
         </button>
-        <button id="deleteBtn" type="button" [routerLink]="['delete']" class="btn m-1 btn-outline-danger">Delete
+        <button id="deleteBtn" type="button" *ngIf="isRole('admin')" [routerLink]="['delete']" class="btn m-1 btn-outline-danger">Delete
         </button>
     </div>
 </div>
