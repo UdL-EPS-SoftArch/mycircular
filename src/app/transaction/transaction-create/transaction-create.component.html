@@ -1,0 +1,66 @@
+<form (ngSubmit)="onSubmit()" #form="ngForm">
+  <fieldset>
+    <!-- Announcement Name -->
+    <div class="form-group mb-3">
+      <label class="control-label" for="name">Announcement Name</label>
+      <input id="name" name="name" type="text" class="form-control" disabled [(ngModel)]="announcement.name" #name="ngModel">
+    </div>
+
+    <!-- Announcement Description -->
+    <div class="form-group mb-3">
+      <label class="control-label" for="description">Announcement Description</label>
+      <textarea id="description" name="description" class="form-control" disabled [(ngModel)]="announcement.description" #description="ngModel"></textarea>
+    </div>
+
+    <!-- Prices -->
+    <div class="row">
+    <!-- Announcement Price -->
+      <div class="col-md-6">
+        <div class="form-group mb-3">
+          <label class="control-label" for="announcementPrice">Announcement Price</label>
+          <input id="announcementPrice" name="announcementPrice" type="number" class="form-control" disabled [(ngModel)]="announcement.price" #price="ngModel">
+        </div>
+      </div>
+
+      <!-- Transaction Price -->
+      <div class="col-md-6">
+        <div class="form-group mb-3">
+          <label class="control-label" for="price">Transaction Price</label>
+          <input id="price" name="price" type="number" class="form-control" [(ngModel)]="transaction.price" min="0">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Users -->
+    <div class="row">
+      <!-- Buyer -->
+      <div class="col-md-6">
+        <div class="form-group mb-3">
+          <label class="control-label" for="buyer">Buyer</label>
+          <select id="buyer" name="buyer" class="form-control" [(ngModel)]="transaction.buyer">
+            <option></option>
+            <option *ngFor="let user of userList" [value]="user.uri">{{user.id}}</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Seller -->
+      <div class="col-md-6">
+        <div class="form-group mb-3">
+          <label class="control-label" for="seller">Seller</label>
+          <select id="seller" name="seller" class="form-control" [(ngModel)]="transaction.seller">
+            <option></option>
+            <option *ngFor="let user of userList" [value]="user.uri">{{user.id}}</option>
+          </select>
+        </div>
+        </div>
+    </div>
+
+    <!-- Create -->
+    <div class="form-group mb-3">
+      <button type="submit" class="btn btn-primary w-100">Create</button>
+    </div>
+
+  </fieldset>
+</form>

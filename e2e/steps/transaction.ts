@@ -1,5 +1,5 @@
 import { environment } from './../../src/environments/environment';
-import { And, Given, Then } from 'cypress-cucumber-preprocessor/steps';
+import { And, Given, When, Then } from 'cypress-cucumber-preprocessor/steps';
 import {toInteger} from "@ng-bootstrap/ng-bootstrap/util/util";
 
 And ('I am on the transactions list page', () => {
@@ -8,8 +8,11 @@ And ('I am on the transactions list page', () => {
 });
 
 Then ('I should see {string}', (text) => {
-    cy.wait(500);
-    cy.contains(text);
+    expect(cy.contains(text));
+});
+
+When ('All items are listed', () => {
+  cy.get('.page-item.active').should('be.visible')
 });
 
 Then ('It creates an announcement and Transaction',()=>{

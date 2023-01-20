@@ -39,6 +39,7 @@ import {ServiceRequestsDeleteComponent} from "./requests/service-requests-delete
 import { TransactionListComponent } from './transaction/transaction-list/transaction-list.component';
 import { TransactionDetailComponent } from './transaction/transaction-detail/transaction-detail.component';
 import { TransactionEditComponent } from './transaction/transaction-edit/transaction-edit.component';
+import { TransactionCreateComponent } from './transaction/transaction-create/transaction-create.component';
 import {MessageListComponent} from "./message/message-list/message-list.component";
 import {MessageDetailComponent} from "./message/message-detail/message-detail.component";
 import {MessageRegisterComponent} from "./message/message-register/message-register.component";
@@ -61,6 +62,7 @@ const routes: Routes = [
   {path: 'serviceRequests', component: ServiceRequestsListComponent, canActivate: [LoggedInGuard]},
   {path: 'serviceRequests/:id', component: ServiceRequestsDetailComponent, canActivate: [LoggedInGuard]},
   {path: 'serviceRequests/:id/delete', component: ServiceRequestsDeleteComponent, canActivate: [LoggedInGuard]},
+  { path: 'transactions/create/:id', component: TransactionCreateComponent, canActivate: [LoggedInGuard] },
   { path: 'transactions/:id/edit', component: TransactionEditComponent, canActivate: [LoggedInGuard]},
   { path: 'transactions/:id' , component: TransactionDetailComponent, canActivate: [LoggedInGuard] },
   { path: 'transactions', component: TransactionListComponent, canActivate: [LoggedInGuard] },
