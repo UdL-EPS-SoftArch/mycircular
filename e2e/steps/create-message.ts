@@ -4,7 +4,7 @@ import { DataTable } from '@cucumber/cucumber';
 
 
 Then('Go to Message create page', () => {
-  cy.visit('http://localhost:4200/message/create');
+  cy.visit('http://localhost:4200/messages/create');
 });
 
 When('I fill the create message form with', (table: DataTable) => {
@@ -13,5 +13,5 @@ When('I fill the create message form with', (table: DataTable) => {
 });
 
 Then('i create a new message with id 1', (option) => {
-  cy.visit('http://localhost:4200/message/1');
+  cy.visit('http://localhost:4200/messages/1');
 });
