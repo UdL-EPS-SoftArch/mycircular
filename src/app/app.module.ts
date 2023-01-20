@@ -65,6 +65,10 @@ import {MessageListComponent} from "./message/message-list/message-list.componen
 import {MessageRegisterComponent} from "./message/message-register/message-register.component";
 import {MessageDetailComponent} from "./message/message-detail/message-detail.component";
 import {MessageSearchComponent} from "./message/message-search/message-search.component";
+import { AdminListComponent } from './admin/admin-list/admin-list.component';
+import { AdminDetailComponent } from './admin/admin-detail/admin-detail.component';
+import { AdminUpdateComponent } from './admin/admin-update/admin-update.component';
+import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
 import { TransactionCreateComponent } from './transaction/transaction-create/transaction-create.component';
 
 @NgModule({
@@ -121,6 +125,10 @@ RequestsDeleteComponent,
     MessageDetailComponent,
     MessageRegisterComponent,
     MessageListComponent,
+    AdminListComponent,
+    AdminDetailComponent,
+    AdminUpdateComponent,
+    AdminDeleteComponent,
     TransactionCreateComponent
   ],
   imports: [
