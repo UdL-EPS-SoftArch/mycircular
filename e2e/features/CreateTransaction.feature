@@ -15,3 +15,16 @@ Feature: Create a new Transaction
       | seller   | demo  |
       | buyer    | demo  |
     And I click the "Create" button
+
+  Scenario: Trying to create an invalid Transaction
+    Given I'm in the homepage
+    And I'm not logged in
+    And I log in as "demo" with password "password"
+    And I'm logged in as user "demo"
+    And There are a announcements created
+    When I fill the create transaction form with
+      | FIELD    | VALUE       |
+      | price    | not_valid   |
+      | seller   | demo        |
+      | buyer    | demo        |
+    And I click the "Create" button
