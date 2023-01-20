@@ -18,3 +18,7 @@ And('There is a Transactions created', () => {
 Then('We use the search bar to find a Transaction', () => {
   //Waiting for the searchbar to be fully implemented
 });
+
+And ('We find the Transaction we were looking for', () => {
+  //Waiting for the searchbar to be fully implemented
+});
