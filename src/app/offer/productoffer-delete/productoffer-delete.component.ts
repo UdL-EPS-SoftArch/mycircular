@@ -39,7 +39,7 @@ export class ProductofferDeleteComponent implements OnInit {
           this.router.navigate(['productOffers']);
         });
     }else{
-      alert("Este usuario no tiene permisos para borrar esta product offer ya que no es el owner.")
+      alert("This user cannot delete this product offer because it is not its owner.")
     }
   }
 

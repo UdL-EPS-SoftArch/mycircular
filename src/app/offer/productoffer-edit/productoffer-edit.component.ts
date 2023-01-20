@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProductOfferService } from "../productoffer.service";
 import { ProductOffer } from "../productoffer";
 import {AuthenticationBasicService} from '../../login-basic/authentication-basic.service';
+import {User} from "../../login-basic/user";
 
 @Component({
   selector: 'app-productoffer-edit',
@@ -10,6 +11,8 @@ import {AuthenticationBasicService} from '../../login-basic/authentication-basic
 })
 export class ProductofferEditComponent implements OnInit {
   public productOffer: ProductOffer;
+  private id: string;
+  private owner: User;
 
   constructor(private router: Router,
               private route: ActivatedRoute,
@@ -19,15 +22,24 @@ export class ProductofferEditComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.productOfferService.getResource(id).subscribe(
-      (productOffer: ProductOffer) => this.productOffer = productOffer) ;
+      (productOffer: ProductOffer) => {
+        this.productOffer = productOffer;
+        this.productOffer.getRelation('offerer').subscribe((user: User) => {
+          this.productOffer.offerer = user;
+        });
+      }) ;
   }
 
   onSubmit(): void {
-    this.productOffer.offerer = this.authenticationService.getCurrentUser();
-    this.productOfferService.patchResource(this.productOffer).subscribe(
-      (patchedProductOffer: ProductOffer) => {
-        this.router.navigate([patchedProductOffer.uri]);
-      });
+    this.owner = this.productOffer.offerer;
+    if(this.owner.id == this.authenticationService.getCurrentUser().id){
+      this.productOfferService.patchResource(this.productOffer).subscribe(
+        (patchedProductOffer: ProductOffer) => {
+          this.router.navigate([patchedProductOffer.uri]);
+        });
+    }else{
+      alert("This user cannot edit this product offer because it is not its owner.")
+    }
   }
 
   getCurrentProductOfferID(): number {

@@ -38,7 +38,7 @@ export class ServiceofferDeleteComponent implements OnInit {
           this.router.navigate(['serviceOffers']);
         });
     }else{
-      alert("Este usuario no tiene permisos para borrar esta service offer ya que no es el owner.")
+      alert("This user cannot delete this service offer because it is not its owner.")
     }
   }
 
