@@ -57,12 +57,3 @@ Feature: Create Product Request
     Then I delete the "mondongo" request to avoid interfering other tests
     And I delete the "mondongo" offer to avoid interfering other tests
 
-
-
-  # TODO: we need to test or do something about creating multiple offers to do the tests.
-  #           TODO: Maybe we should delete de offer once the scenario is done
-
-  # idk wtf happend with cypress but it deppends of the response speed ...
-   #Scenario: Just to clean offers
-  # Given I click the "Offer Product" menu (not_linked)
-  # Then I delete the "mondongo" offer to avoid interfering other tests

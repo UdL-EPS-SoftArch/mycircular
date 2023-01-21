@@ -55,50 +55,6 @@ Then(/^I delete the "([^"]*)" offer to avoid interfering other tests$/, function
   cy.wait(1000);
   cy.url().should('include', '/productOffers');
   cy.contains(requestName).should('not.exist');
-
-
-  /*
-  cy.get('.nav-link').contains('Logout').click();
-  cy.get('.nav-link').contains('Login').click();
-  // Hardcoded like the background (this is not to test anything, just to avoid problems)
-  cy.get('#username').type("demo").blur();
-  cy.get('#password').type("password").blur();
-  cy.get('button').contains('Submit').click();
-  cy.get('#currentUser').invoke('text').should('contains', "demo");
-
-  // TODO: There is a better way? I hope so
-  // FIRST OFFER DELETE
-  cy.visit('http://localhost:4200/productOffers');
-  cy.get('.card-text').contains(requestName).click();
-  cy.get('button').contains("Delete").click();
-  cy.get('button').contains("Delete").click();
-  cy.get('button').contains("Delete").click();
-  // SECOND OFFER DELETE
-  cy.visit('http://localhost:4200/productOffers');
-  cy.get('.card-text').contains(requestName).click();
-  cy.get('button').contains("Delete").click();
-  cy.get('button').contains("Delete").click();
-  cy.get('button').contains("Delete").click();
-  // THIRD OFFER DELETE
-  cy.visit('http://localhost:4200/productOffers');
-  cy.get('.card-text').contains(requestName).click();
-  cy.get('button').contains("Delete").click();
-  cy.get('button').contains("Delete").click();
-  cy.get('button').contains("Delete").click();
-
-  // TODO: NOT WORKING
-  /*
-  let mondongoElements = cy.get('.card-text').contains(requestName);
-  while (mondongoElements.should('not.be.empty')) {
-
-    cy.get('.card-text').contains(requestName).click();
-    cy.get('button').contains("Delete").click();
-    cy.get('button').contains("Delete").click();
-    cy.get('button').contains("Delete").click();
-
-    mondongoElements = cy.get('.card-text').contains(requestName);
-  }
-  */
 });
 
 /*
