@@ -4,6 +4,7 @@ import { ProductOfferService } from "../productoffer.service";
 import { ProductOffer } from "../productoffer";
 import {AuthenticationBasicService} from '../../login-basic/authentication-basic.service';
 import {User} from "../../login-basic/user";
+import {ErrorMessageService} from "../../error-handler/error-message.service";
 
 @Component({
   selector: 'app-productoffer-delete',
@@ -18,7 +19,8 @@ export class ProductofferDeleteComponent implements OnInit {
   constructor(private router: Router,
               private route: ActivatedRoute,
               private productOfferService: ProductOfferService,
-              private authenticationService: AuthenticationBasicService) { }
+              private authenticationService: AuthenticationBasicService,
+              private errorMessageService: ErrorMessageService) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
@@ -39,7 +41,7 @@ export class ProductofferDeleteComponent implements OnInit {
           this.router.navigate(['productOffers']);
         });
     }else{
-      alert("This user cannot delete this product offer because it is not its owner.")
+      this.errorMessageService.showErrorMessage('This user cannot delete this product offer because it is not its owner.');
     }
   }
 
