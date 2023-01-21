@@ -20,6 +20,7 @@ Given(/^I click the "([^"]*)" menu \(not_linked\)$/, (option) => {
 });
 
 Then('I see the product offer list', () => {
+  cy.reload();
   cy.wait(2000); // Web is not charging enough fast
 });
 

@@ -31,7 +31,7 @@ Feature: Create Product Request
     And I click the "Requests" menu
     Then I wait to see my Product Request list
     And There is the new product request with name "mondongo"
-    #And I delete the "mondongo" offer to avoid interfering other tests
+    And I delete the "mondongo" offer to avoid interfering other tests
 
   Scenario: Register new Product Request when I'm not logged in
     Given I log out
@@ -41,7 +41,11 @@ Feature: Create Product Request
     Then I see the product offer list
     When I click the "Request" button
     Then I see error message "Username or password incorrect"
-    #And I delete the "mondongo" offer to avoid interfering other tests
+
+    # NEED TO DELETE STUFF, NOT PART OF THE TEST T_T
+    Then I log in as "demo" with password "password"
+    And I'm logged in as user "demo"
+    And I delete the "mondongo" offer to avoid interfering other tests
 
   Scenario: Can't register a request that already exists
     Given I click the "Offer Product" menu (not_linked)
@@ -52,14 +56,14 @@ Feature: Create Product Request
       # but in Cypress it's "Http failure response for http://localhost:8080/prodRequests: 403 Forbidden"
     Then I see error message "Http failure response for http://localhost:8080/prodRequests: 403 Forbidden"
     Then I delete the "mondongo" request to avoid interfering other tests
-    #And I delete the "mondongo" offer to avoid interfering other tests
+    And I delete the "mondongo" offer to avoid interfering other tests
 
 
 
   # TODO: we need to test or do something about creating multiple offers to do the tests.
   #           TODO: Maybe we should delete de offer once the scenario is done
 
-  # TODO: if this scenario is uncomented, all fail, if it is commented, all works fine... idk wtf happend with cypress
+  # idk wtf happend with cypress but it deppends of the response speed ...
    #Scenario: Just to clean offers
   # Given I click the "Offer Product" menu (not_linked)
   # Then I delete the "mondongo" offer to avoid interfering other tests

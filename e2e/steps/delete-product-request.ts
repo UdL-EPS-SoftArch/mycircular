@@ -41,7 +41,23 @@ Then(/^I delete the "([^"]*)" request to avoid interfering other tests$/, (reque
   cy.contains(requestName).should('not.exist');
 });
 
+// THIS IS NOT FOR TESTING; JUST TO AVOID ERRORS BC CYPRESS IS SHITTY
 Then(/^I delete the "([^"]*)" offer to avoid interfering other tests$/, function (requestName) {
+  cy.visit('http://localhost:4200/productOffers');
+  cy.url().should('include', '/productOffers');
+  cy.wait(1000);
+  cy.get('.card-text').contains(requestName).click();
+  cy.wait(2000);
+  cy.get('button').contains("Delete").click();
+  cy.get('button').contains("Delete").click();
+  cy.get('button').contains("Delete").click();
+  cy.visit('http://localhost:4200/productOffers');
+  cy.wait(1000);
+  cy.url().should('include', '/productOffers');
+  cy.contains(requestName).should('not.exist');
+
+
+  /*
   cy.get('.nav-link').contains('Logout').click();
   cy.get('.nav-link').contains('Login').click();
   // Hardcoded like the background (this is not to test anything, just to avoid problems)
