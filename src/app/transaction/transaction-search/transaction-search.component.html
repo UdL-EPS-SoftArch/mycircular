@@ -1,1 +1,9 @@
 <input type="month" [(ngModel)]="selectedDate" (ngModelChange)="updateList()">
+
+<li *ngIf="currentUrl === 'transactions'">
+  <button class="button align-self-center btn btn-outline-info" [routerLinkActive]="['active']" [routerLink]="['/transactionsotheralias']">Search</button >
+</li>
+
+<li *ngIf="currentUrl === 'transactionsotheralias'">
+  <button class="button align-self-center btn btn-outline-info" [routerLinkActive]="['active']" [routerLink]="['/transactions']">Search</button>
+</li>

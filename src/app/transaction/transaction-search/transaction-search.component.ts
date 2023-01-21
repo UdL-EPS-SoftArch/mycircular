@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit, Output, ViewChild} from '@angular/core'
 import { Transaction } from '../transaction';
 import {TransactionService} from "../transaction.service";
 import {TransactionListComponent} from "../transaction-list/transaction-list.component";
+import {ActivatedRoute} from "@angular/router";
 
 
 
@@ -16,9 +17,11 @@ export class TransactionSearchComponent{
   searchFailed = false;
   searching = false;
   selectedDate;
+  currentUrl: string;
 
 
   constructor(private transactionService: TransactionService,
+              private route: ActivatedRoute,
               private listComponent: TransactionListComponent) {
     this.selectedDate = transactionService.selectedDate
   }
@@ -27,5 +30,12 @@ export class TransactionSearchComponent{
     this.transactionService.setSelectedDate(this.selectedDate);
     this.listComponent.ngOnInit();
   }
-
+refresh(): void {
+    window.location.assign("http://localhost:4200/transactionsotheralias");
+}
+ngOnInit(){
+    this.route.url.subscribe(url=>{
+      this.currentUrl = url[0].path;
+    })
+  }
 }
