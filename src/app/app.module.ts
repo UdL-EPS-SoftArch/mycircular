@@ -66,6 +66,7 @@ import {MessageRegisterComponent} from "./message/message-register/message-regis
 import {MessageDetailComponent} from "./message/message-detail/message-detail.component";
 import {MessageSearchComponent} from "./message/message-search/message-search.component";
 import { TransactionCreateComponent } from './transaction/transaction-create/transaction-create.component';
+import {DateFilterPipe} from "./transaction/transaction-search/date-filter.pipe";
 
 @NgModule({
   declarations: [
@@ -121,7 +122,8 @@ RequestsDeleteComponent,
     MessageDetailComponent,
     MessageRegisterComponent,
     MessageListComponent,
-    TransactionCreateComponent
+    TransactionCreateComponent,
+    DateFilterPipe
   ],
   imports: [
     BrowserModule,

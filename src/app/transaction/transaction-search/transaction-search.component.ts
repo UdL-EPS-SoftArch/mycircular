@@ -1,9 +1,9 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import { Transaction } from '../transaction';
 import {TransactionService} from "../transaction.service";
-import {Observable, of, OperatorFunction} from 'rxjs';
-import { catchError, debounceTime, distinctUntilChanged, switchMap, tap } from 'rxjs/operators';
-import {User} from "../../login-basic/user";
+import {TransactionListComponent} from "../transaction-list/transaction-list.component";
+
+
 
 @Component({
   selector: 'app-transaction-search',
@@ -15,7 +15,17 @@ export class TransactionSearchComponent{
 
   searchFailed = false;
   searching = false;
+  selectedDate;
 
-  constructor(private transactionService: TransactionService) { }
+
+  constructor(private transactionService: TransactionService,
+              private listComponent: TransactionListComponent) {
+    this.selectedDate = transactionService.selectedDate
+  }
+
+  updateList(){
+    this.transactionService.setSelectedDate(this.selectedDate);
+    this.listComponent.ngOnInit();
+  }
 
 }
