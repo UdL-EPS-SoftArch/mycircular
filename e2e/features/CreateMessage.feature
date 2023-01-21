@@ -31,32 +31,30 @@ Feature: Create a new Message
       | about | Hearts of Iron IV |
       | text | Hello! I will interested in your game |
     And I click the "Submit" button
-    Then I create a new message with id 2
+    Then I create a new message with id 1
 
-  Scenario: Create a new Message but Submit button is disabled because about field is empty
-    Given I'm in the homepage
-    Then Go to Message create page
-    When I fill the create message form with
-      | FIELD | VALUE |
-      | about |  |
-      | text | Hello! I will interested in your game |
-    Then the "Submit" button is disabled
+    Scenario: Create a new Message but Submit button is disabled because about field is empty
+      Given I'm in the homepage
+      Then Go to Message create page
+      When I fill the create message form with
+        | FIELD | VALUE |
+        | text | Hello! I will interested in your game |
+      Then The "Submit" button is disabled
 
-  Scenario: Create a new Message but Submit button is disabled because text field is empty
-    Given I'm in the homepage
-    Then Go to Message create page
-    When I fill the create message form with
-      | FIELD | VALUE |
-      | about | Hearts of Iron IV |
-      | text |  |
-    Then the "Submit" button is disabled
+    Scenario: Create a new Message but Submit button is disabled because text field is empty
+      Given I'm in the homepage
+      Then Go to Message create page
+      When I fill the create message form with
+        | FIELD | VALUE |
+        | about | Hearts of Iron IV |
+      Then The "Submit" button is disabled
 
-  Scenario: Create a new Message but I can't perform the action because the number of words of the message is greater than 250 words
-    Given I'm in the homepage
-    Then Go to Message create page
-    When I fill the create message form with
-      | FIELD | VALUE |
-      | about | Hearts of Iron IV |
-      | text | Lorem ipsum sagittis neque, blandit aliquam sem sapien nec leo. Vivamus pharetra finibus lacus eu convallis. Morbi augue sapien, iaculis sit amet diam eu, condimentum sollicitudin leo. Mauris nec ullamcorper felis. Sed id volutpat eros. Fusce a nibh id risus. |
-    And I click the "Submit" button
-    Then an error message will be displayed indicating that the length of the message must be between 0 and 250 words
+    Scenario: Create a new Message but I can't perform the action because the number of words of the message is greater than 250 words
+      Given I'm in the homepage
+      Then Go to Message create page
+      When I fill the create message form with
+        | FIELD | VALUE |
+        | about | Hearts of Iron IV |
+        | text | Lorem ipsum sagittis neque, blandit aliquam sem sapien nec leo. Vivamus pharetra finibus lacus eu convallis. Morbi augue sapien, iaculis sit amet diam eu, condimentum sollicitudin leo. Mauris nec ullamcorper felis. Sed id volutpat eros. Fusce a nibh id risus. |
+      And I click the "Submit" button
+      Then  I see error message for input message text "Message text: length must be between 0 and 256"
