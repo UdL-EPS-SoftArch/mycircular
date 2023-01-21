@@ -4,6 +4,7 @@ import { ServiceOfferService } from "../serviceoffer.service";
 import { ServiceOffer } from "../serviceoffer";
 import {AuthenticationBasicService} from '../../login-basic/authentication-basic.service';
 import {User} from "../../login-basic/user";
+import {ErrorMessageService} from "../../error-handler/error-message.service";
 
 @Component({
   selector: 'app-serviceoffer-edit',
@@ -17,7 +18,8 @@ export class ServiceofferEditComponent implements OnInit {
   constructor(private router: Router,
               private route: ActivatedRoute,
               private serviceOfferService: ServiceOfferService,
-              private authenticationService: AuthenticationBasicService) { }
+              private authenticationService: AuthenticationBasicService,
+              private errorMessageService: ErrorMessageService) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
@@ -38,7 +40,7 @@ export class ServiceofferEditComponent implements OnInit {
           this.router.navigate([patchedServiceOffer.uri]);
         });
     }else{
-      alert("This user cannot edit this service offer because it is not its owner.")
+      this.errorMessageService.showErrorMessage('This user cannot edit this service offer because it is not its owner.');
     }
   }
 
