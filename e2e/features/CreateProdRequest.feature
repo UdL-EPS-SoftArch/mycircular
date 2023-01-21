@@ -29,10 +29,7 @@ Feature: Create Product Request
     And I click the "Requests" menu
     Then I wait to see my Product Request list
     And There is the new product request with name "mondongo"
-    #Then I delete the "mondongo" request to avoid interfering other tests
 
-
-    # TODO: if u are not logged in, when u press the request button, the web forces u to go to login page
   Scenario: Register new Product Request when I'm not logged in
     Given I log out
     And I'm not logged in
@@ -50,9 +47,8 @@ Feature: Create Product Request
     # the error msg is "Http failure response for http://localhost:8080/prodRequests: 403 OK"
       # but in Cypress it's "Http failure response for http://localhost:8080/prodRequests: 403 Forbidden"
     Then I see error message "Http failure response for http://localhost:8080/prodRequests: 403 Forbidden"
-    #Given I click the "Requests" menu
-    #And I wait to see my Product Request list
-    #Then There is no "mondongo" request in the list
+    Then I delete the "mondongo" request to avoid interfering other tests
+
 
   # TODO: we need to test or do something about creating multiple offers to do the tests.
   #           Maybe we should delete de offer once the scenario is done

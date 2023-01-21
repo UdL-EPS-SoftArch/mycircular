@@ -33,6 +33,7 @@ Then(/^I delete the "([^"]*)" request to avoid interfering other tests$/, (reque
   cy.get('.card-text').contains(requestName).click();
   cy.get('button').contains("Delete").click();
   cy.get('button').contains("Delete").click();
+  cy.get('button').contains("Delete").click();
   cy.get('.nav-link').contains("Requests").click();
   cy.wait(1000);
   cy.url().should('include', '/requests');
