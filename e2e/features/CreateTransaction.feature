@@ -39,7 +39,6 @@ Feature: Create a new Transaction
     And There are a announcements created
     When I fill the create transaction form with
       | FIELD    | VALUE  |
-      | price    |        |
       | seller   | demo   |
       | buyer    | demo   |
     And I click the "Create" button
