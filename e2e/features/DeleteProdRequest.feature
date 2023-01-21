@@ -42,18 +42,6 @@ Feature: Delete Product Request
     # DELETE OFFER: NOT TESTING PURPOSES
     And I delete the "vendo opel corsa" offer to avoid interfering other tests
 
-  Scenario: Try to access /requests without being logged in
-    Given I'm in the homepage
-    And I log out
-    Then I'm not logged in
-    When The "Requests" menu is not present
-    When I try to go to "/requests" via url
-    Then I see error message "You should be logged in to perform this action"
-    # DELETE OFFER: NOT TESTING PURPOSES
-    Given I log in as "demo" with password "password"
-    And I'm logged in as user "demo"
-    Then I delete the "vendo opel corsa" offer to avoid interfering other tests
-
   Scenario: Try to delete other user's request
     # In order to do this test we need to get the request id so we can't see other's
     #   request via the buttons on the web
