@@ -41,6 +41,7 @@ Feature: Delete Product Request
     Then There is no "vendo opel corsa" request in the list
     # DELETE OFFER: NOT TESTING PURPOSES
     And I delete the "vendo opel corsa" offer to avoid interfering other tests
+    And I delete the "vendo opel corsa" request to avoid interfering other tests
 
   Scenario: Try to delete other user's request
     # In order to do this test we need to get the request id so we can't see other's
@@ -50,8 +51,6 @@ Feature: Delete Product Request
     Then I go to the "vendo opel corsa" product details
     And I get the request id via the URL
     And I log out
-    # We create here the user insted in the backgroung because we don't want the user in an other scenario
-    # maybe we can create this user like "demo" (that is always created)
 
     # Scenario start
     Given I log in as "demo2" with password "password"
@@ -67,3 +66,4 @@ Feature: Delete Product Request
     And I log in as "demo" with password "password"
     And I'm logged in as user "demo"
     Then I delete the "vendo opel corsa" offer to avoid interfering other tests
+    And I delete the "vendo opel corsa" request to avoid interfering other tests
