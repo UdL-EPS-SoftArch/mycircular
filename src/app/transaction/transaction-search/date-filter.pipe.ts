@@ -6,7 +6,6 @@ import {Transaction} from "../transaction";
 })
 export class DateFilterPipe implements PipeTransform{
   transform(list: Transaction[],date:string): Transaction[] {
-    console.log("hola llego aqui!" + list.length);
     if(!date){
       return list;
     }

@@ -28,11 +28,8 @@ export class TransactionSearchComponent{
 
   updateList(){
     this.transactionService.setSelectedDate(this.selectedDate);
-    this.listComponent.ngOnInit();
   }
-refresh(): void {
-    window.location.assign("http://localhost:4200/transactionsotheralias");
-}
+
 ngOnInit(){
     this.route.url.subscribe(url=>{
       this.currentUrl = url[0].path;
