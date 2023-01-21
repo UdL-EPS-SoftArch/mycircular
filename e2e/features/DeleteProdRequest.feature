@@ -34,6 +34,8 @@ Feature: Delete Product Request
     When I click the "Delete" button
     # Reusamos paso para la confirmación o es mejor crear un paso extra?
     And I click the "Delete" button
+    # We have to do it 3 times...
+    And I click the "Delete" button
     Then I click the "Requests" menu
     Then There is no "vendo opel corsa" request in the list
 

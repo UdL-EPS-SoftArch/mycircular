@@ -21,6 +21,8 @@ Feature: Create Product Request
       | productCode | 123456789      |
     And I click the "Submit" button
 
+
+    # If this first scenario does not work, the third one neither
   Scenario: Register new Product Request
     Given I click the "Offer Product" menu (not_linked)
     # ESTO DE AQUI ABAJO NO ES MI PROBLEMA Y LO DE ARRIBA CAMBIARLO A SOLO VISITAR EL ENLACE
@@ -29,6 +31,7 @@ Feature: Create Product Request
     And I click the "Requests" menu
     Then I wait to see my Product Request list
     And There is the new product request with name "mondongo"
+    #And I delete the "mondongo" offer to avoid interfering other tests
 
   Scenario: Register new Product Request when I'm not logged in
     Given I log out
@@ -38,6 +41,7 @@ Feature: Create Product Request
     Then I see the product offer list
     When I click the "Request" button
     Then I see error message "Username or password incorrect"
+    #And I delete the "mondongo" offer to avoid interfering other tests
 
   Scenario: Can't register a request that already exists
     Given I click the "Offer Product" menu (not_linked)
@@ -48,12 +52,14 @@ Feature: Create Product Request
       # but in Cypress it's "Http failure response for http://localhost:8080/prodRequests: 403 Forbidden"
     Then I see error message "Http failure response for http://localhost:8080/prodRequests: 403 Forbidden"
     Then I delete the "mondongo" request to avoid interfering other tests
+    #And I delete the "mondongo" offer to avoid interfering other tests
+
 
 
   # TODO: we need to test or do something about creating multiple offers to do the tests.
-  #           Maybe we should delete de offer once the scenario is done
-  #     maybe we need clean the requests too
+  #           TODO: Maybe we should delete de offer once the scenario is done
 
-  # This is not working.... it's working like... awkward
-  #Scenario: This scenario its just to clean the request "mondongo", this works like a @beforeAll
-    #Given I delete the "mondongo" request to avoid interfering other tests
+  # TODO: if this scenario is uncomented, all fail, if it is commented, all works fine... idk wtf happend with cypress
+   #Scenario: Just to clean offers
+  # Given I click the "Offer Product" menu (not_linked)
+  # Then I delete the "mondongo" offer to avoid interfering other tests

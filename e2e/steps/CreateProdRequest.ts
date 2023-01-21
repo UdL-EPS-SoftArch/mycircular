@@ -16,6 +16,7 @@ Then(/^I fill the product offer creation form with$/, function (table: DataTable
 Given(/^I click the "([^"]*)" menu \(not_linked\)$/, (option) => {
   cy.visit('http://localhost:4200/productOffers'); // <-- comment when uncomment the other one xd
   //cy.get('.nav-link').contains(option).click(); // <-- uncomment when the link appears in the navbar
+  cy.wait(2000);
 });
 
 Then('I see the product offer list', () => {
