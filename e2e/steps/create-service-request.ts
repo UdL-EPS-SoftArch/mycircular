@@ -23,25 +23,9 @@ Then(/^I see the service offer list$/, function () {
 
 Then(/^I wait to see my service Request list$/, function () {
   cy.wait(2000); // Web is not charging enough fast
-
 });
 
 Then(/^There is the new service request with name "([^"]*)"$/, function (name) {
   cy.contains(name);
 });
 
-// THIS IS NOT FOR TESTING; JUST TO AVOID ERRORS BC CYPRESS IS SHITTY
-Then(/^I delete the "([^"]*)" service offer to avoid interfering other tests$/, function (offerName) {
-  cy.visit('http://localhost:4200/serviceOffers');
-  cy.url().should('include', '/serviceOffers');
-  cy.wait(1000);
-  cy.get('.card-text').contains(offerName).click();
-  cy.wait(2000);
-  cy.get('button').contains("Delete").click();
-  cy.get('button').contains("Delete").click();
-  cy.get('button').contains("Delete").click();
-  cy.visit('http://localhost:4200/serviceOffers');
-  cy.wait(1000);
-  cy.url().should('include', '/serviceOffers');
-  cy.contains(offerName).should('not.exist');
-});

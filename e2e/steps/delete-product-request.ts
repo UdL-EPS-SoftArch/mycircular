@@ -1,8 +1,6 @@
 import { Given, When, Then, And } from 'cypress-cucumber-preprocessor/steps';
-import { DataTable } from '@cucumber/cucumber';
 
-
-let savedID: string | undefined;
+export let savedID: string | undefined; // BAD PRACTICE
 
 Given(/^I go to the "([^"]*)" product details$/, (productName) => {
   cy.get('.card-text').contains(productName).click();
@@ -20,7 +18,7 @@ And(/^I log out$/, function () {
   cy.get('.nav-link').contains('Logout').click();
 });
 
-// This is just to avoid interferences between requests test, and it also helps us to check a error msg
+// This is just to avoid interferences between requests test, and it also helps us to check an error msg
 Then(/^I delete the "([^"]*)" request to avoid interfering other tests$/, (requestName) => {
   cy.get('.nav-link').contains("Requests").click();
   cy.url().should('include', '/requests');
