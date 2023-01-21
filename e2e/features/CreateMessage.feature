@@ -31,7 +31,7 @@ Feature: Create a new Message
       | about | Hearts of Iron IV |
       | text | Hello! I will interested in your game |
     And I click the "Submit" button
-    Then I create a new message with id 1
+    Then I create a new message with id 2
 
   Scenario: Create a new Message but Submit button is disabled because about field is empty
     Given I'm in the homepage
