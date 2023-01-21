@@ -17,8 +17,8 @@ When('I fill the create message form with', (table: DataTable) => {
     cy.get('#' + pair[0]).type(pair[1]).blur() );
 });
 
-Then('i create a new message with id 1', (option) => {
-  cy.visit('http://localhost:4200/messages/1');
+Then('I create a new message', (option) => {
+  cy.visit('http://localhost:4200/messages');
 });
 
 
