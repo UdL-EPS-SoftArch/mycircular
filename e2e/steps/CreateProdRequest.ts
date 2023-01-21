@@ -19,11 +19,11 @@ Given(/^I click the "([^"]*)" menu \(not_linked\)$/, (option) => {
 });
 
 Then('I see the product offer list', () => {
-  cy.wait(1000);
+  cy.wait(1000); // Web is not charging enough fast
 });
 
 Then(/^I wait to see my Product Request list$/,  () => {
-  cy.wait(1000);
+  cy.wait(2000); // Web is not charging enough fast
   cy.url().should('include', '/requests')
 });
 
