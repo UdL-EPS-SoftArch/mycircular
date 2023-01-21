@@ -33,13 +33,14 @@ Feature: Create Product Request
 
 
     # TODO: if u are not logged in, when u press the request button, the web forces u to go to login page
-  #Scenario: Register new Product Request when I'm not logged in
-    #Given I'm not logged in
-    #Given I click the "Offer Product" menu
+  Scenario: Register new Product Request when I'm not logged in
+    Given I log out
+    And I'm not logged in
+    Given I click the "Offer Product" menu (not_linked)
     # ESTO DE AQUI ABAJO NO ES MI PROBLEMA Y LO DE ARRIBA CAMBIARLO A SOLO VISITAR EL ENLACE
-    #Then I see the product offer list
-    #When I click the "Request" button
-    #Then I get redirect to "Login" page
+    Then I see the product offer list
+    When I click the "Request" button
+    Then I see error message "Username or password incorrect"
 
   Scenario: Can't register a request that already exists
     Given I click the "Offer Product" menu (not_linked)
@@ -55,6 +56,7 @@ Feature: Create Product Request
 
   # TODO: we need to test or do something about creating multiple offers to do the tests.
   #           Maybe we should delete de offer once the scenario is done
+  #     maybe we need clean the requests too
 
   # This is not working.... it's working like... awkward
   #Scenario: This scenario its just to clean the request "mondongo", this works like a @beforeAll
