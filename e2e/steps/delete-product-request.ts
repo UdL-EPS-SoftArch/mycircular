@@ -1,6 +1,9 @@
 import { Given, When, Then, And } from 'cypress-cucumber-preprocessor/steps';
 import { DataTable } from '@cucumber/cucumber';
 
+
+let savedID: string | undefined;
+
 Given(/^I go to the "([^"]*)" product details$/, (productName) => {
   /*
   cy.get(`label[for=${productName}]`)
@@ -55,6 +58,24 @@ Then(/^I delete the "([^"]*)" offer to avoid interfering other tests$/, function
   cy.wait(1000);
   cy.url().should('include', '/productOffers');
   cy.contains(requestName).should('not.exist');
+});
+
+Then(/^I get the request id via the URL$/, function () {
+  cy.url().then((url) => {
+     savedID = url.split('/').pop();
+  });
+});
+
+Then(/^I try to go to other user's request$/, function () {
+  cy.visit("http://localhost:4200/requests/" + savedID);
+});
+
+Then(/^I see an error message telling me that the action is forbidden$/, function () {
+  const message: string = "Http failure response for http://localhost:8080/prodRequests/" + savedID + ": 403 Forbidden";
+
+  cy.get('.alert')
+    .invoke('text')
+    .should('contains', message);
 });
 
 /*

@@ -5,6 +5,7 @@ Feature: Delete Product Request
 
   Background:
     # TODO: there is a better way to do all this steps...?
+    # TODO; there is a better way to do all the steps that are just the background but for just 1 scenario?
     Given I'm in the homepage
     And I'm not logged in
     Then I log in as "demo" with password "password"
@@ -49,4 +50,32 @@ Feature: Delete Product Request
     When I try to go to "/requests" via url
     Then I see error message "You should be logged in to perform this action"
     # DELETE OFFER: NOT TESTING PURPOSES
-    And I delete the "vendo opel corsa" offer to avoid interfering other tests
+    Given I log in as "demo" with password "password"
+    And I'm logged in as user "demo"
+    Then I delete the "vendo opel corsa" offer to avoid interfering other tests
+
+  Scenario: Try to delete other user's request
+    # In order to do this test we need to get the request id so we can't see other's
+    #   request via the buttons on the web
+    Given I click the "Request" menu
+    And I wait to see my Product Request list
+    Then I go to the "vendo opel corsa" product details
+    And I get the request id via the URL
+    And I log out
+    # We create here the user insted in the backgroung because we don't want the user in an other scenario
+    # maybe we can create this user like "demo" (that is always created)
+
+    # Scenario start
+    Given I log in as "demo2" with password "password"
+    And I'm logged in as user "demo2"
+    Then I try to go to other user's request
+    When I click the "Delete" button
+    And I click the "Delete" button
+    And I click the "Delete" button
+    Then I see an error message telling me that the action is forbidden
+
+    # DELETE OFFER: NOT TESTING PURPOSES
+    Given I log out
+    And I log in as "demo" with password "password"
+    And I'm logged in as user "demo"
+    Then I delete the "vendo opel corsa" offer to avoid interfering other tests
