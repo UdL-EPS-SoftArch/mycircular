@@ -16,6 +16,6 @@
   </div>
 </div>
 <div class="card-footer text-right">
-  <button id="createBtn" type="button" [routerLink]="['create']" class="btn m-1 btn-outline-primary">Create Rating
+  <button id="createBtn" type="button" *ngIf="isRole('user')" [routerLink]="['create']" class="btn m-1 btn-outline-primary">Create Rating
   </button>
 </div>

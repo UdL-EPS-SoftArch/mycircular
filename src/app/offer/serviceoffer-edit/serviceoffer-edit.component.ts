@@ -23,9 +23,10 @@ export class ServiceofferEditComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.serviceOffer.offerer = this.authenticationService.getCurrentUser();
     this.serviceOfferService.patchResource(this.serviceOffer).subscribe(
       (patchedServiceOffer: ServiceOffer) => {
-        this.router.navigate(['serviceOffers', patchedServiceOffer.id]);
+        this.router.navigate([patchedServiceOffer.uri]);
       });
   }
 

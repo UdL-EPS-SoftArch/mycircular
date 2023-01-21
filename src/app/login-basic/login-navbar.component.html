@@ -1,5 +1,10 @@
 <li class="nav-item" *ngIf="isLoggedIn()" id="currentUser">
-  <a class="nav-link" [routerLink]="['/users', getCurrentUser().id]">
+  <a class="nav-link"*ngIf="isRole('user')" [routerLink]="['/users', getCurrentUser().id]">
+    <span class="fas fa-user-circle"></span> {{getCurrentUser().id}}</a>
+</li>
+
+<li class="nav-item" *ngIf="isLoggedIn()" id="currentUser">
+  <a class="nav-link"*ngIf="isRole('admin')" [routerLink]="['/admins', getCurrentUser().id]">
     <span class="fas fa-user-circle"></span> {{getCurrentUser().id}}</a>
 </li>
 
