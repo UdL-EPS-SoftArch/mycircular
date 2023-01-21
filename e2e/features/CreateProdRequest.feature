@@ -41,7 +41,6 @@ Feature: Create Product Request
     Then I see the product offer list
     When I click the "Request" button
     Then I see error message "Username or password incorrect"
-
     # NEED TO DELETE STUFF, NOT PART OF THE TEST T_T
     Then I log in as "demo" with password "password"
     And I'm logged in as user "demo"

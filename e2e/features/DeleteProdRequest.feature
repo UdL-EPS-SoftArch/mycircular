@@ -38,6 +38,8 @@ Feature: Delete Product Request
     And I click the "Delete" button
     Then I click the "Requests" menu
     Then There is no "vendo opel corsa" request in the list
+    # DELETE OFFER: NOT TESTING PURPOSES
+    And I delete the "vendo opel corsa" offer to avoid interfering other tests
 
   Scenario: Try to access /requests without being logged in
     Given I'm in the homepage
@@ -46,3 +48,5 @@ Feature: Delete Product Request
     When The "Requests" menu is not present
     When I try to go to "/requests" via url
     Then I see error message "You should be logged in to perform this action"
+    # DELETE OFFER: NOT TESTING PURPOSES
+    And I delete the "vendo opel corsa" offer to avoid interfering other tests
