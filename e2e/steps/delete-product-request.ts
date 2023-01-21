@@ -5,14 +5,6 @@ import { DataTable } from '@cucumber/cucumber';
 let savedID: string | undefined;
 
 Given(/^I go to the "([^"]*)" product details$/, (productName) => {
-  /*
-  cy.get(`label[for=${productName}]`)
-    .should('be.visible')
-    .and('have.attr', 'href')
-    .then((href) => {
-      cy.get(`label[for=${productName}]`).click();
-    });
-   */
   cy.get('.card-text').contains(productName).click();
 });
 
@@ -78,26 +70,3 @@ Then(/^I see an error message telling me that the action is forbidden$/, functio
     .should('contains', message);
 });
 
-/*
-const { Given, When, Then } = require('cypress-cucumber-preprocessor/steps');
-
-Given('un usuario hace una petición GET a la API', () => {
-  cy.request({
-    method: 'GET',
-    url: '/api/products',
-  }).as('response');
-});
-
-When('la petición es exitosa', () => {
-  cy.get('@response').should((response) => {
-    expect(response.status).to.equal(200);
-  });
-});
-
-Then('se recibe una respuesta con el código de estado 200', () => {
-  cy.get('@response').should((response) => {
-    expect(response.body).to.have.property('products');
-  });
-});
-
- */
