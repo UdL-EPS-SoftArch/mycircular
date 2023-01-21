@@ -13,6 +13,7 @@ import { User } from '../../login-basic/user';
 })
 export class ProductOfferListComponent implements OnInit {
   public productOffers: ProductOffer[] = [];
+  public specificUserProductOffers: ProductOffer[] = [];
   public pageSize = 5;
   public page = 1;
   public totalProductOffers = 0;
@@ -38,6 +39,12 @@ export class ProductOfferListComponent implements OnInit {
         });
         console.log(this.productOffers)
       });
+    /*
+    if(offer.offerer == this.authenticationService.getCurrentUser()){
+      this.specificUserProductOffers = page.resources;
+    }
+    this.productOffers = this.specificUserProductOffers
+    */
   }
 
   changePage(): void {

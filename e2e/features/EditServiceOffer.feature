@@ -14,7 +14,6 @@ Feature: Edit a exist ServiceOffer
       | description    | Asus DashF15 with 3060RTX and 16gb of ram |
       | price | 100     |
       | dateTime | 2018-02-12T12:08:23Z      |
-      | offerer | users/demo      |
       | availability | true      |
       | durationInHours | 10      |
     And I click the "Submit" button
