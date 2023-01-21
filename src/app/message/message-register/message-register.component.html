@@ -13,7 +13,7 @@
     <!-- Text input -->
     <div class="form-group mb-3">
       <label class="control-label" for="text">Message</label>
-      <input id="text" name="text" type="text" class="form-control" [(ngModel)]="message.text" #text="ngModel">
+      <input id="text" name="text" type="text" class="form-control" required [(ngModel)]="message.text" #text="ngModel">
     </div>
     <!-- When input -- it is not necessary, since it is done automatically at POST --
     <div class="form-group mb-3">
