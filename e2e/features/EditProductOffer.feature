@@ -7,7 +7,7 @@ Feature: edit a exist ProductOffer
     Given I'm in the homepage
     And I log in as "demo" with password "password"
     And I'm logged in as user "demo"
-    Then Go to Product offer edit page with id "1"
+    Then Go to Product offer edit page with id "2"
     And I fill the edit product offer form with
       | FIELD    | VALUE         |
       | name | Laptop EditTest          |
@@ -18,27 +18,26 @@ Feature: edit a exist ProductOffer
       | brand | Asus      |
       | productCode | 123456789      |
     And I click the "Submit" button
-    Then i check the Product Offer with id "1"
-
-  Scenario: Register new user
-    Given I'm in the homepage
-    And I'm not logged in
-    When I click the "Register" menu
-    And I fill the form with
-      | FIELD    | VALUE         |
-      | username | user2          |
-      | email    | user2@demo.app |
-      | password | password      |
-    And I click the "Submit" button
-    Then I'm logged in as user "user2"
+    Then i check the Product Offer with id "2"
 
   Scenario: Edit Product Offer with other user
     Given I'm in the homepage
-    Then Go to Product offer edit page with id "1"
+    And I'm not logged in
+    When I click the "Login" menu
+    And fill the login form with
+      | FIELD    | VALUE         |
+      | username | user2          |
+      | password | password      |
+    And I click the "Submit" button
+    And I'm logged in as user "user2"
+    Given I'm in the homepage
+    Then Go to Product offer edit page with id "2"
     And I fill the edit product offer form with
       | FIELD    | VALUE         |
       | price | 7000      |
-    And I click the "Submit" button
-    And I click the "Submit" button
-    And I click the "Submit" button
+    When I click the "Submit" button now
+    When I click the "Submit" button now
+    When I click the "Submit" button now
+    When I click the "Submit" button now
+    When I click the "Submit" button now
     Then I see the alert message "This user cannot edit this product offer because it is not its owner."

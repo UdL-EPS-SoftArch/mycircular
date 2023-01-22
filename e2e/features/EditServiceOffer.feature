@@ -7,7 +7,7 @@ Feature: Edit a exist ServiceOffer
     Given I'm in the homepage
     And I log in as "demo" with password "password"
     And I'm logged in as user "demo"
-    Then Go to Service offer edit page with id "1"
+    Then Go to Service offer edit page with id "4"
     And I fill the edit service offer form with
       | FIELD    | VALUE         |
       | name | Repair Laptop EditTest      |
@@ -17,27 +17,26 @@ Feature: Edit a exist ServiceOffer
       | availability | true      |
       | durationInHours | 10      |
     And I click the "Submit" button
-    Then i check the service offer with id "1"
-
-  Scenario: Register new user
-    Given I'm in the homepage
-    And I'm not logged in
-    When I click the "Register" menu
-    And I fill the form with
-      | FIELD    | VALUE         |
-      | username | user2          |
-      | email    | user2@demo.app |
-      | password | password      |
-    And I click the "Submit" button
-    Then I'm logged in as user "user2"
+    Then i check the service offer with id "4"
 
   Scenario: Edit Service Offer with not service offer owner
     Given I'm in the homepage
-    Then Go to Service offer edit page with id "1"
+    And I'm not logged in
+    When I click the "Login" menu
+    And fill the login form with
+      | FIELD    | VALUE         |
+      | username | user2          |
+      | password | password      |
+    And I click the "Submit" button
+    And I'm logged in as user "user2"
+    Given I'm in the homepage
+    Then Go to Service offer edit page with id "4"
     And I fill the edit service offer form with
       | FIELD    | VALUE         |
       | price | 500     |
-    And I click the "Submit" button
-    And I click the "Submit" button
-    And I click the "Submit" button
+    When I click the "Submit" button now
+    When I click the "Submit" button now
+    When I click the "Submit" button now
+    When I click the "Submit" button now
+    When I click the "Submit" button now
     Then I see the alert message "This user cannot edit this service offer because it is not its owner."
