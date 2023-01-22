@@ -37,6 +37,7 @@ export class MessageRegisterComponent implements OnInit {
 
   onSubmit(): void {
     this.message.user = this.authenticationService.getCurrentUser();
+    this.message.when = new Date();
     this.announcementService.findByName(this.productname).subscribe(announcement => {
       this.message.product = announcement.resources[0];
       this.messageService.createResource({body: this.message}).subscribe(message => {
