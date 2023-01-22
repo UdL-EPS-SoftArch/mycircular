@@ -34,7 +34,8 @@ Feature: edit a exist ProductOffer
       | manufacturer | Asus      |
       | brand | Asus      |
       | productCode | 123456789      |
-    And I click the "Submit" button now
+    When I click the "Submit" button now
+    When I click the "Submit" button now
     Then I see the alert message "ProductOffer description: length must be between 10 and 200"
 
   Scenario: Edit Product Offer with mistakes in field name product
@@ -51,7 +52,8 @@ Feature: edit a exist ProductOffer
       | manufacturer | Asus      |
       | brand | Asus      |
       | productCode | 123456789      |
-    And I click the "Submit" button now
+    When I click the "Submit" button now
+    When I click the "Submit" button now
     Then I see the alert message "ProductOffer name: length must be between 2 and 24"
 
   Scenario: Edit Product Offer with mistakes in field date product
@@ -68,7 +70,8 @@ Feature: edit a exist ProductOffer
       | manufacturer | Asus      |
       | brand | Asus      |
       | productCode | 123456789      |
-    And I click the "Submit" button now
+    When I click the "Submit" button now
+    When I click the "Submit" button now
     Then I see the alert message "Text '07/07/20' could not be parsed at index 0"
 
   Scenario: Edit Product Offer with other user

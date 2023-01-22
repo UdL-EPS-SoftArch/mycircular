@@ -19,5 +19,4 @@ Then('I see the alert message {string}', (message) => {
 When('I click the {string} button now', (label) => {
   cy.contains('button', label).should('be.visible');
   cy.get('button').contains(label).click({force: true});
-  cy.wait(150);
 });
