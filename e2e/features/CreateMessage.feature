@@ -11,6 +11,9 @@ Feature: Create a new Message
     And I'm not logged in
     And I log in as "demo" with password "password"
     And I'm logged in as user "demo"
+
+  Scenario: Create a new announcement
+    Given I'm in the homepage
     Then Go to Product offer create page
     And I fill the create product offer form with
       | FIELD | VALUE |
