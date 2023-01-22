@@ -39,15 +39,15 @@ Feature: Create Product Request
     #Then I see the product offer list
     #When I click the "Request" button
     #Then I get redirect to "Login" page
-  #THIS TEST FAILS
-  #Scenario: Can't register a request that already exists
-    #Given I click the "Offer Product" menu (not_linked)
+
+  Scenario: Can't register a request that already exists
+    Given I click the "Offer Product" menu (not_linked)
     # ESTO DE AQUI ABAJO NO ES MI PROBLEMA Y LO DE ARRIBA CAMBIARLO A SOLO VISITAR EL ENLACE
-    #Then I see the product offer list
-    #When I click the "Request" button
+    Then I see the product offer list
+    When I click the "Request" button
     # the error msg is "Http failure response for http://localhost:8080/prodRequests: 403 OK"
       # but in Cypress it's "Http failure response for http://localhost:8080/prodRequests: 403 Forbidden"
-    #Then I see error message "Http failure response for http://localhost:8080/prodRequests: 403 Forbidden"
+    Then I see error message "Http failure response for http://localhost:8080/prodRequests: 403 Forbidden"
     #Given I click the "Requests" menu
     #And I wait to see my Product Request list
     #Then There is no "mondongo" request in the list
