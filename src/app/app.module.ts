@@ -70,6 +70,7 @@ import { AdminDetailComponent } from './admin/admin-detail/admin-detail.componen
 import { AdminUpdateComponent } from './admin/admin-update/admin-update.component';
 import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
 import { TransactionCreateComponent } from './transaction/transaction-create/transaction-create.component';
+import {DateFilterPipe} from "./transaction/transaction-search/date-filter.pipe";
 
 @NgModule({
   declarations: [
@@ -125,6 +126,7 @@ RequestsDeleteComponent,
     MessageDetailComponent,
     MessageRegisterComponent,
     MessageListComponent,
+    DateFilterPipe,
     AdminListComponent,
     AdminDetailComponent,
     AdminUpdateComponent,
