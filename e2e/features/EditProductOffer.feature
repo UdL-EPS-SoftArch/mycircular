@@ -34,8 +34,8 @@ Feature: edit a exist ProductOffer
       | manufacturer | Asus      |
       | brand | Asus      |
       | productCode | 123456789      |
-    And I click the "Submit" button
-    Then I see error message for input name product "ProductOffer description: length must be between 10 and 200"
+    And I click the "Submit" button now
+    Then I see the alert message "ProductOffer description: length must be between 10 and 200"
 
   Scenario: Edit Product Offer with mistakes in field name product
     Given I'm in the homepage
@@ -51,8 +51,8 @@ Feature: edit a exist ProductOffer
       | manufacturer | Asus      |
       | brand | Asus      |
       | productCode | 123456789      |
-    And I click the "Submit" button
-    Then I see error message for input name product "ProductOffer name: length must be between 2 and 24"
+    And I click the "Submit" button now
+    Then I see the alert message "ProductOffer name: length must be between 2 and 24"
 
   Scenario: Edit Product Offer with mistakes in field date product
     Given I'm in the homepage
@@ -68,8 +68,8 @@ Feature: edit a exist ProductOffer
       | manufacturer | Asus      |
       | brand | Asus      |
       | productCode | 123456789      |
-    And I click the "Submit" button
-    Then I see error message for input name product "Text '07/07/20' could not be parsed at index 0"
+    And I click the "Submit" button now
+    Then I see the alert message "Text '07/07/20' could not be parsed at index 0"
 
   Scenario: Edit Product Offer with other user
     Given I'm in the homepage
@@ -86,6 +86,5 @@ Feature: edit a exist ProductOffer
     And I fill the edit product offer form with
       | FIELD    | VALUE         |
       | price | 7000      |
-    When I click the "Submit" button now
     When I click the "Submit" button now
     Then I see the alert message "This user cannot edit this product offer because it is not its owner."
