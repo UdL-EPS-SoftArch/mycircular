@@ -34,7 +34,4 @@ Feature: Delete a ProductOffer
     Then Go to product offer delete page with id "2"
     When I click the "Delete" button now
     When I click the "Delete" button now
-    When I click the "Delete" button now
-    When I click the "Delete" button now
-    When I click the "Delete" button now
     Then I see the alert message "This user cannot delete this product offer because it is not its owner."

@@ -32,7 +32,4 @@ Feature: Delete a ServiceOffer
     Then Go to Service offer delete page with id "4"
     When I click the "Delete" button now
     When I click the "Delete" button now
-    When I click the "Delete" button now
-    When I click the "Delete" button now
-    When I click the "Delete" button now
     Then I see the alert message "This user cannot delete this service offer because it is not its owner."

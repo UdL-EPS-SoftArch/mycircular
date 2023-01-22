@@ -37,7 +37,4 @@ Feature: edit a exist ProductOffer
       | price | 7000      |
     When I click the "Submit" button now
     When I click the "Submit" button now
-    When I click the "Submit" button now
-    When I click the "Submit" button now
-    When I click the "Submit" button now
     Then I see the alert message "This user cannot edit this product offer because it is not its owner."

@@ -36,7 +36,4 @@ Feature: Edit a exist ServiceOffer
       | price | 500     |
     When I click the "Submit" button now
     When I click the "Submit" button now
-    When I click the "Submit" button now
-    When I click the "Submit" button now
-    When I click the "Submit" button now
     Then I see the alert message "This user cannot edit this service offer because it is not its owner."

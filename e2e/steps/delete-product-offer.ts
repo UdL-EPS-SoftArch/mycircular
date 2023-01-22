@@ -10,6 +10,7 @@ Then('i check the product offer list', () => {
 });
 
 Then('I see the alert message {string}', (message) => {
+  cy.wait(500);
   cy.get('.alert')
     .invoke('text')
     .should('contains', message);
@@ -18,4 +19,5 @@ Then('I see the alert message {string}', (message) => {
 When('I click the {string} button now', (label) => {
   cy.contains('button', label).should('be.visible');
   cy.get('button').contains(label).click({force: true});
+  cy.wait(500);
 });
