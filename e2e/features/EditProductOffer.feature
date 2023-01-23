@@ -97,19 +97,15 @@ Feature: edit a exist ProductOffer
   Scenario: Edit Product Offer with other user
     Given I'm in the homepage
     And I'm not logged in
-    When I click the "Login" menu
+    And I click the "Login" menu
     And fill the login form with
       | FIELD    | VALUE         |
       | username | user2          |
       | password | password      |
     And I click the "Submit" button
     And I'm logged in as user "user2"
-    Given I'm in the homepage
+    And I'm in the homepage
     And I go to ProductOffers Page
-    Then Select the Product offer "Laptop Asus 2"
-    And I try to forcefully edit this product offer
-    And I fill the edit product offer form with
-      | FIELD    | VALUE         |
-      | price | 7000      |
-    When I click the "Submit" button now
-    Then I see the alert message "This user cannot edit this product offer because it is not its owner."
+    When Select the Product offer "Laptop Asus 2"
+    Then There is no "Edit" button
+
