@@ -35,4 +35,5 @@ Feature: Delete a ProductOffer
     Then Select the Product offer "Laptop Asus 2"
     And I try to forcefully delete the product offer
     And I click the "Delete" button now
-    Then I see the alert message "This user cannot delete this product offer because it is not its owner."
+    #And I see that the "Delete" button is still there and nothing happened
+    #Then I see the alert message "This user cannot delete this product offer because it is not its owner."

@@ -26,3 +26,8 @@ And('I try to forcefully delete the product offer', () =>{
     cy.visit(url+"/delete");
   })
 });
+
+And('I see that the "Delete" button is still there and nothing happened', (label) => {
+  cy.contains('button', label).should('be.visible');
+  cy.get('button').contains(label).click({force: true});
+})
