@@ -34,7 +34,7 @@
               class="btn m-1 btn-outline-primary">Product Offer List</button>
       <button id="editBtn" type="button" *ngIf="isRole('USER') && isOwner()" [routerLink]="['edit']"
               class="btn m-1 btn-outline-success">Edit</button>
-      <button id="deleteBtn" type="button" *ngIf="isRole('USER') && isOwner()" [routerLink]="['delete']"
+      <button id="deleteBtn" type="button" [routerLink]="['delete']"
               class="btn m-1 btn-outline-danger">Delete</button>
     </div>
   </div>
