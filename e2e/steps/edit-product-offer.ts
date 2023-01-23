@@ -22,3 +22,12 @@ When('I fill the edit product offer form with', (table: DataTable) => {
 Then('i check the Product Offer with id {string}', (id) => {
   cy.visit('http://localhost:4200/productOffers/'+id);
 });
+
+Then('I go to ProductOffers Page', () => {
+  cy.visit('http://localhost:4200/productOffers/');
+});
+
+Then('Select the Product offer {string}', (text) => {
+  cy.contains('a', text).should('be.visible');
+  cy.get('a').contains(text).click({force: true});
+});
