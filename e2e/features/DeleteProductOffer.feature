@@ -33,6 +33,7 @@ Feature: Delete a ProductOffer
     And I'm in the homepage
     And I go to ProductOffers Page
     And Select the Product offer "Laptop Asus 2"
+    And I wait for the "123456789" content to appear
     When I click the "Delete" button
     And I wait for the "confirm deletion" content to appear
     And I click the "Delete" button
