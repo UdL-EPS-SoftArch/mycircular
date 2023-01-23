@@ -23,17 +23,14 @@ Feature: Delete a ServiceOffer
   Scenario: Delete Service Offer with not service offer owner
     Given I'm in the homepage
     And I'm not logged in
-    When I click the "Login" menu
+    And I click the "Login" menu
     And fill the login form with
       | FIELD    | VALUE         |
       | username | user2          |
       | password | password      |
     And I click the "Submit" button
     And I'm logged in as user "user2"
-    Given I'm in the homepage
+    And I'm in the homepage
     And I go to ServiceOffers Page
-    Then Select the Service offer "All types Repair"
-    And I try to forcefully delete the service offer
-    When I click the "Delete" button now
-    #Then I see that the "Delete" button is still there and nothing happened
-    #Then I see the alert message "This user cannot delete this service offer because it is not its owner."
+    When Select the Service offer "All types Repair"
+    Then There is no "Delete" button
