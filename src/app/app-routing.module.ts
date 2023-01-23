@@ -73,6 +73,7 @@ const routes: Routes = [
   { path: 'messages/create', component: MessageRegisterComponent, canActivate: [LoggedInGuard]},
   { path: 'messages/:id', component: MessageDetailComponent, canActivate: [LoggedInGuard]},
   { path: 'messages', component: MessageListComponent, canActivate: [LoggedInGuard]},
+  { path: 'transactionsotheralias', component: TransactionListComponent, canActivate: [LoggedInGuard] },
   
   { path: 'admins/:id', component: AdminDetailComponent, canActivate: [LoggedInGuard]},
   { path: 'admins', component: AdminListComponent, canActivate: [LoggedInGuard]},
