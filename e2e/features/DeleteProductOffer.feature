@@ -23,17 +23,17 @@ Feature: Delete a ProductOffer
   Scenario: Delete Product Offer with not offer owner
     Given I'm in the homepage
     And I'm not logged in
-    When I click the "Login" menu
+    And I click the "Login" menu
     And fill the login form with
       | FIELD    | VALUE         |
       | username | user2          |
       | password | password      |
     And I click the "Submit" button
     And I'm logged in as user "user2"
-    Given I'm in the homepage
+    And I'm in the homepage
     And I go to ProductOffers Page
-    Then Select the Product offer "Laptop Asus 2"
-    And I try to forcefully delete the product offer
-    And I click the "Delete" button now
-    #And I see that the "Delete" button is still there and nothing happened
-    #Then I see the alert message "This user cannot delete this product offer because it is not its owner."
+    And Select the Product offer "Laptop Asus 2"
+    When I click the "Delete" button
+    And I wait for the "confirm deletion" content to appear
+    And I click the "Delete" button
+    Then I see the alert message "This user cannot delete this product offer because it is not its owner."
