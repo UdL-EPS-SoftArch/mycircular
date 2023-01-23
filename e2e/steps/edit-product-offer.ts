@@ -1,4 +1,4 @@
-import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps';
+import { Given, When, Then, And } from 'cypress-cucumber-preprocessor/steps';
 import { DataTable } from '@cucumber/cucumber';
 
 Then('Go to Service offer create page', () => {
@@ -30,4 +30,14 @@ Then('I go to ProductOffers Page', () => {
 Then('Select the Product offer {string}', (text) => {
   cy.contains('a', text).should('be.visible');
   cy.get('a').contains(text).click({force: true});
+});
+
+And('There is no {string} button', (label) =>{
+    cy.contains('button', label).should('not.exist');
+});
+
+And('I try to forcefully edit this product offer', () =>{
+  cy.url().then((url) => {
+    cy.visit(url+"/edit");
+  })
 });
