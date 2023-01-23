@@ -14,10 +14,10 @@ Feature: Delete a ProductOffer
     And I click the "Submit" button
     And I'm logged in as user "demo"
     Given I'm in the homepage
-    Then Go to product offer delete page with id "1"
-    And I click the "Delete" button
-    And I click the "Delete" button
-    And I click the "Delete" button
+    And I go to ProductOffers Page
+    Then Select the Product offer "Laptop MSI"
+    And I click the "Delete" button now
+    And I click the "Delete" button now
     Then i check the product offer list
 
   Scenario: Delete Product Offer with not offer owner
@@ -31,7 +31,8 @@ Feature: Delete a ProductOffer
     And I click the "Submit" button
     And I'm logged in as user "user2"
     Given I'm in the homepage
-    Then Go to product offer delete page with id "2"
-    When I click the "Delete" button now
-    When I click the "Delete" button now
+    And I go to ProductOffers Page
+    Then Select the Product offer "Laptop Asus 2"
+    And I try to forcefully delete the product offer
+    And I click the "Delete" button now
     Then I see the alert message "This user cannot delete this product offer because it is not its owner."

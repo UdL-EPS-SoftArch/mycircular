@@ -29,12 +29,12 @@ Feature: Create a new ProductOffer
     Then Go to Product offer create page
     And I fill the create product offer form with
       | FIELD    | VALUE         |
-      | name | Laptop Asus          |
-      | description    | Asus Gaming laptop |
+      | name | Laptop MSI          |
+      | description    | MSI Gaming laptop |
       | price | 900      |
       | dateTime | 2018-02-12T12:08:23Z      |
-      | manufacturer | Asus      |
-      | brand | Asus      |
+      | manufacturer | MSI      |
+      | brand | MSI      |
       | productCode | 1111112131      |
     And I click the "Submit" button
 

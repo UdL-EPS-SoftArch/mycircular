@@ -1,4 +1,4 @@
-import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps';
+import {Given, When, Then, And} from 'cypress-cucumber-preprocessor/steps';
 import { DataTable } from '@cucumber/cucumber';
 
 Then('Go to Service offer delete page with id {string}', (id) => {
@@ -7,4 +7,10 @@ Then('Go to Service offer delete page with id {string}', (id) => {
 
 Then('i check the service offer list', () => {
   cy.visit('http://localhost:4200/serviceOffers/');
+});
+
+And('I try to forcefully delete the service offer', () =>{
+  cy.url().then((url) => {
+    cy.visit(url+"/delete");
+  })
 });
