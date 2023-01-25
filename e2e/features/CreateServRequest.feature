@@ -15,7 +15,6 @@ Feature: Create Service Request
       | description    | Asus DashF15 with 3060RTX and 16gb of ram |
       | price | 700      |
       | dateTime | 2018-02-12T12:08:23Z      |
-      | offerer | users/demo      |
       | availability | true      |
       | durationInHours | 5      |
     And I click the "Submit" button

@@ -17,7 +17,6 @@ Feature: Retrieve an existing serv request
       | description    | lo vendo porque es una mierda |
       | price | 1      |
       | dateTime | 2018-02-12T12:08:23Z      |
-      | offerer | users/demo      |
       | availability | true      |
       | durationInHours | 5      |
     And I click the "Submit" button
