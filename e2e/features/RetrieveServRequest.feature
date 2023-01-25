@@ -24,11 +24,9 @@ Feature: Retrieve an existing serv request
     # ESTO DE AQUI ABAJO NO ES MI PROBLEMA Y LO DE ARRIBA CAMBIARLO A SOLO VISITAR EL ENLACE
     Then I see the service offer list
     And I click the "Request" button
-    And I log out
 
   Scenario: Get my requests
-    Given I log in as "demo" with password "password"
-    And I'm logged in as user "demo"
+    Given I'm logged in as user "demo"
     When I click the "Requests" menu
     Then I wait to see my service Request list
     And I see there is the "cypress" request I have created
@@ -45,7 +43,8 @@ Feature: Retrieve an existing serv request
 
   Scenario: Try to access /requests without being logged in
     Given I'm in the homepage
-    Then I'm not logged in
+    And I log out
+    And I'm not logged in
     When The "Requests" menu is not present
     When I try to go to "/requests" via url
     Then I see error message "You should be logged in to perform this action"
@@ -57,6 +56,7 @@ Feature: Retrieve an existing serv request
 
   Scenario: Try to see if i have other user's requests
     Given I'm in the homepage
+    And I log out
     And I log in as "demo2" with password "password"
     Then I'm logged in as user "demo2"
     When I click the "Requests" menu
