@@ -31,7 +31,8 @@ export class ServiceRequestsCreateComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.popUp()
+    // this.popUp()
+    this.createRequest();
   }
 
   popUp(): void {
@@ -60,7 +61,7 @@ export class ServiceRequestsCreateComponent implements OnInit {
     ).subscribe(
       () => {
         console.log("service Request created", this.serviceRequest)
-        this.location.back()
+        //this.location.back()
         //this.router.navigate
       });
   }

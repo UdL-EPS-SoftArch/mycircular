@@ -39,9 +39,6 @@ export class ProductRequestsListComponent implements OnInit {
             console.log(productRequest)
           }
           this.productRequests = productRequests
-          console.log("i got it")
-          console.log(typeof productRequests)
-          console.log(productRequests[0].name)
         }
       )
     console.log(this.productRequests)

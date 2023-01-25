@@ -46,9 +46,6 @@ export class RequestsListComponent implements OnInit {
               console.log(request)
           }
           this.requests = requests
-          console.log("i got it")
-          console.log(typeof requests)
-          console.log(requests[0].name)
         }
       )
     console.log(this.requests)
