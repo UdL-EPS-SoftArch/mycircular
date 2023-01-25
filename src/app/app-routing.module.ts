@@ -39,9 +39,14 @@ import {ServiceRequestsDeleteComponent} from "./requests/service-requests-delete
 import { TransactionListComponent } from './transaction/transaction-list/transaction-list.component';
 import { TransactionDetailComponent } from './transaction/transaction-detail/transaction-detail.component';
 import { TransactionEditComponent } from './transaction/transaction-edit/transaction-edit.component';
+import { TransactionCreateComponent } from './transaction/transaction-create/transaction-create.component';
 import {MessageListComponent} from "./message/message-list/message-list.component";
 import {MessageDetailComponent} from "./message/message-detail/message-detail.component";
 import {MessageRegisterComponent} from "./message/message-register/message-register.component";
+import { AdminListComponent } from './admin/admin-list/admin-list.component';
+import { AdminDetailComponent } from './admin/admin-detail/admin-detail.component';
+import { AdminUpdateComponent } from './admin/admin-update/admin-update.component';
+import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
 
 const routes: Routes = [
   {path: 'users/create', component: UserRegisterComponent},
@@ -61,12 +66,20 @@ const routes: Routes = [
   {path: 'serviceRequests', component: ServiceRequestsListComponent, canActivate: [LoggedInGuard]},
   {path: 'serviceRequests/:id', component: ServiceRequestsDetailComponent, canActivate: [LoggedInGuard]},
   {path: 'serviceRequests/:id/delete', component: ServiceRequestsDeleteComponent, canActivate: [LoggedInGuard]},
+  { path: 'transactions/create/:id', component: TransactionCreateComponent, canActivate: [LoggedInGuard] },
   { path: 'transactions/:id/edit', component: TransactionEditComponent, canActivate: [LoggedInGuard]},
   { path: 'transactions/:id' , component: TransactionDetailComponent, canActivate: [LoggedInGuard] },
   { path: 'transactions', component: TransactionListComponent, canActivate: [LoggedInGuard] },
   { path: 'messages/create', component: MessageRegisterComponent, canActivate: [LoggedInGuard]},
   { path: 'messages/:id', component: MessageDetailComponent, canActivate: [LoggedInGuard]},
   { path: 'messages', component: MessageListComponent, canActivate: [LoggedInGuard]},
+  { path: 'transactionsotheralias', component: TransactionListComponent, canActivate: [LoggedInGuard] },
+  
+  { path: 'admins/:id', component: AdminDetailComponent, canActivate: [LoggedInGuard]},
+  { path: 'admins', component: AdminListComponent, canActivate: [LoggedInGuard]},
+  { path: 'admins/:id/update', component: AdminUpdateComponent, canActivate: [LoggedInGuard] },
+  { path: 'admins/:id/delete', component: AdminDeleteComponent, canActivate: [LoggedInGuard] },
+
 
   // reservada para admins { path: 'users/:id/edit', component: UserEditComponent, canActivate: [LoggedInGuard]},
   { path: 'users/:id', component: UserDetailComponent, canActivate: [LoggedInGuard]},

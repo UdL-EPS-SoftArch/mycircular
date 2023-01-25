@@ -2,8 +2,7 @@
 
 
 <h1 class="mb-4">Transaction List</h1>
-
-<div class="card mb-2" *ngFor="let transaction of transactionList ">
+<div class="card mb-2" *ngFor="let transaction of transactionList | dateFilter: selectedDate">
   <div class="card-header">
     <p class="card-text col-md-12 p-3">
       {{ transaction.creationDate | date: "dd.MM.yyy"}}
@@ -12,7 +11,7 @@
   <div class="card-body row align-items-center">
     <div class="col-md-3">
       <h6 class="card-subtitle text-muted">Announcement</h6>
-      <a class="card-text">...</a>
+      <p class="card-text">{{ transaction.announcementAbout.name }}</p>
     </div>
     <div class="col-md-3">
       <h6 class="card-subtitle text-muted">Price</h6>

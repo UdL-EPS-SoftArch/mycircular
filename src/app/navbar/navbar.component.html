@@ -11,7 +11,7 @@
         <a class="nav-link" [routerLink]="['/about']">About</a>
       </li>
 
-      <li class="nav-item" *ngIf="isRole('user')" ngbDropdown>
+      <li class="nav-item" *ngIf="isRole('user') || isRole('admin')" ngbDropdown>
         <a class="nav-link dropdown-toggle" id="playerDropdown" role="button" aria-haspopup="true" aria-expanded="false"
           ngbDropdownToggle>Users</a>
         <div class="dropdown-menu" aria-labelledby="playDropdown" ngbDropdownMenu>
@@ -19,30 +19,43 @@
             [routerLink]="['/users']"><span class="fas fa-user-circle"></span> List</a>
         </div>
       </li>
-      <a class="nav-link" [routerLink]="['/reviews']">Reviews</a>
-      <li class="nav-item" *ngIf="isRole('user')" ngbDropdown>
-        <a class="nav-link dropdown-toggle" id="transactionDropdown" role="button"
-           aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>Transactions</a>
+      <a class="nav-link" *ngIf="isRole('user') || isRole('admin')" [routerLink]="['/reviews']">Reviews</a>
+      <li class="nav-item" *ngIf="isRole('user') || isRole('admin')" ngbDropdown>      
+        <a class="nav-link dropdown-toggle" id="transactionDropdown" role="button" aria-haspopup="true" 
+        aria-expanded="false" ngbDropdownToggle>Transactions</a>
         <div class="dropdown-menu" aria-labelledby="transactionDropdown" ngbDropdownMenu>
           <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
-             [routerLink]="['/transactions']"><span class="fas fa-money-bill"></span> List</a>
-        </div>
-      </li>
-      <li class="nav-item" *ngIf="isRole('user')" ngbDropdown>
-        <a class="nav-link dropdown-toggle" id="messageDropdown" role="button"
-           aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>Message</a>
+            [routerLink]="['/transactions']"><span class="fas fa-money-bill"></span> List</a>
+          </div>
+        </li>
+        <li class="nav-item" *ngIf="isRole('user') || isRole('admin')" ngbDropdown>
+          <a class="nav-link dropdown-toggle" id="messageDropdown" role="button" aria-haspopup="true"
+          aria-expanded="false" ngbDropdownToggle>Message</a>
         <div class="dropdown-menu" aria-labelledby="playerDropdown" ngbDropdownMenu>
           <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true}"
-             [routerLink]="['/messages']"><span class="fa-solid fa-message"></span> List </a>
+          [routerLink]="['/messages']"><span class="fa-solid fa-message"></span> List </a>
         </div>
       </li>
-
-      <li *ngIf="isRole('user')"
-          class="nav-item" [routerLinkActive]="'active'"
-          [routerLinkActiveOptions]="{ exact: true }">
+      
+      <li *ngIf="isRole('user') || isRole('admin')" class="nav-item" [routerLinkActive]="'active'"
+      [routerLinkActiveOptions]="{ exact: true }">
         <a class="nav-link" [routerLink]="['/requests']">
           Requests
         </a>
+      </li>
+      <a class="nav-link" *ngIf="isRole('admin')" [routerLink]="['/admins']">Admins</a>
+      
+      <li class="nav-item" *ngIf="isRole('user')" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="offersDropdown" role="button"
+           aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>Offers</a>
+        <div class="dropdown-menu" aria-labelledby="playerDropdown" ngbDropdownMenu>
+          <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true}"
+             [routerLink]="['/offers']"><span class="fa-solid fa-message"></span> Offers List </a>
+          <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true}"
+             [routerLink]="['/productOffers']"><span class="fa-solid fa-message"></span> Product Offers List </a>
+          <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true}"
+             [routerLink]="['/serviceOffers']"><span class="fa-solid fa-message"></span> Service Offers List </a>
+        </div>
       </li>
 
 

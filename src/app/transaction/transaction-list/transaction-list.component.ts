@@ -1,9 +1,10 @@
+import { Announcement } from 'src/app/announcement/announcement';
 import { User } from '../../login-basic/user';
 import { AuthenticationBasicService } from '../../login-basic/authentication-basic.service';
 import { TransactionService } from '../transaction.service';
 import { Router } from '@angular/router';
 import { PagedResourceCollection } from '@lagoshny/ngx-hateoas-client';
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import { Transaction } from '../transaction';
 
 @Component({
@@ -17,13 +18,17 @@ export class TransactionListComponent implements OnInit {
   public pageSize = 5;
   public page = 0;
   public currentUsername = this.authenticationService.getCurrentUser().id;
+  public selectedDate;
 
 
   constructor(public router: Router,
               private transactionService: TransactionService,
-              private authenticationService: AuthenticationBasicService) { }
+              private authenticationService: AuthenticationBasicService){
+    this.selectedDate = transactionService.selectedDate;
+  }
 
   ngOnInit(): void {
+    this.selectedDate = this.transactionService.selectedDate;
     this.transactionService.searchPage('findByBuyer_UsernameOrSeller_Username', { params: { buyerUsername: this.currentUsername, sellerUsername: this.currentUsername },
       pageParams: { page: this.page, size: this.pageSize },
       sort: {name: 'DESC'}}).subscribe(
@@ -38,6 +43,9 @@ export class TransactionListComponent implements OnInit {
           });
           transaction.getRelation('buyer').subscribe((buyer: User) => {
             transaction.buyer = buyer;
+          });
+          transaction.getRelation('announcementAbout').subscribe((announcementAbout: Announcement) => {
+            transaction.announcementAbout = announcementAbout;
           });
         });
       }
@@ -55,6 +63,9 @@ export class TransactionListComponent implements OnInit {
           });
           transaction.getRelation('buyer').subscribe((buyer: User) => {
             transaction.buyer = buyer;
+          });
+          transaction.getRelation('announcementAbout').subscribe((announcementAbout: Announcement) => {
+            transaction.announcementAbout = announcementAbout;
           });
         }
         );
