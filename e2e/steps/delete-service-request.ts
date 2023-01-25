@@ -15,7 +15,7 @@ Then(/^I delete the "([^"]*)" service offer to avoid interfering other tests$/, 
   cy.wait(2000);
   cy.get('button').contains("Delete").click();
   cy.get('button').contains("Delete").click();
-  cy.get('button').contains("Delete").click();
+  //cy.get('button').contains("Delete").click();
   cy.visit('http://localhost:4200/serviceOffers');
   cy.wait(1000);
   cy.url().should('include', '/serviceOffers');

@@ -36,7 +36,7 @@ Feature: Delete Product Request
     # Reusamos paso para la confirmación o es mejor crear un paso extra?
     And I click the "Delete" button
     # We have to do it 3 times...
-    And I click the "Delete" button
+    #And I click the "Delete" button
     Then I click the "Requests" menu
     Then There is no "vendo opel corsa" request in the list
     # DELETE OFFER: NOT TESTING PURPOSES
@@ -58,7 +58,7 @@ Feature: Delete Product Request
     Then I try to go to other user's request
     When I click the "Delete" button
     And I click the "Delete" button
-    And I click the "Delete" button
+    #And I click the "Delete" button
     Then I see an error message telling me that the action is forbidden
 
     # DELETE OFFER: NOT TESTING PURPOSES
